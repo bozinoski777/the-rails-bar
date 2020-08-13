@@ -1,0 +1,9 @@
+<div class="container text-center">
+<%= render 'shared/banner'%>
+<h1>All doses</h1>
+<ol>
+  <% @doses.each do |dose| %>
+  <li> <%= dose.description  %> </li>
+  <% end %>
+</ol>
+</div>
