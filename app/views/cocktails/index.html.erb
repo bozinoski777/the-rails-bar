@@ -3,7 +3,8 @@
 <h1>All cocktails</h1>
 <ol>
   <% @cocktails.each do |cocktail| %>
-  <li> <%= cocktail.name  %> </li>
+  <li> <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </li>
   <% end %>
 </ol>
+<%= link_to 'Create a cocktail', new_cocktail_path  %>
 </div>
