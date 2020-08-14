@@ -1,0 +1,6 @@
+<div class="banner" style="background-image: linear-gradient(rgba(32,0,0,0.6),rgba(0,0,0,0.4)), url(<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>);">
+  <div class="container">
+    <h1><%= cocktail_within.name %></h1>
+    <a class="btn btn-success btn-lg font-weight-bold" href=<%= "/cocktails/#{cocktail_within.id}/doses/new" %>>Add an Ingredient</a>
+  </div>
+</div>
