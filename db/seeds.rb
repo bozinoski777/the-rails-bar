@@ -17,3 +17,15 @@ ingredients.each do |ingredient|
     Ingredient.create(name: thing['strIngredient1'].capitalize)
   end
 end
+
+
+url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
+cocktail_serialized = open(url).read
+cocktails = JSON.parse(cocktail_serialized)
+
+cocktails.each do |cocktail|
+  cocktail[1].each do |thingy|
+    p thingy['strDrink']
+  end
+  # Cocktail.create!(name: cocktail['strDrink'])
+end
