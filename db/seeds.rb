@@ -8,36 +8,35 @@ require 'open-uri'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-ingre_serialized = open(url).read
-ingredients = JSON.parse(ingre_serialized)
-
-ingredients.each do |ingredient|
-  ingredient[1].each do |thing|
-    Ingredient.create(name: thing['strIngredient1'].capitalize)
-  end
-end
-
-
 url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
 cocktail_serialized = open(url).read
 cocktails = JSON.parse(cocktail_serialized)
 
 cocktails.each do |cocktail|
-  cocktail[1].each do |thingy|
-    n = 1
-    if !thingy["strIngredient#{n}"].empty?
-    begin
-    p  Ingredient.create!(name: thingy["strIngredient#{n}"])
-    rescue => e
-      puts e
-    end
-    n += 1
+  #seed ingredients
+  n = 1
+  p array_cocktails = cocktail['drinks']
+  array_cocktails.each do |thingy|
+    15.times do
+      unless thingy["strIngredient#{n}"].nil?
+        ingredient = Ingredient.new(name: thingy["strIngredient#{n}"])
+        ingredient.save
+        p ingredient
+      end
+        n += 1
 
   end
-    cocktail = Cocktail.create!(name: thingy['strDrink'], description: thingy['strInstructions'])
-    file = URI.open(thingy['strDrinkThumb'])
-    cocktail.photo.attach(io: file, filename: "#{thingy['strDrink'].gsub(" ", "")}.#{thingy['strDrinkThumb'][0...-3]}", content_type: 'image/png')
-    p cocktail
   end
 end
+
+    # #seed cocktails
+    # cocktail = Cocktail.create!(name: thingy['strDrink'], description: thingy['strInstructions'])
+    # #seed doses
+    # Dose.create!(
+    #   cocktail: Cocktail.find(n),
+    #   description: thingy["strMeasure#{n}"],
+    #   ingredient: ingredient)
+    # #Seed images
+    # file = URI.open(thingy['strDrinkThumb'])
+    # cocktail.photo.attach(io: file, filename: "#{thingy['strDrink'].gsub(" ", "")}.#{thingy['strDrinkThumb'][0...-3]}", content_type: 'image/png')
+    # p cocktail
