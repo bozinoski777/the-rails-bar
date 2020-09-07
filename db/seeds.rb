@@ -17,19 +17,18 @@ cocktails['drinks'].each do |cocktail|
   p cocktail
   n = 1
   15.times do
-    unless cocktail["strIngredient#{n}"].nil? && (Ingredient.pluck(:name).include? cocktail["strIngredient#{n}"])
-      created_ingredient = Ingredient.new(name: cocktail["strIngredient#{n}"])
-      created_ingredient.save!
+    if !Ingredient.pluck(:name).include? cocktail["strIngredient#{n}"]
+      Ingredient.create!(name: cocktail["strIngredient#{n}"])
+
     end
     # seed cocktails
-    created_cocktail = Cocktail.create!(name: cocktail['strDrink'], description: cocktail['strInstructions'])
+    Cocktail.create!(name: cocktail['strDrink'], description: cocktail['strInstructions'])
     # seed doses
-    created_dose = Dose.create!(
-      cocktail: created_cocktail,
+    Dose.create!(
+      cocktail: Cocktail.find(n),
       description: cocktail["strMeasure#{n}"],
-      ingredient: created_ingredient)
+      ingredient: Ingredient.find(n))
     n += 1
-    p created_dose
   end
 end
 
