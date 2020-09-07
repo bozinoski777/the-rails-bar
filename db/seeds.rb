@@ -25,7 +25,19 @@ cocktails = JSON.parse(cocktail_serialized)
 
 cocktails.each do |cocktail|
   cocktail[1].each do |thingy|
-    p thingy['strDrink']
+    n = 1
+    if !thingy["strIngredient#{n}"].empty?
+    begin
+    p  Ingredient.create!(name: thingy["strIngredient#{n}"])
+    rescue => e
+      puts e
+    end
+    n += 1
+
   end
-  # Cocktail.create!(name: cocktail['strDrink'])
+    cocktail = Cocktail.create!(name: thingy['strDrink'], description: thingy['strInstructions'])
+    file = URI.open(thingy['strDrinkThumb'])
+    cocktail.photo.attach(io: file, filename: "#{thingy['strDrink'].gsub(" ", "")}.#{thingy['strDrinkThumb'][0...-3]}", content_type: 'image/png')
+    p cocktail
+  end
 end

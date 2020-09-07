@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 2020_09_07_170017) do
 
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
-    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
   end
 
   create_table "doses", force: :cascade do |t|
