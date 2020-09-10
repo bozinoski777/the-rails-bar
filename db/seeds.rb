@@ -7,7 +7,10 @@ cocktails = JSON.parse(cocktail_serialized)
 
 # seed cocktails
 cocktails['drinks'].each do |cocktail|
-  Cocktail.create!(name: cocktail['strDrink'], description: cocktail['strInstructions'], seed_id: cocktail['idDrink'])
+  cocky = Cocktail.create!(name: cocktail['strDrink'], description: cocktail['strInstructions'], seed_id: cocktail['idDrink'])
+  # Seed images
+  # file = URI.open(cocktail['strDrinkThumb'])
+  # cocky.photo.attach(io: file, filename: "#{cocktail['strDrink'].gsub(" ", "")}.#{cocktail['strDrinkThumb'][0...-3]}", content_type: 'image/png')
 end
 ingredient_description_groups = []
 # fetch and convert ingredients
@@ -42,27 +45,17 @@ end
 x = 1
 Cocktail.all.each do |cocktail|
   ingredient_description_groups.each do |ingredient_description_pair|
-    p ingredient_description_pair
-  if ingredient_description_pair["idDrink#{x}"] == cocktail.seed_id
-    ingredient_description_pair.each do |k, v|
+    if ingredient_description_pair["idDrink#{x}"] == cocktail.seed_id
+      ingredient_description_pair.each do |k, v|
       unless k.match(/(idDrink\d\d|idDrink\d)/)
         Dose.create!(
           cocktail: cocktail,
           description: v,
           ingredient: Ingredient.find_by(name: k))
       end
-
+      end
     end
-
+    x += 1
   end
-  x += 1
 end
-end
-Cocktail.all
-# seed doses
 
-
-    # #Seed images
-    # file = URI.open(cocktail['strDrinkThumb'])
-    # cocktail.photo.attach(io: file, filename: "#{cocktail['strDrink'].gsub(" ", "")}.#{cocktail['strDrinkThumb'][0...-3]}", content_type: 'image/png')
-    # p cocktail
