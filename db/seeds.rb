@@ -29,12 +29,13 @@ cocktails['drinks'].each do |cocktail|
   ingredient_description_groups << group
   i += 1
 end
-
+p ingredient_description_groups
 # seed ingredients
 ingredient_description_groups.each do |cocktail|
   # cocktail.reject! { |k, _| k.match(/(idDrink\d\d|idDrink\d)/) }
   begin
     cocktail.each do |k, _|
+      p k
       unless k.match(/(idDrink\d\d|idDrink\d)/)
         Ingredient.create!(name: k)
       end
