@@ -34,15 +34,13 @@ all_cockrails.each do |cocktail|
   rescue
   end
 end
-
-
-
+p all_cockrails
 # seed doses
-# Dose.create!(
-#   cocktail: Cocktail.find(n),
-#   description: cocktail["strMeasure#{n}"],
-#   ingredient: Ingredient.find(n))
-# # end
+Dose.create!(
+  cocktail: Cocktail.find(n),
+  description: cocktail["strMeasure#{n}"],
+  ingredient: Ingredient.find(n))
+
 
     # #Seed images
     # file = URI.open(cocktail['strDrinkThumb'])
