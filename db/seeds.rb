@@ -19,7 +19,7 @@ cocktails['drinks'].each do |cocktail|
 
   15.times do
     unless cocktail["strIngredient#{n}"].nil?
-      group[cocktail["strIngredient#{n}"]] = cocktail["strMeasure#{n}"]
+      group[cocktail["strIngredient#{n}"]] = cocktail["strMeasure#{n}"].nil? ? '1 oz' : cocktail["strMeasure#{n}"]
       n += 1
     end
   end
@@ -27,22 +27,13 @@ cocktails['drinks'].each do |cocktail|
   i += 1
 end
 
-ingredient_description_groups.each do |pair|
-  pair.map do |k, v|
-    if v.nil?
-      v = "1 oz"
-    end
-  end
-end
-
-# p ingredient_description_groups
 # seed ingredients
 ingredient_description_groups.each do |cocktail|
   # cocktail.reject! { |k, _| k.match(/(idDrink\d\d|idDrink\d)/) }
   begin
     cocktail.each do |k, _|
       unless k.match(/(idDrink\d\d|idDrink\d)/)
-        Ingredient.create!(name: k)
+        p Ingredient.create!(name: k)
       end
     end
   rescue
@@ -59,7 +50,7 @@ Cocktail.all.each do |cocktail|
           description: v,
           ingredient: Ingredient.find_by(name: k))
       end
-        p Dose.all
+
     end
 
     x += 1
