@@ -33,7 +33,7 @@ ingredient_description_groups.each do |cocktail|
   begin
     cocktail.each do |k, _|
       unless k.match(/(idDrink\d\d|idDrink\d)/)
-        p Ingredient.create!(name: k)
+        Ingredient.create!(name: k)
       end
     end
   rescue
@@ -42,6 +42,7 @@ end
 x = 1
 Cocktail.all.each do |cocktail|
   ingredient_description_groups.each do |ingredient_description_pair|
+    p ingredient_description_pair
   if ingredient_description_pair["idDrink#{x}"] == cocktail.seed_id
     ingredient_description_pair.each do |k, v|
       unless k.match(/(idDrink\d\d|idDrink\d)/)
@@ -53,8 +54,8 @@ Cocktail.all.each do |cocktail|
 
     end
 
-    x += 1
   end
+  x += 1
 end
 end
 Cocktail.all
