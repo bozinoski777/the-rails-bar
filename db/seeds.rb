@@ -9,8 +9,8 @@ cocktails = JSON.parse(cocktail_serialized)
 cocktails['drinks'].each do |cocktail|
   cocky = Cocktail.create!(name: cocktail['strDrink'], description: cocktail['strInstructions'], seed_id: cocktail['idDrink'])
   # Seed images
-  # file = URI.open(cocktail['strDrinkThumb'])
-  # cocky.photo.attach(io: file, filename: "#{cocktail['strDrink'].gsub(" ", "")}.#{cocktail['strDrinkThumb'][0...-3]}", content_type: 'image/png')
+  file = URI.open(cocktail['strDrinkThumb'])
+  cocky.photo.attach(io: file, filename: "#{cocktail['strDrink'].gsub(" ", "")}.#{cocktail['strDrinkThumb'][0...-3]}", content_type: 'image/png')
 end
 ingredient_description_groups = []
 # fetch and convert ingredients
@@ -29,19 +29,20 @@ cocktails['drinks'].each do |cocktail|
   ingredient_description_groups << group
   i += 1
 end
-p ingredient_description_groups
 # seed ingredients
 ingredient_description_groups.each do |cocktail|
+  p ingredient_description_groups
   # cocktail.reject! { |k, _| k.match(/(idDrink\d\d|idDrink\d)/) }
-  begin
+
     cocktail.each do |k, _|
-      p k
-      unless k.match(/(idDrink\d\d|idDrink\d)/)
+      ingredient_names = Ingredient.pluck(:name)
+      # unless k.match?(/(idDrink\d\d|idDrink\d)/)
+       if !ingredient_names.include? k
         Ingredient.create!(name: k)
       end
+      # end
     end
-  rescue
-  end
+
 end
 Cocktail.all.each do |cocktail|
   x = 1
@@ -49,7 +50,7 @@ Cocktail.all.each do |cocktail|
 # ISSUE WITH FOLLOWING IF STATEMENT
     if ingredient_description_pair["idDrink#{x}"] == cocktail.seed_id
       ingredient_description_pair.each do |k, v|
-      unless k.match(/(idDrink\d\d|idDrink\d)/)
+      unless k.match?(/(idDrink\d\d|idDrink\d)/)
         Dose.create!(
           cocktail: cocktail,
           description: v,
