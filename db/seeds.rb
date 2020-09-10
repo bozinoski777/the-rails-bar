@@ -28,18 +28,23 @@ cocktails['drinks'].each do |cocktail|
 end
 # seed ingredients
 all_cockrails.each do |cocktail|
-  cocktail.reject! { |k, _| k.match(/(idDrink\d\d|idDrink\d)/) }
+  # cocktail.reject! { |k, _| k.match(/(idDrink\d\d|idDrink\d)/) }
   begin
-    cocktail.each { |k, _| Ingredient.create!(name: k) }
+    cocktail.each do |k, _|
+      unless k.match(/(idDrink\d\d|idDrink\d)/)
+        Ingredient.create!(name: k)
+      end
+    end
   rescue
   end
 end
+p Ingredient.all
 p all_cockrails
 # seed doses
-Dose.create!(
-  cocktail: Cocktail.find(n),
-  description: cocktail["strMeasure#{n}"],
-  ingredient: Ingredient.find(n))
+# Dose.create!(
+#   cocktail: Cocktail.find(n),
+#   description: cocktail["strMeasure#{n}"],
+#   ingredient: Ingredient.find(n))
 
 
     # #Seed images
