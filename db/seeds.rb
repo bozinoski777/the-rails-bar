@@ -42,9 +42,10 @@ ingredient_description_groups.each do |cocktail|
   rescue
   end
 end
-x = 1
 Cocktail.all.each do |cocktail|
+  x = 1
   ingredient_description_groups.each do |ingredient_description_pair|
+# ISSUE WITH FOLLOWING IF STATEMENT
     if ingredient_description_pair["idDrink#{x}"] == cocktail.seed_id
       ingredient_description_pair.each do |k, v|
       unless k.match(/(idDrink\d\d|idDrink\d)/)
