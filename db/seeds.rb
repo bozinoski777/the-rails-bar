@@ -9,12 +9,8 @@ cocktails = JSON.parse(cocktail_serialized)
 cocktails['drinks'].each do |cocktail|
   Cocktail.create!(name: cocktail['strDrink'], description: cocktail['strInstructions'])
 end
-ing_desc = {}
 all_cockrails = []
-all_ids = []
-# ingredients_per_cocktail = []
-# descriptions_per_coctail = []
-# seed ingredients
+# fetch and convert ingredients
 i = 1
 cocktails['drinks'].each do |cocktail|
   n = 1
@@ -32,19 +28,7 @@ cocktails['drinks'].each do |cocktail|
 end
 p all_cockrails
 
-
-# all_ids.each do |id|
-#   cocktails['drinks'].each do |cocktail|
-#     all_drinks = {drink_id: id}
-#     n = 1
-#     15.times do
-#       all_drinks.merge! all_drinks[cocktail["strIngredient#{n}"]] = cocktail["strMeasure#{n}"]
-#       n += 1
-#     end
-#   end
-# end
-
-
+# seed ingredients
 
 
 
