@@ -10,23 +10,40 @@ cocktails['drinks'].each do |cocktail|
   Cocktail.create!(name: cocktail['strDrink'], description: cocktail['strInstructions'])
 end
 ing_desc = {}
-ingredients_per_cocktail = []
-descriptions_per_coctail = []
+all_cockrails = []
+all_ids = []
+# ingredients_per_cocktail = []
+# descriptions_per_coctail = []
 # seed ingredients
+i = 1
 cocktails['drinks'].each do |cocktail|
   n = 1
-  15.times do
-    ing_desc.merge!(cocktail["strIngredient#{n}"] => cocktail["strMeasure#{n}"])
-  n += 1
-end
-  # if cocktail["strIngredient#{n}"].nil?
-  #   p "Pass"
-  # elsif !ingredient_names.include? "#{cocktail["strIngredient#{n}"]}"
-  #   Ingredient.create!(name: cocktail["strIngredient#{n}"])
-  # end
-end
+  group = {}
+  group["idDrink#{i}"] = cocktail["idDrink"]
 
-p ing_desc
+  15.times do
+    unless cocktail["strIngredient#{n}"].nil?
+      group[cocktail["strIngredient#{n}"]] = cocktail["strMeasure#{n}"]
+      n += 1
+    end
+  end
+  all_cockrails << group
+  i += 1
+end
+p all_cockrails
+
+
+# all_ids.each do |id|
+#   cocktails['drinks'].each do |cocktail|
+#     all_drinks = {drink_id: id}
+#     n = 1
+#     15.times do
+#       all_drinks.merge! all_drinks[cocktail["strIngredient#{n}"]] = cocktail["strMeasure#{n}"]
+#       n += 1
+#     end
+#   end
+# end
+
 
 
 
