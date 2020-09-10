@@ -26,9 +26,14 @@ cocktails['drinks'].each do |cocktail|
   all_cockrails << group
   i += 1
 end
-p all_cockrails
-
 # seed ingredients
+all_cockrails.each do |cocktail|
+  cocktail.reject! { |k, _| k.match(/(idDrink\d\d|idDrink\d)/) }
+  begin
+    cocktail.each { |k, _| Ingredient.create!(name: k) }
+  rescue
+  end
+end
 
 
 
