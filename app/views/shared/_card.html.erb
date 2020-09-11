@@ -11,14 +11,14 @@
 </div> -->
 
 <div class="col-sm-6 col-md-3">
-  <div class="wrapper">
+  <div class="wrapper" href="<%"/cocktails/#{cocktail_within.id}" %>">
     <div class="card" style="margin-bottom: 35px;"><img src="<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>"/>
       <div class="info">
         <h1><%= cocktail_within.name %></h1>
-        <p>Ingrtedients: <% cocktail_within.ingredients.each do |ing| %>
-                                            <%= ing.name  %>,
-                                            <% end %></p>
-        <button>Read More</button>
+        <ul><% cocktail_within.ingredients.each do |ing| %>
+                                           <li><%= ing.name%></li>
+                                            <% end %>
+        </ul>
       </div>
     </div>
   </div>

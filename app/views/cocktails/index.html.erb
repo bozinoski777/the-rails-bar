@@ -5,7 +5,7 @@
 <div class="container ">
   <div class="row row justify-content-around">
     <% @cocktails.each do |cocktail| %>
-      <%= link_to (render 'shared/card', cocktail_within: cocktail),  "/cocktails/#{cocktail.id}"%>
+      <%= render 'shared/card', cocktail_within: cocktail%>
     <% end %>
   </div>
 </div>
