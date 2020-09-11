@@ -1,6 +1,6 @@
 require 'json'
 require 'open-uri'
-
+# REFACORTING IS NECESSARY
 ('a'..'z').each do |letter|
   url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
   cocktail_serialized = open(url).read
@@ -10,8 +10,8 @@ require 'open-uri'
     cocktails['drinks'].each do |cocktail|
       cocky = Cocktail.create!(name: cocktail['strDrink'], description: cocktail['strInstructions'], seed_id: cocktail['idDrink'])
       # Seed images
-      # file = URI.open(cocktail['strDrinkThumb'])
-      # cocky.photo.attach(io: file, filename: "#{cocktail['strDrink'].gsub(" ", "")}.#{cocktail['strDrinkThumb'][0...-3]}", content_type: 'image/png')
+      file = URI.open(cocktail['strDrinkThumb'])
+      cocky.photo.attach(io: file, filename: "#{cocktail['strDrink'].gsub(" ", "")}.#{cocktail['strDrinkThumb'][0...-3]}", content_type: 'image/png')
     end
     ingredient_description_groups = []
     # fetch and convert ingredients
@@ -34,16 +34,11 @@ require 'open-uri'
     ingredient_description_groups.each do |cocktail|
       cocktail.each do |k, v|
         ingredient_names = Ingredient.pluck(:name)
-        # unless k.match?(/(idDrink\d\d|idDrink\d)/)
-        if k == "" || v == ''
-          puts "blank"
+        if k == '' || v == ''
         elsif !ingredient_names.include? k
           Ingredient.create!(name: k)
-          puts "Ingredient created"
         else
-          puts "Ingredient included"
         end
-        # end
       end
     end
     Cocktail.all.each do |cocktail|
