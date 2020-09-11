@@ -1,18 +1,6 @@
-<!--  <div class="col-sm-6 col-md-3" style="padding-left: 5px; padding-right: 5px;">
-  <div class="card" style="width: 15rem;">
-    <img href=<%#="/cocktails/#{cocktail_within.id}" %> class="card-img-top img-thumbnail"  style="height: 300px; object-cover: cover; " src="<%#= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title font-weight-bold" style="margin-bottom: 0px;"><%#= cocktail_within.name %></h5>
-      <p class="card-text">Ingrtedients: <#% cocktail_within.ingredients.each do |ing| %>
-                                          <#%#= ing.name  %>,
-                                          <#% end %> </p>
-    </div>
-  </div>
-</div> -->
-
-<div class="col-sm-6 col-md-3">
+<div class="col-sm-6 col-lg-3">
   <a style="text-decoration: none;" href="<%="/cocktails/#{cocktail_within.id}" %>">
-    <div class="wrapper">
+    <div class="wrapper d-flex">
       <div class="card" style="margin-bottom: 35px;"><img src="<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>"/>
         <div class="info">
           <h1><%= cocktail_within.name %></h1>

@@ -2,8 +2,8 @@
 <div class="container text-center">
 <h1>Cocktails</h1>
 </div>
-<div class="container ">
-  <div class="row row justify-content-around">
+<div class="container">
+  <div class="row justify-content-around">
     <% @cocktails.each do |cocktail| %>
       <%= render 'shared/card', cocktail_within: cocktail%>
     <% end %>

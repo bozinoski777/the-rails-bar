@@ -17,8 +17,9 @@
 .wrapper {
   display: -webkit-box;
   // display: flex;
-  width: 90%;
+  width: 100%;
   justify-content: space-around;
+  position: relative;
 }
 
 .card {
