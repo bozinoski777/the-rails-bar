@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row justify-content-around">
     <% @cocktails.each do |cocktail| %>
-      <%= render 'shared/card', cocktail_within: cocktail%>
+      <%= render 'shared/list', cocktail_within: cocktail%>
     <% end %>
   </div>
 </div>
