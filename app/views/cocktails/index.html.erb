@@ -5,7 +5,7 @@
 <div class="container ">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <%= render 'shared/card', cocktail_within: cocktail %>
+      <%= link_to (render 'shared/card', cocktail_within: cocktail),  "/cocktails/#{cocktail.id}"%>
     <% end %>
   </div>
 </div>
