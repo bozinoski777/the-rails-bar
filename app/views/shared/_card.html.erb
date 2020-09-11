@@ -10,9 +10,9 @@
   </div>
 </div> -->
 
-<div class="col-sm-6 col-md-3" style="margin: 5px;">
+<div class="col-sm-6 col-md-3">
   <div class="wrapper">
-    <div class="card"><img src="<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>"/>
+    <div class="card" style="margin-bottom: 35px;"><img src="<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>"/>
       <div class="info">
         <h1><%= cocktail_within.name %></h1>
         <p>Ingrtedients: <% cocktail_within.ingredients.each do |ing| %>

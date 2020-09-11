@@ -3,7 +3,7 @@
 <h1>Cocktails</h1>
 </div>
 <div class="container ">
-  <div class="row">
+  <div class="row row justify-content-around">
     <% @cocktails.each do |cocktail| %>
       <%= link_to (render 'shared/card', cocktail_within: cocktail),  "/cocktails/#{cocktail.id}"%>
     <% end %>
