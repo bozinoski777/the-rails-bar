@@ -7,10 +7,17 @@
     <div class="col-md-6">
 
       <%= render 'shared/table', cocktail_within: @cocktail %>
+      <br>
       <h2>Instructions:</h2>
       <p><%=@cocktail.description%></p>
+      <h3>Glass Type</h3>
       <p><%=@cocktail.glass%></p>
-      <p><%=@cocktail.alcoholic%></p>
+      <br>
+      <% if @cocktail.alcoholic == true%>
+        <p><%= "Alcoholic" %></p>
+      <% else %>
+        <p><%= "Non-Alcoholic" %></p>
+      <% end %>
     </div>
 
   </div>
