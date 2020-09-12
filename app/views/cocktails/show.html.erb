@@ -8,7 +8,9 @@
 
       <%= render 'shared/table', cocktail_within: @cocktail %>
       <h2>Instructions:</h2>
-      <h3><%=@cocktail.description%></h3>
+      <p><%=@cocktail.description%></p>
+      <p><%=@cocktail.glass%></p>
+      <p><%=@cocktail.alcoholic%></p>
     </div>
 
   </div>

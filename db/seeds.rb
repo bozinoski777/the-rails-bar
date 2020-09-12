@@ -8,7 +8,17 @@ require 'open-uri'
   unless cocktails['drinks'].nil?
     # seed cocktails
     cocktails['drinks'].each do |cocktail|
-      cocky = Cocktail.create!(name: cocktail['strDrink'], description: cocktail['strInstructions'], seed_id: cocktail['idDrink'])
+      if cocktail['strAlcoholic'] == "Alcoholic"
+        alco_booly = true
+      else
+        alco_booly = false
+      end
+
+      cocky = Cocktail.create!(name: cocktail['strDrink'],
+                               description: cocktail['strInstructions'],
+                               seed_id: cocktail['idDrink'],
+                               glass: cocktail['strGlass'],
+                               alcoholic: alco_booly)
       # Seed images
       file = URI.open(cocktail['strDrinkThumb'])
       cocky.photo.attach(io: file, filename: "#{cocktail['strDrink'].gsub(" ", "")}.#{cocktail['strDrinkThumb'][0...-3]}", content_type: 'image/png')
