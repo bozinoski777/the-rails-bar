@@ -1,6 +1,8 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.order(name: :asc)
+    @cocktails = Cocktail.where(alcoholic: false)
+
   end
 
   def show
