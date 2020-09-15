@@ -1,7 +1,7 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.order(name: :asc)
-    @cocktails = Cocktail.where(alcoholic: false)
+    # @cocktails = Cocktail.order(name: :asc)
+    @cocktails = Cocktail.where(alcoholic: params[:alcoholic])
 
   end
 
@@ -28,6 +28,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :ingredients, :doses, :photo)
+    params.require(:cocktail).permit(:name, :ingredients, :doses, :photo, :alcoholic)
   end
 end

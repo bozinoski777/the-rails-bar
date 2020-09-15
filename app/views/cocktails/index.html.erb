@@ -3,7 +3,7 @@
 <h1 class="m-4">Cocktails</h1>
 </div>
 <div class="container"><i class="thumb-list-toggle fas fa-th-list"></i><i class="thumb-list-toggle fas fa-th-large"></i></div>
-<div class="container"><i style="font-size: 20px;" class="fas fa-wine-glass-alt"></i><p>Alcoholic?</p></div>
+<div class="container"><%= button_to 'Non-Alcoholic', root_path(alcoholic: false) %><i style="font-size: 20px;" class="fas fa-wine-glass-alt"></i><p>Alcoholic?</p></div>
 <div class="container">
   <div class="row justify-content-around">
     <% @cocktails.each do |cocktail| %>
