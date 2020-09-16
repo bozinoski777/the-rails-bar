@@ -12,6 +12,10 @@
       <p><%=@cocktail.description%></p>
       <h3>Glass Type</h3>
       <p><%=@cocktail.glass%></p>
+      <p>Ratings</p>
+      <% @cocktail.ratings.each do |rating|%>
+      <p><%= rating.rating %> </p>
+      <% end %>
       <br>
       <% if @cocktail.alcoholic == true%>
         <p><%= "Alcoholic" %></p>
