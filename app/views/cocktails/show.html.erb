@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <%= render 'shared/show_banner', cocktail_within: @cocktail %>
 <div class="container">
   <div class="modal-body row">
@@ -5,7 +6,6 @@
       <%= cl_image_tag @cocktail.photo.key, width: 400, crop: :fill %>
     </div>
     <div class="col-md-6">
-
       <%= render 'shared/table', cocktail_within: @cocktail %>
       <br>
       <h2>Instructions:</h2>
@@ -16,23 +16,22 @@
       <%= @cocktail.ratings.average("rating") %>
       <br>
       <% if @cocktail.alcoholic == true%>
-        <p><%= "Alcoholic" %></p>
+      <p><%= "Alcoholic" %></p>
       <% else %>
-        <p><%= "Non-Alcoholic" %></p>
+      <p><%= "Non-Alcoholic" %></p>
       <% end %>
     </div>
+
     <div class="container">
       <h2>Rate this cocktail!</h2>
-        <%= simple_form_for([@cocktail, @rating]) do |f| %>
-          <%= f.input :rating, as: :radio_buttons, collection: [['1', 'one star'],
-                                                                ['2', 'two stars'],
-                                                                ['3', 'three stars'],
-                                                                ['4', 'four stars'],
-                                                                ['5', 'five stars']], label_method: :second, value_method: :first %>
-          <%= f.submit %>
-        <% end %>
+      <%= simple_form_for([@cocktail, @rating]) do |f| %>
+      <%= f.input :rating, as: :radio_buttons, collection: [['1', 'one'],
+      ['2', 'two'],
+      ['3', 'three'],
+      ['4', 'four'],
+      ['5', 'five']], label_method: :second, value_method: :first %>
+      <%= f.submit %>
+      <% end %>
     </div>
-
   </div>
-
 </div>
