@@ -13,9 +13,7 @@
       <h3>Glass Type</h3>
       <p><%=@cocktail.glass%></p>
       <p>Ratings</p>
-      <% @cocktail.ratings.each do |rating|%>
-      <p><%= rating.rating %> </p>
-      <% end %>
+      <%= @cocktail.ratings.average("rating") %>
       <br>
       <% if @cocktail.alcoholic == true%>
         <p><%= "Alcoholic" %></p>
