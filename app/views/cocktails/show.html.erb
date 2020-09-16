@@ -19,6 +19,13 @@
         <p><%= "Non-Alcoholic" %></p>
       <% end %>
     </div>
+    <div class="container">
+      <h2>Rate this cocktail!</h2>
+        <%= simple_form_for([@cocktail, @rating]) do |f| %>
+          <%= f.input :ratings, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']], label_method: :second, value_method: :first %>
+          <%= f.submit %>
+        <% end %>
+    </div>
 
   </div>
 
