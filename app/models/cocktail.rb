@@ -5,4 +5,14 @@ class Cocktail < ApplicationRecord
   has_many :ingredients, through: :doses, dependent: :destroy
   validates :name, uniqueness: true
   validates :name, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+                  against: [:name],
+                  associated_against: {
+                    ingredients: [:name]
+                  },
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end

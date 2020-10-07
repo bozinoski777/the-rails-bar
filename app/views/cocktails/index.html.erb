@@ -1,6 +1,14 @@
 <%= render 'shared/banner'%>
 <div class="container text-center">
 <h1 class="m-4">Cocktails</h1>
+<%= form_tag cocktails_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a cocktail"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 </div>
 <div class="container"><h3>
  <% if params['alcoholic'] == 'false' %>
