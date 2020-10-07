@@ -1,7 +1,6 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.order(name: :asc)
-    @cocktails = Cocktail.where(alcoholic: params[:alcoholic])
   end
 
   def show
