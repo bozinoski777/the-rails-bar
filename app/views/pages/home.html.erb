@@ -9,10 +9,19 @@
   %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
+
+  <div class="">
+    <%= simple_form_for :search_alcoholic, url: cocktails_path, method: "GET" do |f| %>
+      <%= f.input :alcoholic, collection: {"Alcoholic": true, "Non-Alcoholic": false}, label: false, as: :radio_buttons %>
+      <%= f.submit "Filter", class: "btn btn-filter w-100" %>
+    <% end %>
+  </div>
+
 </div>
 <h2>Top 10 Cocktails</h2>
 <div class="container"><i class="thumb-list-toggle fas fa-th-list"></i><i class="thumb-list-toggle fas fa-th-large"></i></div>
-<div class="container"><%= link_to 'Non-Alcoholic', cocktails_path(alcoholic: 'false') %><i style="font-size: 20px;" class="fas fa-wine-glass-alt"></i><p>Alcoholic?</p></div>
+<div class="container"><%= link_to 'Non-Alcoholic', cocktails_path({"alcoholic"=>"false"}) %><i style="font-size: 20px;" class="fas fa-wine-glass-alt"></i><p>Alcoholic?</p></div>
+<div class="container"><%= link_to 'Non-Alcoholic', cocktails_path(query: 'true') %><i style="font-size: 20px;" class="fas fa-wine-glass-alt"></i><p>Alcoholic?</p></div>
 <div class="container">
   <div class="row justify-content-around">
     <% @cocktails.each do |cocktail| %>
