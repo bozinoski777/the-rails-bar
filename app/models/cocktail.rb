@@ -6,6 +6,8 @@ class Cocktail < ApplicationRecord
   validates :name, uniqueness: true
   validates :name, presence: true
 
+  $glasses = Cocktail.distinct.order(:glass).pluck(:glass)
+
   include PgSearch::Model
   pg_search_scope :global_search,
                   against: [:name],
