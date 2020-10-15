@@ -17,5 +17,6 @@
     <% @cocktails.each do |cocktail| %>
       <%= render 'shared/card', cocktail_within: cocktail%>
     <% end %>
+    <%== pagy_nav(@pagy) %>
   </div>
 </div>

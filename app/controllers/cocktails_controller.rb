@@ -2,14 +2,14 @@ class CocktailsController < ApplicationController
 
   def index
     if params[:query].present? && params[:alcoholic].present?
-      @cocktails = Cocktail.global_search(params[:query]).where(alcoholic: false)
+      @pagy, @cocktails = pagy(Cocktail.global_search(params[:query]).where(alcoholic: false))
     else
       if params[:query].present? && !params[:alcoholic].present?
-        @cocktails = Cocktail.global_search(params[:query])
+        @pagy, @cocktails = pagy(Cocktail.global_search(params[:query]))
       elsif !params[:query].present? && params[:alcoholic].present?
-        @cocktails = Cocktail.where(alcoholic: false)
+        @pagy, @cocktails = pagy(Cocktail.where(alcoholic: false))
       else
-        @cocktails = Cocktail.all.limit(5)
+         @pagy, @cocktails = pagy(Cocktail.all)
       end
     end
   end
