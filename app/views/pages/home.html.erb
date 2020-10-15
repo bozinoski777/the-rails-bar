@@ -8,13 +8,19 @@
     placeholder: "Find a cocktail"
   %>
   <div class="custom-control custom-switch">
-     <%= form.check_box :active, class: "custom-control-input", id: "customSwitch1"   %>
-   <label class="custom-control-label" for="customSwitch1">Status: </label>
+    <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false">
+    <label class="custom-control-label" for="alcoholic">Virgin</label>
   </div>
-  <%= radio_button_tag(:alcoholic, true) %>
-  <%= label_tag(:age_child, "Alcoholic") %>
-  <%= radio_button_tag(:alcoholic, false) %>
-  <%= label_tag(:age_child, "Non-Alcoholic") %>
+  <!-- <input type="radio" name="alcoholic" id="alcoholic_true" value="true">
+  <label for="alcoholic">Alcoholic</label>
+  <input type="radio" name="alcoholic" id="alcoholic_true" value="false">
+  <label for="alcoholic">Non-Alcoholic</label> -->
+
+
+  <%#= radio_button_tag(:alcoholic, true) %>
+  <%#= label_tag(:age_child, "Alcoholic") %>
+  <%#= radio_button_tag(:alcoholic, false) %>
+  <%#= label_tag(:age_child, "Non-Alcoholic") %>
     <%#= label_tag("Alcoholic": true, "Non-Alcoholic": false), label: false, as: :radio_buttons %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
