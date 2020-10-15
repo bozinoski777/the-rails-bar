@@ -3,13 +3,18 @@ class CocktailsController < ApplicationController
   def index
     if params[:query].present? && params[:alcoholic].present?
       @pagy, @cocktails = pagy(Cocktail.global_search(params[:query]).where(alcoholic: false))
+      loader
     else
       if params[:query].present? && !params[:alcoholic].present?
         @pagy, @cocktails = pagy(Cocktail.global_search(params[:query]))
+        loader
       elsif !params[:query].present? && params[:alcoholic].present?
         @pagy, @cocktails = pagy(Cocktail.where(alcoholic: false))
+        loader
       else
          @pagy, @cocktails = pagy(Cocktail.all)
+         loader
+
       end
     end
   end
@@ -50,3 +55,12 @@ class CocktailsController < ApplicationController
     params.permit(:name, :alcoholic, :ingredients, :doses, :photo)
   end
 end
+
+         def loader
+          respond_to do |format|
+           format.html
+           format.json {
+             render json: { entries: render_to_string(partial: "render_cocktails", formats: [:html]), pagination: view_context.pagy_nav(@pagy) }
+           }
+         end
+       end

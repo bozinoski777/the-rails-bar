@@ -14,10 +14,13 @@
 <div class="container"><i class="thumb-list-toggle fas fa-th-list"></i><i class="thumb-list-toggle fas fa-th-large"></i></div>
 
 <div class="container">
-  <div class="row justify-content-around">
-    <% @cocktails.each do |cocktail| %>
-      <%= render 'shared/card', cocktail_within: cocktail%>
-    <% end %>
-    <%== pagy_nav(@pagy) %>
+    <div data-controller="infinite-scroll">
+      <div data-target="infinite-scroll.entries">
+      <%= render "render_cocktails" %>
+      </div>
+
+      <div data-target="infinite-scroll.pagination">
+        <%== pagy_nav(@pagy) %>
+      </div>
   </div>
 </div>
