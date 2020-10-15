@@ -30,6 +30,12 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new
   end
 
+  def update
+  @cocktail = Cocktail.find(params[:id])
+  @cocktail.update(cocktail_params)
+  redirect_to cocktail_path(@cocktail)
+  end
+
   def create
     @cocktail = Cocktail.new(cocktail_params)
     @cocktail.save
@@ -52,15 +58,15 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.permit(:name, :alcoholic, :ingredients, :doses, :photo)
+    params.require(:cocktail).permit(:name, :alcoholic, :ingredients, :doses, :photo, :description)
   end
 end
 
-         def loader
-          respond_to do |format|
-           format.html
-           format.json {
-             render json: { entries: render_to_string(partial: "render_cocktails", formats: [:html]), pagination: view_context.pagy_nav(@pagy) }
-           }
-         end
-       end
+def loader
+  respond_to do |format|
+    format.html
+    format.json {
+    render json: { entries: render_to_string(partial: "render_cocktails", formats: [:html]), pagination: view_context.pagy_nav(@pagy) }
+    }
+  end
+end
