@@ -1,24 +1,18 @@
 class CocktailsController < ApplicationController
 
-    def index
-
-      if params[:query].present?
+  def index
+    if params[:query].present? && params[:alcoholic].present?
+      @cocktails = Cocktail.global_search(params[:query]).where(alcoholic: false)
+    else
+      if params[:query].present? && !params[:alcoholic].present?
         @cocktails = Cocktail.global_search(params[:query])
-      elsif params[:search_alcoholic]
-        @cocktails = Cocktail.where(alcoholic: params[:search_alcoholic][:alcoholic])
-      elsif params[:search_glass]
-        @cocktails = Cocktail.where(glass: params[:search_glass][:glass])
+      elsif !params[:query].present? && params[:alcoholic].present?
+        @cocktails = Cocktail.where(alcoholic: false)
       else
         @cocktails = Cocktail.all.limit(5)
       end
     end
-  # def index
-  #   if params[:query].present?
-  #     @cocktails = Cocktail.global_search(params[:query])
-  #   else
-  #     @cocktails = Cocktail.all
-  #   end
-  # end
+  end
 
   def show
     @cocktail = Cocktail.find(params[:id])

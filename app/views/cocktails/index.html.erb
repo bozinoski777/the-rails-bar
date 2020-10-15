@@ -1,14 +1,7 @@
 <%= render 'shared/banner'%>
 <div class="container text-center">
 <h1 class="m-4">Cocktails</h1>
-<%= form_tag cocktails_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a cocktail"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<%= render 'shared/search_bar'%>
 </div>
 <div class="container"><h3>
  <% if params['alcoholic'] == 'false' %>
@@ -19,7 +12,6 @@
 </h3>
 </div>
 <div class="container"><i class="thumb-list-toggle fas fa-th-list"></i><i class="thumb-list-toggle fas fa-th-large"></i></div>
-<div class="container"><i style="font-size: 20px;" class="fas fa-wine-glass-alt"></i><p>Alcoholic?</p></div>
 <div class="container">
   <div class="row justify-content-around">
     <% @cocktails.each do |cocktail| %>

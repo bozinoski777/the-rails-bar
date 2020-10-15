@@ -6,19 +6,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-        <!-- Glass Dropdown -->
-        <div class="nav-item dropdown">
-          <%= link_to "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false do %>
-            Glass
-          <% end %>
-          <div class="dropdown-menu cocktail-drop" aria-labelledby="navbarDropdown">
-            <%= simple_form_for :search_glass, url: cocktails_path, method: "GET" do |f| %>
-              <%= f.input :glass, collection: $glasses, label: false, as: :radio_buttons %>
-              <%= f.submit "Filter", class: "btn btn-filter w-100" %>
-            <% end %>
-          </div>
-        </div>
-        </ul>
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
