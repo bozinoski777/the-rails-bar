@@ -7,12 +7,21 @@
     class: "form-control",
     placeholder: "Find a cocktail"
   %>
+  <div class="custom-control custom-switch">
+     <%= form.check_box :active, class: "custom-control-input", id: "customSwitch1"   %>
+   <label class="custom-control-label" for="customSwitch1">Status: </label>
+  </div>
+  <%= radio_button_tag(:alcoholic, true) %>
+  <%= label_tag(:age_child, "Alcoholic") %>
+  <%= radio_button_tag(:alcoholic, false) %>
+  <%= label_tag(:age_child, "Non-Alcoholic") %>
+    <%#= label_tag("Alcoholic": true, "Non-Alcoholic": false), label: false, as: :radio_buttons %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
   <div class="">
     <%= simple_form_for :search_alcoholic, url: cocktails_path, method: "GET" do |f| %>
-      <%= f.input :alcoholic, collection: {"Alcoholic": true, "Non-Alcoholic": false}, label: false, as: :radio_buttons %>
+      <%#= f.input :alcoholic, collection: {"Alcoholic": true, "Non-Alcoholic": false}, label: false, as: :radio_buttons %>
       <%= f.submit "Filter", class: "btn btn-filter w-100" %>
     <% end %>
   </div>

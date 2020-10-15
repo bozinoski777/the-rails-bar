@@ -1,8 +1,7 @@
 class CocktailsController < ApplicationController
 
     def index
-
-      if params[:query].present?
+      if params[:query].present? && params[:alcoholic].present?
         @cocktails = Cocktail.global_search(params[:query])
       elsif params[:search_alcoholic]
         @cocktails = Cocktail.where(alcoholic: params[:search_alcoholic][:alcoholic])
