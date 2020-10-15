@@ -4,14 +4,45 @@
   <div class="modal-body row">
     <div class="col-md-6">
       <%= cl_image_tag @cocktail.photo.key, width: 400, crop: :fill %>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalPhoto">
+        Edit Photo
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalPhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalPhotoLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalPhotoLabel">Modal title</h5>
+              <%= cl_image_tag @cocktail.photo.key, width: 400, crop: :fill %>
+              <%= simple_form_for(@cocktail) do |f| %>
+                <%= f.input :photo %>
+                <%= f.submit %>
+              <% end %>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <div class="col-md-6">
       <%= render 'shared/table', cocktail_within: @cocktail %>
       <br>
       <h2>Instructions:</h2>
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
+        Edit description
       </button>
 
       <!-- Modal -->
@@ -40,6 +71,35 @@
       </div>
       <p><%=@cocktail.description%></p>
       <h3>Glass Type</h3>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalglass">
+        Edit glass type
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalglass" tabindex="-1" role="dialog" aria-labelledby="exampleModalglassLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalglassLabel">Modal title</h5>
+              <%= simple_form_for(@cocktail) do |f| %>
+                <%= f.input :glass %>
+                <%= f.submit %>
+              <% end %>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <p><%=@cocktail.glass%></p>
       <p>Ratings</p>
       <%= @cocktail.ratings.average("rating") %>
