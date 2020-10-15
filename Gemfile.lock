@@ -62,7 +62,6 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
-    bootstrap-toggle-rails (2.2.1.0)
     builder (3.2.4)
     byebug (11.1.3)
     cloudinary (1.12.0)
@@ -114,6 +113,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    pagy (3.8.3)
     pg (1.2.3)
     pg_search (2.3.3)
       activerecord (>= 5.2)
@@ -236,13 +236,13 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap (>= 1.4.2)
-  bootstrap-toggle-rails
   byebug
   cloudinary (~> 1.12.0)
   dotenv-rails
   font-awesome-sass (~> 5.12.0)
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  pagy (~> 3.5)
   pg (>= 0.18, < 2.0)
   pg_search (~> 2.3.0)
   puma (~> 4.1)
