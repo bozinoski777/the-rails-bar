@@ -17,9 +17,44 @@
     <th scope="row"> <%= n %> </th>
     <td> <%= dose.ingredient.name %> </td>
     <td> <%= dose.description %> </td>
+    <td> <%= link_to "Delete",
+            dose_path(dose),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></td>
     <%  n += 1  %>
     <% end %>
     </tr>
+    <tr>
+    <th scope="row"> + </th>
+    <td><a data-target="#exampleModalIngredient" data-toggle="modal"> Add am ingredient </a></td>
+    <td> with a dose</td>
+    </tr>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalIngredient" tabindex="-1" role="dialog" aria-labelledby="exampleModalIngredientLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalIngredientLabel">Modal title</h5>
+            <%= simple_form_for [@cocktail, @dose] do |f| %>
+              <%= f.association :ingredient %>
+              <%= f.input :description %>
+              <%= f.submit %>
+            <% end %>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </tbody>
   <!--Table body-->
 </table>
