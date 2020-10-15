@@ -1,0 +1,13 @@
+<%= form_tag cocktails_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a cocktail"
+  %>
+  <div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false">
+    <label class="custom-control-label" for="alcoholic">Virgin</label>
+  </div>
+
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>

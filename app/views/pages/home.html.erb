@@ -1,36 +1,8 @@
 <%= render 'shared/banner'%>
 <div class="container text-center">
-<h1 class="m-4">Cocktails</h1>
-<%= form_tag cocktails_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a cocktail"
-  %>
-  <div class="custom-control custom-switch">
-    <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false">
-    <label class="custom-control-label" for="alcoholic">Virgin</label>
-  </div>
-  <!-- <input type="radio" name="alcoholic" id="alcoholic_true" value="true">
-  <label for="alcoholic">Alcoholic</label>
-  <input type="radio" name="alcoholic" id="alcoholic_true" value="false">
-  <label for="alcoholic">Non-Alcoholic</label> -->
+<h1 class="m-4 d-flex">Cocktails</h1>
+<%= render 'shared/search_bar'%>
 
-
-  <%#= radio_button_tag(:alcoholic, true) %>
-  <%#= label_tag(:age_child, "Alcoholic") %>
-  <%#= radio_button_tag(:alcoholic, false) %>
-  <%#= label_tag(:age_child, "Non-Alcoholic") %>
-    <%#= label_tag("Alcoholic": true, "Non-Alcoholic": false), label: false, as: :radio_buttons %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
-  <div class="">
-    <%= simple_form_for :search_alcoholic, url: cocktails_path, method: "GET" do |f| %>
-      <%#= f.input :alcoholic, collection: {"Alcoholic": true, "Non-Alcoholic": false}, label: false, as: :radio_buttons %>
-      <%= f.submit "Filter", class: "btn btn-filter w-100" %>
-    <% end %>
-  </div>
 
 </div>
 <h2>Top 10 Cocktails</h2>
