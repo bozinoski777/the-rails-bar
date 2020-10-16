@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @pagy, @cocktails = pagy(Cocktail.all)
+    @pagy, @cocktails = pagy(Cocktail.joins(:ratings).group('cocktails.id').order('avg(ratings.rating) desc'))
     loader
   end
 end
