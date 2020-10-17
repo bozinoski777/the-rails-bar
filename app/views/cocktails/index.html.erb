@@ -15,9 +15,7 @@
 
 
 <% if params[:display].present? && params[:display] == "list"  %>
-<form action=<% "#{params}/"  %> accept-charset="UTF-8" method="post">
-  <input type="submit" value="Grid" class="btn btn-primary" data-disable-with="Grid">
-</form>
+<a href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=grid"%> >Grid!</a>
 
 <div class="container">
     <div data-controller="infinite-scroll">
@@ -31,10 +29,8 @@
   </div>
 </div>
 <% else %>
-<%= params %>
-<form action="/ <% params %>" accept-charset="UTF-8" method="get">
-  <input type="submit" name="display" value="list" class="btn btn-primary" data-disable-with="List">
-</form>\
+
+
 <a href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=list"%> >List!</a>
 <div class="container">
     <div data-controller="infinite-scroll">
