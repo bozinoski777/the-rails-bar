@@ -68,10 +68,19 @@ class CocktailsController < ApplicationController
 end
 
 def loader
-  respond_to do |format|
-    format.html
-    format.json {
-    render json: { entries: render_to_string(partial: "render_cocktails", formats: [:html]), pagination: view_context.pagy_nav(@pagy) }
-    }
+  if params[:display] == "list"
+    respond_to do |format|
+      format.html
+      format.json {
+      render json: { entries: render_to_string(partial: "render_cocktails_list", formats: [:html]), pagination: view_context.pagy_nav(@pagy) }
+      }
+    end
+  else
+    respond_to do |format|
+      format.html
+      format.json {
+      render json: { entries: render_to_string(partial: "render_cocktails", formats: [:html]), pagination: view_context.pagy_nav(@pagy) }
+      }
+    end
   end
 end
