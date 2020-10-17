@@ -1,4 +1,4 @@
-<%= render 'shared/banner'%>
+<%#= render 'shared/banner'%>
 <div class="container text-center">
 <h1 class="m-4 d-flex">Cocktails</h1>
 <%= render 'shared/search_bar'%>
@@ -9,11 +9,13 @@
 <div class="container">
 <h2>Top 10 Cocktails</h2>
 
+
+
+<% if params[:display].present? && params[:display] == "list"  %>
 <form action="/" accept-charset="UTF-8" method="get">
-  <input type="submit" name="display" value="list" class="btn btn-primary" data-disable-with="List">
+  <input type="submit"value="Grid" class="btn btn-primary" data-disable-with="Grid">
 </form>
 
-<% if params == display[list]  %>
 <div class="container">
     <div data-controller="infinite-scroll">
       <div data-target="infinite-scroll.entries">
@@ -26,6 +28,9 @@
   </div>
 </div>
 <% else %>
+<form action="/" accept-charset="UTF-8" method="get">
+  <input type="submit" name="display" value="list" class="btn btn-primary" data-disable-with="List">
+</form>
 <div class="container">
     <div data-controller="infinite-scroll">
       <div data-target="infinite-scroll.entries">
@@ -37,5 +42,6 @@
       </div>
   </div>
 </div>
+<% end %>
 
 </div>
