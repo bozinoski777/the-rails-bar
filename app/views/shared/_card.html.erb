@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-lg-3">
+<div id="card-link" class="col-sm-6 col-lg-3">
   <a style="text-decoration: none;" href="<%="/cocktails/#{cocktail_within.id}" %>">
     <div class="wrapper d-flex">
       <div class="card" style="margin-bottom: 35px;"><img src="<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>"/>
