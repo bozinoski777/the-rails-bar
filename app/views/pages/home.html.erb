@@ -8,6 +8,24 @@
 <div class="container"><i class="thumb-list-toggle fas fa-th-list"></i><i class="thumb-list-toggle fas fa-th-large"></i></div>
 <div class="container">
 <h2>Top 10 Cocktails</h2>
+
+<form action="/" accept-charset="UTF-8" method="get">
+  <input type="submit" name="display" value="list" class="btn btn-primary" data-disable-with="List">
+</form>
+
+<% if params == display[list]  %>
+<div class="container">
+    <div data-controller="infinite-scroll">
+      <div data-target="infinite-scroll.entries">
+      <%= render "./cocktails/render_cocktails_list" %>
+      </div>
+
+      <div data-target="infinite-scroll.pagination">
+        <%== pagy_nav(@pagy) %>
+      </div>
+  </div>
+</div>
+<% else %>
 <div class="container">
     <div data-controller="infinite-scroll">
       <div data-target="infinite-scroll.entries">
@@ -19,4 +37,5 @@
       </div>
   </div>
 </div>
+
 </div>
