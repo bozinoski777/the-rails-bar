@@ -13,10 +13,10 @@ RSpec.describe 'Edit cocktail' do
     expect(page).to have_content('Instructions')
   end
 
-  it 'opens edit cocktail name' do
+  it 'edits cocktail name' do
     visit('/cocktails/1')
     fill_in 'Name', with: 'TestName'
-    click_button('Update Cocktail')
+    click_button('Update Name')
     expect(page).to have_content('TestName')
   end
 
