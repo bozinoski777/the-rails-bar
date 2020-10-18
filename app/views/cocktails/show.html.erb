@@ -1,5 +1,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <%= render 'shared/show_banner', cocktail_within: @cocktail %>
+<% if params[:new] == 'creation' %>
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Well done!</h4>
+  <p>Aww yeah, you successfully read this important alert message. ADD DOSES AND EDIT STUFF!</p>
+  <hr>
+  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div>
+<% end %>
 <div class="container">
   <div class="modal-body row">
     <div class="col-md-6">

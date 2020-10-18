@@ -45,19 +45,19 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new(cocktail_params)
     @cocktail.save
     if @cocktail.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to cocktail_path @cocktail, new: 'creation'
     else
       render :new
     end
 
-    @cocktail = Cocktail.find(params[:cocktail_id])
-    @rating = Rating.new(rating_params)
-    @rating.cocktail = @cocktail
-    if @rating.save
-      redirect_to cocktail_path(@cocktail)
-    else
-      render :new
-    end
+    # @cocktail = Cocktail.find(params[:cocktail_id])
+    # @rating = Rating.new(rating_params)
+    # @rating.cocktail = @cocktail
+    # if @rating.save
+    #   redirect_to cocktail_path(@cocktail)
+    # else
+    #   render :new
+    # end
   end
 
   private
