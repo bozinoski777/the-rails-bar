@@ -27,7 +27,7 @@ class CocktailsController < ApplicationController
   end
 
   def new
-    @cocktail = Cocktail.new
+    @cocktail = Cocktail.new(alcoholic: true)
   end
 
   def update

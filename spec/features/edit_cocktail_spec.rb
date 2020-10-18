@@ -5,7 +5,7 @@ RSpec.describe 'Edit cocktail' do
   before(:context) do
     Cocktail.find(1).destroy! if Cocktail.where(id: 1).present?
     file = open('/home/hristian/Downloads/400046700953_8407.jpg')
-    Cocktail.create!(name: 'Test Cocktail', id: '1').photo.attach(io: file, filename: 'img.png', content_type: 'image/png')
+    Cocktail.create!(name: 'Test Cocktail', id: '1', alcoholic: true).photo.attach(io: file, filename: 'img.png', content_type: 'image/png')
   end
 
   it 'displays the cocktail page' do
@@ -32,6 +32,13 @@ RSpec.describe 'Edit cocktail' do
     fill_in 'Glass', with: 'TestGlass'
     click_button('Update Info')
     expect(page).to have_content('TestGlass')
+  end
+
+  it 'edits cocktail alcoholic' do
+    visit('/cocktails/1')
+    find("input[type='checkbox']").set(false)
+    click_button('Update Info')
+    expect(page).to have_content('Non-Alcoholic')
   end
 
   # it 'creates a new cocktail' do
