@@ -20,6 +20,20 @@ RSpec.describe 'Edit cocktail' do
     expect(page).to have_content('TestName')
   end
 
+  it 'edits cocktail description' do
+    visit('/cocktails/1')
+    fill_in 'Description', with: 'TestDescription'
+    click_button('Update Info')
+    expect(page).to have_content('TestDescription')
+  end
+
+  it 'edits cocktail glass-type' do
+    visit('/cocktails/1')
+    fill_in 'Glass', with: 'TestGlass'
+    click_button('Update Info')
+    expect(page).to have_content('TestGlass')
+  end
+
   # it 'creates a new cocktail' do
   #   visit('/cocktails/new')
   #   fill_in 'Name', with: 'TestCocktail'
