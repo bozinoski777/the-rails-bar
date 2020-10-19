@@ -69,7 +69,13 @@ RSpec.describe 'Edit cocktail' do
     expect(page).not_to have_content('TestDose')
   end
 
-  it 'add a rating'
+  it 'add a rating' do
+    visit('/cocktails/1')
+    choose('1')
+    choose('2')
+    click_button('Create Rating')
+    expect(page).to have_content('1.5')
+  end
 
   it 'deletes a cocktail'
 
