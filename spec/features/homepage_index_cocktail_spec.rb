@@ -20,6 +20,8 @@ RSpec.describe 'Homepage Index' do
   end
 
   it 'shows the cocktail rating on card' do
+    visit('/')
+    expect(page).to have_content('4.0')
   end
 
   it 'shows the cocktail ingredients on card' do
