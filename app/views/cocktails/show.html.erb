@@ -52,7 +52,6 @@
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Edit Info
       </button>
-
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -79,6 +78,10 @@
           </div>
         </div>
       </div>
+      <%= link_to "Delete #{@cocktail.name}",
+                  cocktail_path(@cocktail),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
       <p><%=@cocktail.description%></p>
       <h3>Glass Type</h3>
 

@@ -58,7 +58,7 @@ RSpec.describe 'Edit cocktail' do
     expect(page).to have_content('TestDose')
   end
 
-  it 'deletes an ingredient / dose', :focus  do
+  it 'deletes an ingredient / dose' do
     visit('/cocktails/1')
     find('a[data-target="#exampleModalIngredient"]').click
     select('Milk', from: 'Ingredient')
@@ -69,7 +69,7 @@ RSpec.describe 'Edit cocktail' do
     expect(page).not_to have_content('TestDose')
   end
 
-  it 'add a rating' do
+  it 'add a rating', :focus  do
     visit('/cocktails/1')
     choose('1')
     choose('2')
@@ -77,6 +77,10 @@ RSpec.describe 'Edit cocktail' do
     expect(page).to have_content('1.5')
   end
 
-  it 'deletes a cocktail'
-
+  it 'deletes a cocktail' do
+    visit('/cocktails/1')
+    click_link('Delete Test Cocktail')
+    click_button('Confirm')
+    expect(current_path).to eql('/cocktails/')
+  end
 end
