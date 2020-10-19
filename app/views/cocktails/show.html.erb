@@ -11,7 +11,7 @@
 <div class="container">
   <div class="modal-body row">
     <div class="col-md-6">
-      <%= cl_image_tag @cocktail.photo.key, width: 400, crop: :fill %>
+      <%= cl_image_tag @cocktail.photo.key, width: 400, crop: :fill, id: 'main_img' %>
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalPhoto">
         Edit Photo
@@ -26,7 +26,7 @@
               <%= cl_image_tag @cocktail.photo.key, width: 400, crop: :fill %>
               <%= simple_form_for(@cocktail) do |f| %>
                 <%= f.input :photo %>
-                <%= f.submit %>
+                <%= f.submit 'Update Photo'%>
               <% end %>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
