@@ -41,7 +41,14 @@ RSpec.describe 'Edit cocktail' do
     expect(page).to have_content('Non-Alcoholic')
   end
 
-  it 'edits cocktail picture'
+  it 'edits cocktail picture', :focus do
+    visit('/cocktails/1')
+    old_img = have_css(id: 'main_img')
+    click_button('Edit Photo')
+    find('form input[type="file"]').set('/home/hristian/Downloads/20200706_204644.jpg')
+    click_button('Update Photo')
+    expect(old_img).not_to eql have_css(id: 'main_img')
+  end
 
   it 'adds an ingredient / dose'
 
@@ -51,12 +58,4 @@ RSpec.describe 'Edit cocktail' do
 
   it 'deletes a cocktail'
 
-
-  # it 'creates a new cocktail' do
-  #   visit('/cocktails/new')
-  #   fill_in 'Name', with: 'TestCocktail'
-  #   find('form input[type="file"]').set('/home/hristian/Downloads/20200706_204644.jpg')
-  #   find('input[name="commit"]').click
-  #   expect(page).to have_content('Well done!')
-  # end
 end
