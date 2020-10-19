@@ -5,6 +5,8 @@ RSpec.describe 'Edit cocktail' do
     Cocktail.find(1).destroy! if Cocktail.where(id: 1).present?
     file = open('/home/hristian/Downloads/400046700953_8407.jpg')
     Cocktail.create!(name: 'Test Cocktail', description: "bla", id: '1', alcoholic: true).photo.attach(io: file, filename: 'img.png', content_type: 'image/png')
+    Dose.create!(description: 'Gin', cocktail_id: '1', ingredient_id: '1')
+    Ingredient.create!(name: 'KUR_DEBEL')
   end
 
   it 'displays the cocktail page' do
