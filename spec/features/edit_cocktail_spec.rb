@@ -49,7 +49,7 @@ RSpec.describe 'Edit cocktail' do
     expect(old_img).not_to eql have_css(id: 'main_img')
   end
 
-  it 'adds an ingredient / dose', :focus do
+  it 'adds an ingredient / dose' do
     visit('/cocktails/1')
     find('a[data-target="#exampleModalIngredient"]').click
     select('Milk', from: 'Ingredient')
@@ -58,7 +58,16 @@ RSpec.describe 'Edit cocktail' do
     expect(page).to have_content('TestDose')
   end
 
-  it 'deletes an ingredient / dose'
+  it 'deletes an ingredient / dose', :focus  do
+    visit('/cocktails/1')
+    find('a[data-target="#exampleModalIngredient"]').click
+    select('Milk', from: 'Ingredient')
+    fill_in 'Description ', with: 'TestDose'
+    click_button('Create Dose')
+    expect(page).to have_content('TestDose')
+    click_link('Delete')
+    expect(page).not_to have_content('TestDose')
+  end
 
   it 'add a rating'
 
