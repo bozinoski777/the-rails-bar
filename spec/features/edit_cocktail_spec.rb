@@ -41,6 +41,17 @@ RSpec.describe 'Edit cocktail' do
     expect(page).to have_content('Non-Alcoholic')
   end
 
+  it 'edits cocktail picture'
+
+  it 'adds an ingredient / dose'
+
+  it 'deletes an ingredient / dose'
+
+  it 'add a rating'
+
+  it 'deletes a cocktail'
+
+
   # it 'creates a new cocktail' do
   #   visit('/cocktails/new')
   #   fill_in 'Name', with: 'TestCocktail'
