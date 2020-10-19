@@ -14,11 +14,16 @@ RSpec.describe 'Homepage Index' do
     find('div.card')
   end
 
-  it 'shows the cocktail name on card'
+  it 'shows the cocktail name on card' do
+    visit('/')
+    expect(page).to have_content('Test Cocktail')
+  end
 
-  it 'shows the cocktail rating on card'
+  it 'shows the cocktail rating on card' do
+  end
 
-  it 'shows the cocktail ingredients on card'
+  it 'shows the cocktail ingredients on card' do
+  end
 
   it 'navigates to list view'
 
