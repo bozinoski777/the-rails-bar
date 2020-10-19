@@ -37,8 +37,8 @@
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalIngredientLabel">Modal title</h5>
             <%= simple_form_for [@cocktail, @dose] do |f| %>
-              <%= f.association :ingredient %>
-              <%= f.input :description %>
+              <%= f.association :ingredient%>
+              <%= f.input :description%>
               <%= f.submit %>
             <% end %>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">

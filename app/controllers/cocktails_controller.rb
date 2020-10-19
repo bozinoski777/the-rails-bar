@@ -12,8 +12,8 @@ class CocktailsController < ApplicationController
         @pagy, @cocktails = pagy(Cocktail.where(alcoholic: false))
         loader
       else
-         @pagy, @cocktails = pagy(Cocktail.all)
-         loader
+        @pagy, @cocktails = pagy(Cocktail.all)
+        loader
 
       end
     end
@@ -31,14 +31,15 @@ class CocktailsController < ApplicationController
   end
 
   def update
-  @cocktail = Cocktail.find(params[:id])
-  @cocktail.update(cocktail_params)
-  redirect_to cocktail_path(@cocktail)
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.update(cocktail_params)
+    redirect_to cocktail_path(@cocktail)
   end
+
   def destroy
-  @cocktail = Cocktail.find(params[:id])
-  @cocktail.destroy
-  redirect_to cocktail_path(@cocktail)
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    redirect_to cocktails_path
   end
 
   def create
@@ -49,15 +50,6 @@ class CocktailsController < ApplicationController
     else
       render :new
     end
-
-    # @cocktail = Cocktail.find(params[:cocktail_id])
-    # @rating = Rating.new(rating_params)
-    # @rating.cocktail = @cocktail
-    # if @rating.save
-    #   redirect_to cocktail_path(@cocktail)
-    # else
-    #   render :new
-    # end
   end
 
   private

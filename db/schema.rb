@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2020_09_15_155042) do
     t.string "seed_id"
     t.string "glass"
     t.boolean "alcoholic"
-    t.integer "rating"
   end
 
   create_table "doses", force: :cascade do |t|
