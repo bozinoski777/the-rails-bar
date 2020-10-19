@@ -6,9 +6,13 @@ RSpec.describe 'Homepage Index' do
     Cocktail.find(1).destroy! if Cocktail.where(id: 1).present?
     file = open('/home/hristian/Downloads/400046700953_8407.jpg')
     Cocktail.create!(name: 'Test Cocktail', id: '1', alcoholic: true).photo.attach(io: file, filename: 'img.png', content_type: 'image/png')
+    Rating.create!(rating: 4, id: '1', cocktail_id: 1)
   end
 
-  it 'shows the cocktail card'
+  it 'shows the cocktail card' do
+    visit('/')
+    find('div.card')
+  end
 
   it 'shows the cocktail name on card'
 
