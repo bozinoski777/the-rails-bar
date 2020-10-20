@@ -8,7 +8,7 @@
         <div class="list_name"> <h2><%= cocktail_within.name %></h2> </div>
         <div class="ingredients-list">
           <div class="list_ingredient">
-
+          <p>
             <% n_ingredients = cocktail_within.ingredients.size %>
             <% n = 0 %>
             <% cocktail_within.ingredients.limit(6).each do |ing| %>
@@ -19,7 +19,7 @@
                 <%= ing.name %>.
               <% end %>
             <% end %>
-
+          </p>
         </div>
       </div>
     </div>
