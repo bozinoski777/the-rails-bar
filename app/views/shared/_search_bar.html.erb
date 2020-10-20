@@ -1,4 +1,4 @@
-<%= form_tag cocktails_path, method: :get do %>
+<%= form_tag cocktails_path, id: 'search_from', method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
