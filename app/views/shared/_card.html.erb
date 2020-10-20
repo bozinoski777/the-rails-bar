@@ -3,11 +3,10 @@
     <div class="wrapper d-flex">
       <div class="card" style="margin-bottom: 35px;"><img src="<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>"/>
         <div class="info">
-          <p>KUR</p>
           <h1 class="card_name"><%= cocktail_within.name %></h1>
           <p class="card_rating"> <%= cocktail_within.ratings.average("rating") %></p>
-          <ul><% cocktail_within.ingredients.each do |ing| %>
-                                             <li class="card_ingredient"><%= ing.name%></li>
+          <ul class="card_ingredient"><% cocktail_within.ingredients.each do |ing| %>
+                                             <li><%= ing.name%></li>
                                               <% end %>
           </ul>
         </div>
