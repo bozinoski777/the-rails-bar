@@ -71,13 +71,9 @@ RSpec.describe 'Edit cocktail' do
 
   it 'deletes an ingredient / dose' do
     visit('/cocktails/1')
-    # find('a[data-target="#exampleModalIngredient"]').click
-    # select('Milk', from: 'Ingredient')
-    # fill_in 'Description ', with: 'TestDose'
-    # click_button('Create Dose')
-    expect(page).to have_content('TestDose')
+    expect(page).to have_content('Milk')
     click_link('Delete')
-    expect(page).not_to have_content('TestDose')
+    expect(page).not_to have_content('Milk')
   end
 
   it 'deletes a cocktail' do
