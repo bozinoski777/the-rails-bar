@@ -1,34 +1,31 @@
-<div class="col-sm-6 col-lg-3">
+<div class="container">
   <a style="text-decoration: none;" href="<%="/cocktails/#{cocktail_within.id}" %>">
-    <table id="tablePreview" class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Ingredient</th>
-          <th>Dose</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row"> </th>
-          <td class="list_name"> <%= cocktail_within.name %> </td>
-          <td class="list_glass"> <%= cocktail_within.glass %> </td>
-          <td class="list_rating"> <%= cocktail_within.ratings.average("rating") %> </td>
-          <td class="list_alcoholic"> <%= cocktail_within.alcoholic %> </td>
-          <td class="list_ingredient"> </td>
-          <% cocktail_within.ingredients.each do |ing| %>
-          <td> <%= ing.name%>, </td>
-          <% end %>
-          <td> <%= cocktail_within.glass %> </td>
-        </tr>
-      </tbody>
-    </table>
   </a>
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2>Product name</h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
+</div>
+<div class="card-product">
+  <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill, id: 'main_img' %>
+    <div class="col">
+        <div class="list_name"> <h2><%= cocktail_within.name %></h2> </div>
+        <div class="ingredients-list">
+          <div class="list_ingredient">
+          <p>
+            <% n_ingredients = cocktail_within.ingredients.size %>
+            <% n = 0 %>
+            <% cocktail_within.ingredients.limit(6).each do |ing| %>
+              <% if n < (n_ingredients - 1) %>
+                <%= ing.name %>,
+                <% n += 1 %>
+              <% else %>
+                <%= ing.name %>.
+              <% end %>
+            <% end %>
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
+    <div class="col text-right">
+      <p class="list_glass"><%= cocktail_within.glass %> <i class="fas fa-glass-whiskey" style="color: #e9c46a"></i></p>
+      <p class="list_rating"><%= cocktail_within.ratings.average("rating").nil? ? "0" : cocktail_within.ratings.average("rating").round(2) %><i class="fas fa-star" style="color: #e9c46a"></i> </p>
+      <p class="list_alcoholic"><%= cocktail_within.alcoholic ? "Alcoholic" : "Non-Alcoholic" %> <i class="fas fa-cocktail" style="color: #e9c46a"></i></p>
+    </div>
 </div>
