@@ -9,7 +9,7 @@ RSpec.describe 'Homepage Index' do
     # Cocktail.create!(name: 'Test Cocktail', id: 1, alcoholic: true).photo.attach(io: file, filename: 'img.png', content_type: 'image/png')
     # Rating.create!(rating: 4, id: 1, cocktail_id: 1)
     # Ingredient.create!(name: 'KUR_DEBEL', id: 1)
-    # Dose.create!(description: 'Gin', cocktail_id: 1, ingredient_id: 1)
+    Dose.create!(description: 'Gin', cocktail_id: 1, ingredient_id: 1)
   end
 
   it 'shows the cocktail card' do
