@@ -1,4 +1,14 @@
 LISTICLE
+<table id="tablePreview" class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Ingredient</th>
+      <th>Dose</th>
+    </tr>
+  </thead>
+
+</table>
 <% @cocktails.each do |cocktail| %>
   <%= render 'shared/cocktail_list', cocktail_within: cocktail%>
 <% end %>

@@ -1,13 +1,11 @@
-<div class="col-sm-6 col-lg-3" style="background: white;">
+<div class="container">
   <a style="text-decoration: none;" href="<%="/cocktails/#{cocktail_within.id}" %>">
-    <table id="tablePreview" class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Ingredient</th>
-          <th>Dose</th>
-        </tr>
-      </thead>
+
+  </a>
+</div>
+  <div class="card-product">
+    <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill, id: 'main_img' %>
+    <div class="card-product-infos">
       <tbody>
         <tr>
           <th scope="row"> </th>
@@ -22,13 +20,7 @@
           <td> <%= cocktail_within.glass %> </td>
         </tr>
       </tbody>
-    </table>
-  </a>
-</div>
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2>Product name</h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
+      <!-- <h2>Product name</h2> -->
+      <!-- <p>Product description with <strong>relevant info</strong> only.</p> -->
     </div>
   </div>
