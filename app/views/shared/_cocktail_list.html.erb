@@ -12,8 +12,11 @@
           <tbody>
             <tr>
             <th scope="row"> </th>
-            <td> <%= cocktail_within.name %> </td>
-            <td>  </td>
+            <td class="list_name"> <%= cocktail_within.name %> </td>
+            <td class="list_glass"> <%= cocktail_within.glass %> </td>
+            <td class="list_rating"> <%= cocktail_within.ratings.average("rating") %> </td>
+            <td class="list_alcoholic"> <%= cocktail_within.alcoholic %> </td>
+            <td class="list_ingredient">  </td>
              <% cocktail_within.ingredients.each do |ing| %>
                                                         <td> <%= ing.name%>, </td>
                                                           <% end %>

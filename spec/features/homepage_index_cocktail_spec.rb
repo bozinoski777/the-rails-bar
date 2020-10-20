@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Homepage Index' do
-
   before(:context) do
     Cocktail.find(1).destroy if Cocktail.where(id: 1).present?
     Dose.find(1).destroy if Dose.where(id: 1).present?
@@ -34,28 +33,32 @@ RSpec.describe 'Homepage Index' do
 
   it 'navigates to list view' do
     visit('/')
-    # find("input[value='list']").click
     click_button('list')
     expect(page).to have_content('LISTICLE')
   end
 
   it 'shows the cocktail name on list item' do
-    visit('/')
+    visit('/?display=list')
+    find('.list_name')
   end
 
   it 'shows the cocktail rating on list item' do
-    visit('/')
+    visit('/?display=list')
+    find('.list_rating')
   end
 
   it 'shows the cocktail ingredients on list item' do
-    visit('/')
+    visit('/?display=list')
+    find('.list_ingredient')
   end
 
   it 'shows the cocktail alcoholic/virgin on list item' do
-    visit('/')
+    visit('/?display=list')
+    find('.list_alcoholic')
   end
 
   it 'shows the cocktail glass type on list item' do
-    visit('/')
+    visit('/?display=list')
+    find('.list_glass')
   end
 end
