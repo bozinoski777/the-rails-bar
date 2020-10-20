@@ -1,29 +1,34 @@
 <div class="col-sm-6 col-lg-3">
   <a style="text-decoration: none;" href="<%="/cocktails/#{cocktail_within.id}" %>">
     <table id="tablePreview" class="table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Ingredient</th>
-        <th>Dose</th>
-      </tr>
-    </thead>
-
-          <tbody>
-            <tr>
-            <th scope="row"> </th>
-            <td class="list_name"> <%= cocktail_within.name %> </td>
-            <td class="list_glass"> <%= cocktail_within.glass %> </td>
-            <td class="list_rating"> <%= cocktail_within.ratings.average("rating") %> </td>
-            <td class="list_alcoholic"> <%= cocktail_within.alcoholic %> </td>
-            <td class="list_ingredient">  </td>
-             <% cocktail_within.ingredients.each do |ing| %>
-                                                        <td> <%= ing.name%>, </td>
-                                                          <% end %>
-            <td> <%= cocktail_within.glass %> </td>
-
-            </tr>
-          </tbody>
-        </table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ingredient</th>
+          <th>Dose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"> </th>
+          <td class="list_name"> <%= cocktail_within.name %> </td>
+          <td class="list_glass"> <%= cocktail_within.glass %> </td>
+          <td class="list_rating"> <%= cocktail_within.ratings.average("rating") %> </td>
+          <td class="list_alcoholic"> <%= cocktail_within.alcoholic %> </td>
+          <td class="list_ingredient"> </td>
+          <% cocktail_within.ingredients.each do |ing| %>
+          <td> <%= ing.name%>, </td>
+          <% end %>
+          <td> <%= cocktail_within.glass %> </td>
+        </tr>
+      </tbody>
+    </table>
   </a>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2>Product name</h2>
+      <p>Product description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
 </div>

@@ -13,7 +13,6 @@
                   <i class="fas fa-star" style="color: lightgray"></i>
                 <% end %>
               </p>
-          <p class="card_rating"> <%= cocktail_within.ratings.average("rating").to_i %></p>
             </div>
           <ul class="card_ingredient"><% cocktail_within.ingredients.each do |ing| %>
                                              <li><%= ing.name%></li>
