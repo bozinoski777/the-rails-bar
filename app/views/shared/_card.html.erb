@@ -4,7 +4,17 @@
       <div class="card" style="margin-bottom: 35px;"><img src="<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>"/>
         <div class="info">
           <h1 class="card_name"><%= cocktail_within.name %></h1>
-          <p class="card_rating"> <%= cocktail_within.ratings.average("rating") %></p>
+            <div class="d-flex justify-content-between">
+              <p>
+                <% cocktail_within.ratings.average("rating").to_i.times do %>
+                  <i class="fas fa-star" style="color: #e9c46a"></i>
+                <% end %>
+                <% (5-cocktail_within.ratings.average("rating").to_i).times do %>
+                  <i class="fas fa-star" style="color: lightgray"></i>
+                <% end %>
+              </p>
+          <p class="card_rating"> <%= cocktail_within.ratings.average("rating").to_i %></p>
+            </div>
           <ul class="card_ingredient"><% cocktail_within.ingredients.each do |ing| %>
                                              <li><%= ing.name%></li>
                                               <% end %>
