@@ -17,13 +17,6 @@ if defined?(CocktailsController)
       { name: "" }
     end
 
-    describe "GET index" do
-      it "assigns all cocktails as @cocktails" do
-        cocktail = Cocktail.create! valid_attributes
-        get :index, params: {}
-        expect(assigns(:cocktails)).to eq([cocktail])
-      end
-    end
 
     describe "GET show" do
       it "assigns the requested cocktail as @cocktail" do
@@ -52,11 +45,6 @@ if defined?(CocktailsController)
           post :create, params: {:cocktail => valid_attributes}
           expect(assigns(:cocktail)).to be_a(Cocktail)
           expect(assigns(:cocktail)).to be_persisted
-        end
-
-        it "redirects to the created cocktail" do
-          post :create, params: {:cocktail => valid_attributes}
-          expect(response).to redirect_to(Cocktail.last)
         end
       end
 

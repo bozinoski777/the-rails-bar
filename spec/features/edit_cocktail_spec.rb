@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'Edit cocktail' do
   before(:context) do
-    Cocktail.find(1).destroy! if Cocktail.where(id: 1).present?
+    Cocktail.find(1).destroy if Cocktail.where(id: 1).present?
     file = open('/home/hristian/Downloads/400046700953_8407.jpg')
-    Cocktail.create!(name: 'Test Cocktail', description: "bla", id: '1', alcoholic: true).photo.attach(io: file, filename: 'img.png', content_type: 'image/png')
-    Dose.create!(description: 'Gin', cocktail_id: '1', ingredient_id: '1')
-    Ingredient.create!(name: 'KUR_DEBEL')
+    Cocktail.create(name: 'Test Cocktail', description: "bla", id: '1', alcoholic: true).photo.attach(io: file, filename: 'img.png', content_type: 'image/png')
+    Dose.create(description: 'Gin', cocktail_id: '1', ingredient_id: '1')
+    Ingredient.create(name: 'Milk')
   end
 
   it 'displays the cocktail page' do
@@ -71,10 +71,10 @@ RSpec.describe 'Edit cocktail' do
 
   it 'deletes an ingredient / dose' do
     visit('/cocktails/1')
-    find('a[data-target="#exampleModalIngredient"]').click
-    select('Milk', from: 'Ingredient')
-    fill_in 'Description ', with: 'TestDose'
-    click_button('Create Dose')
+    # find('a[data-target="#exampleModalIngredient"]').click
+    # select('Milk', from: 'Ingredient')
+    # fill_in 'Description ', with: 'TestDose'
+    # click_button('Create Dose')
     expect(page).to have_content('TestDose')
     click_link('Delete')
     expect(page).not_to have_content('TestDose')
