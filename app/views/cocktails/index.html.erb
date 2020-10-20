@@ -1,15 +1,14 @@
-<%= render 'shared/banner'%>
 <div class="container text-center">
-<h1 class="m-4">Cocktails</h1>
-<%= render 'shared/search_bar'%>
-</div>
-<div class="container"><h3>
+<div class="container">
  <% if params['alcoholic'] == 'false' %>
- <h3><%="Non Alcoholic-Cocktails and other drinks " %></h3>
+ <h1><%="Non-Alcoholic Drinks" %></h1>
+ <% elsif params['query'].present? %>
+ <h1><%="Drinks with #{params['query'].capitalize}"%></h1>
  <% else %>
- <h3><%=" Something else "%></h3>
+ <h1><%="Drinks"%></h1>
  <% end %>
-</h3>
+</div>
+<%= render 'shared/search_bar'%>
 </div>
 <div class="container"><i class="thumb-list-toggle fas fa-th-list"></i><i class="thumb-list-toggle fas fa-th-large"></i></div>
 
