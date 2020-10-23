@@ -5,7 +5,11 @@
     placeholder: "Find a cocktail"
   %>
   <div class="custom-control custom-switch">
+    <% if params[:alcoholic].present? && params[:alcoholic] == "false" %>
+    <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false" checked>
+    <% else %>
     <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false">
+    <% end %>
     <label class="custom-control-label" for="alcoholic">Virgin</label>
   </div>
 
