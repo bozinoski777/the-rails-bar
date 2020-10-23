@@ -10,39 +10,38 @@
 </div>
 <%= render 'shared/search_bar'%>
 </div>
-<div class="container"><i class="thumb-list-toggle fas fa-th-list"></i><i class="thumb-list-toggle fas fa-th-large"></i></div>
 
-
-<% if params[:display].present? && params[:display] == "list"  %>
-<a href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=grid"%> >Grid!</a>
-
-<div class="container">
-    <div data-controller="infinite-scroll">
-      <div data-target="infinite-scroll.entries">
-      <%= render "render_cocktails_list" %>
-      </div>
-
-      <div data-target="infinite-scroll.pagination">
-        <%== pagy_nav(@pagy) %>
-      </div>
-  </div>
-</div>
-<% else %>
-
-
-<a href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=list"%> >List!</a>
-<div class="container">
-    <div data-controller="infinite-scroll">
-      <div data-target="infinite-scroll.entries">
-      <%= render "render_cocktails" %>
-      </div>
-
-      <div data-target="infinite-scroll.pagination">
-        <%== pagy_nav(@pagy) %>
-      </div>
-  </div>
+<div class="container text-right">
+  <% if params[:display].present? && params[:display] == "list"  %>
+  <a href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=grid"%> ><i class="thumb-list-toggle fas fa-th-large"></i></a>
 </div>
 
+  <div class="container">
+      <div data-controller="infinite-scroll">
+        <div data-target="infinite-scroll.entries">
+        <%= render "render_cocktails_list" %>
+        </div>
+
+        <div data-target="infinite-scroll.pagination">
+          <%== pagy_nav(@pagy) %>
+        </div>
+    </div>
+  </div>
+  <% else %>
+
+
+  <a href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=list"%> ><i class="thumb-list-toggle fas fa-th-list"></i></a>
+  <div class="container">
+      <div data-controller="infinite-scroll">
+        <div data-target="infinite-scroll.entries">
+        <%= render "render_cocktails" %>
+        </div>
+
+        <div data-target="infinite-scroll.pagination">
+          <%== pagy_nav(@pagy) %>
+        </div>
+    </div>
+  </div>
 <% end %>
 
 
