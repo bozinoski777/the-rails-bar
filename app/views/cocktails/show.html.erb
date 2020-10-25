@@ -14,7 +14,7 @@
       <%= cl_image_tag @cocktail.photo.key, width: 400, crop: :fill, id: 'main_img' %>
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalPhoto">
-        Edit Photo
+       <i class="fas fa-camera"></i>
       </button>
 
       <!-- Modal -->
@@ -50,7 +50,7 @@
       <h2>Instructions:</h2>
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Edit Info
+        <i class="fas fa-edit"></i>
       </button>
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,6 +78,7 @@
           </div>
         </div>
       </div>
+      <i class="fas fa-trash-alt"></i>
       <%= link_to "Delete #{@cocktail.name}",
                   cocktail_path(@cocktail),
                   method: :delete,
