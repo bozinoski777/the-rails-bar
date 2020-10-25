@@ -2,3 +2,9 @@
 
 /*** basic styles ***/
 
+#add_ingredient {
+}
+#add_ingredient:hover {
+  cursor: pointer;
+  border: 1px solid lightgray;
+}
