@@ -15,10 +15,12 @@
       <div class="nav-item active">
       </div>
       <div class="nav-item">
-        <%= link_to "/cocktails/new", class: "navbar-brand nav-link" do %>
-        <%= "New Cocktail" %><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603657228/Mr%20Cocktail%20icons/shaker_ieoznh.svg", id: "new_cocktail_nav" %>
+        <div id="new_cocktail_border" class=" text-right">
+        <%= link_to "/cocktails/new", class: "navbar-brand nav-link d-flex" do %>
+        <p>New Cocktail</p>
+        <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603657228/Mr%20Cocktail%20icons/shaker_ieoznh.svg", id: "new_cocktail_nav" %>
         <% end %>
-      </li>
+        </div>
       <li class="nav-item dropdown">
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Another action", "#", class: "dropdown-item" %>
