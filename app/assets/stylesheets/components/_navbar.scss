@@ -10,3 +10,16 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+#new_cocktail_nav, #nav_logo{
+  transform: rotate(0deg);
+  transition: .2s;
+
+
+}
+
+#new_cocktail_nav:hover, #nav_logo:hover{
+  -webkit-transform: rotate(10deg);
+  transform-origin: center;
+
+}
