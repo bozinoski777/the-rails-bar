@@ -1,5 +1,5 @@
 
-<div id="whole_searchbar" class="search_bar d-flex justify-content-around">
+<div id="whole_searchbar" class="search_bar d-flex justify-content-between">
   <div>
 <%= form_tag cocktails_path, id: 'search_from', method: :get do %>
   <%= text_field_tag :query,
@@ -9,6 +9,7 @@
     id: "input_text"
   %>
   </div>
+<div id="search_button"><button type="submit" name="commit" value="Search" class="btn btn-link btn-lg border"><i class="fas fa-search"></i></button></div>
   <div class="custom-control custom-switch">
     <% if params[:alcoholic].present? && params[:alcoholic] == "false" %>
     <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false" checked>
@@ -18,7 +19,6 @@
     <label class="custom-control-label" for="alcoholic">Virgin</label>
   </div>
 
-<button type="submit" name="commit" value="Search" class="btn btn-link btn-lg border"><i class="fas fa-search"></i></button>
   <!-- <%#= submit_tag "Search", class: "btn btn-primary" %> -->
 <% end %>
 </div>

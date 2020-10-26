@@ -4,6 +4,7 @@ button {
   height: 50px;
   opacity: 1;
   position: absolute;
+  left: 50%;
 }
   .search_bar {
   border-radius: 50px;
@@ -12,7 +13,7 @@ button {
   padding: 3px;
   padding-top: 7px;
   margin: 3px;
-  position: relative;
+  left: 50%;
   width: 62px;
   input {
     opacity: 0;
@@ -24,6 +25,7 @@ button {
     #input_text {
       border-radius: 50px 50px 50px 50px;
       height: 50px;
+      width: 350px;
     }
     .custom-switch {
       padding-left: 2.25rem;
@@ -80,21 +82,40 @@ button {
   // opacity: 0;
   transition: 0.8s;
   #input_text {
-  transition: 0.8s;
+  transition: 0.1s;
+  opacity: 0;
   }
   .custom-switch {
-  transition: 0.8s;
+  opacity: 0;
+  transition: 0.1s;
   }
 }
 
 
 #whole_searchbar:hover {
   opacity: 1;
-  width: 60%;
+  width: 25%;
+  button{
+    // left: 45%;
+  }
   #input_text {
-    opacity: 1;
+  transition: 2s;
+  opacity: 1;
   }
   .custom-switch {
-    opacity: 1;
+  transition: 8s;
+  opacity: 1;
   }
+  #search_button {
+    opacity: 0;
+    visibility: hidden;;
+    transition: 0.1s;
+  }
+}
+
+#search_button {
+  position: relative;
+  left: -347px;
+  opacity: 1;
+  transition: 2s;
 }
