@@ -1,38 +1,38 @@
 <%= render 'shared/banner'%>
 <div class="container">
+<section id="cocktails_section">
+  <% if params[:display].present? && params[:display] == "list"  %>
+  <form class="text-right mt-3 mb-3" action="/" accept-charset="UTF-8" method="get">
+   <p class="toggle-name">Show Grid</p><button class="thumb-toggle text-right" type="submit" value="Grid"><i class="thumb-list-toggle fas fa-th-large"></i></button>
+  </form>
 
-<% if params[:display].present? && params[:display] == "list"  %>
-<form action="/" accept-charset="UTF-8" method="get">
-  <button type="submit" value="Grid" class=""><i class="thumb-list-toggle fas fa-th-large"></i></button>
-</form>
+  <div class="container text-center">
+      <div data-controller="infinite-scroll">
+        <div class="text-center" data-target="infinite-scroll.entries">
+        <%= render "./cocktails/render_cocktails_list" %>
+        </div>
 
-<div class="container text-center">
-    <div data-controller="infinite-scroll">
-      <div class="text-center" data-target="infinite-scroll.entries">
-      <%= render "./cocktails/render_cocktails_list" %>
-      </div>
-
-      <div data-target="infinite-scroll.pagination">
-        <%== pagy_nav(@pagy) %>
-      </div>
+        <div data-target="infinite-scroll.pagination">
+          <%== pagy_nav(@pagy) %>
+        </div>
+    </div>
   </div>
-</div>
-<% else %>
-<form action="/" accept-charset="UTF-8" method="get">
-  <button type="submit" name="display" value="list" class=""><i class="thumb-list-toggle fas fa-th-list"></i></button>
-</form>
-<div class="container text-center">
-    <div data-controller="infinite-scroll">
-      <div data-target="infinite-scroll.entries">
-      <%= render "./cocktails/render_cocktails" %>
-      </div>
+  <% else %>
+  <form class="text-right mt-3 mb-3" action="/" accept-charset="UTF-8" method="get">
+    <p class="toggle-name">Show List</p><button class="thumb-toggle text-right" type="submit" name="display" value="list"><i class="thumb-list-toggle fas fa-th-list"></i></button>
+  </form>
+  <div class="container text-center">
+      <div data-controller="infinite-scroll">
+        <div data-target="infinite-scroll.entries">
+        <%= render "./cocktails/render_cocktails" %>
+        </div>
 
-      <div data-target="infinite-scroll.pagination">
-        <%== pagy_nav(@pagy) %>
-      </div>
+        <div data-target="infinite-scroll.pagination">
+          <%== pagy_nav(@pagy) %>
+        </div>
+    </div>
   </div>
-</div>
-<% end %>
-
-</div>
+  <% end %>
+</section>
+</div >
 icons by Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

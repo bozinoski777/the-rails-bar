@@ -1,5 +1,33 @@
 .thumb-list-toggle {
-text-align: center;
-font-size: 25px;
-padding: 5px;
+  text-align: center;
+  font-size: 25px;
+  padding: 5px;
+}
+
+.thumb-toggle {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 47px;
+  height: 43px;
+  transition: 0.3s;
+}
+
+#cocktails_section {
+  position: relative;
+}
+.toggle-name {
+  position: absolute;
+  top: 11px;
+  right: 47px;
+  opacity: 1;
+}
+
+.thumb-toggle:hover {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 147px;
+  height: 43px;
+}
+.toggle-name:hover .thumb-toggle:hover {
+  opacity: 1;
 }
