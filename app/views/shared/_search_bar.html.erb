@@ -9,7 +9,7 @@
     id: "input_text"
   %>
   </div>
-<div id="search_button"><button type="submit" name="commit" value="Search" class="btn btn-link btn-lg"><i class="fas fa-search"></i></button></div>
+<div id="search_button"><button type="submit" name="commit" value="Search" class="btn btn-link btn-lg"><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603747390/Mr%20Cocktail%20icons/zoom_pbjdyx.svg", id: "magnify" %></button></div>
   <div class="custom-control custom-switch">
     <% if params[:alcoholic].present? && params[:alcoholic] == "false" %>
     <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false" checked>
