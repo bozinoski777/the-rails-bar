@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: #F4F4F4;
   position: relative;
+  height: 60px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -76,7 +77,7 @@
   background-color: white;
     p {
       opacity: 1;
-      top: 20px;
+      top: 15px;
       right: 73px;
       position: absolute;
     }
@@ -88,6 +89,6 @@
 
   #new_cocktail_nav {
     position: absolute;
-    top: 17px;
-    right: 34px;
+    top: 11px;
+    right: 36px;
   }
