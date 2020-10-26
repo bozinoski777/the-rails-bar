@@ -11,15 +11,42 @@
   width: 40px;
 }
 
+
+#logo_border{
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: .2s;
+  width: 80px;
+  p {
+    opacity: 0;
+    top: 8px;
+    left: 3px;
+    position: relative;
+  }
 #new_cocktail_nav, #nav_logo{
   transform: rotate(0deg);
   transition: .2s;
 
 
 }
+}
 
-#new_cocktail_nav:hover, #nav_logo:hover{
+#logo_border:hover{
+  border: none;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.37);
+  border-radius: 10px;
+  width: 195px;
+  transition: .2s;
+  background-color: white;
+
+#new_cocktail_nav, #nav_logo{
   -webkit-transform: rotate(10deg);
   transform-origin: center;
 
 }
+  p{
+    transition: .2s;
+    opacity: 1;
+  }
+}
+
