@@ -1,28 +1,34 @@
-.search_bar {
+button {
+  border-radius: 50% !important;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  position: absolute;
+}
+  .search_bar {
   border-radius: 50px;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.37);
   background-color: white;
-  padding: 10px;
-  margin: 10px;
+  padding: 3px;
+  padding-top: 7px;
+  margin: 3px;
   position: relative;
-  width: 500px;
+  width: 62px;
   input {
-  border: 1px solid white;
-  border-radius: 20px 20px 20px 20px;
-  }
+    opacity: 0;
+    border: 1px solid white;
+    border-radius: 20px 20px 20px 20px;
 
-    button {
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
     }
+
     #input_text {
       border-radius: 50px 50px 50px 50px;
       height: 50px;
     }
-    custom-switch {
+    .custom-switch {
       padding-left: 2.25rem;
       padding-bottom: 1rem; // added for positioning
+      opacity: 0;
     }
 
     .custom-control-label { // added for alignment with the switch
@@ -66,4 +72,29 @@
   padding-left: 3.25rem;
   padding-right: 1rem;
   padding-top: 0.3rem;
+}
+
+#whole_searchbar {
+  // width: 0px;
+  // height: 0px;
+  // opacity: 0;
+  transition: 0.8s;
+  #input_text {
+  transition: 0.8s;
+  }
+  .custom-switch {
+  transition: 0.8s;
+  }
+}
+
+
+#whole_searchbar:hover {
+  opacity: 1;
+  width: 60%;
+  #input_text {
+    opacity: 1;
+  }
+  .custom-switch {
+    opacity: 1;
+  }
 }
