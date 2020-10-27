@@ -24,8 +24,8 @@
       </div>
     </div>
     <div class="col text-right">
-      <p class="list_glass"><%= cocktail_within.glass %> <i class="fas fa-glass-whiskey" style="color: #e9c46a"></i></p>
       <p class="list_rating"><%= cocktail_within.ratings.average("rating").nil? ? "0" : cocktail_within.ratings.average("rating").round(2) %><i class="fas fa-star" style="color: #e9c46a"></i> </p>
       <p class="list_alcoholic"><%= cocktail_within.alcoholic ? "Alcoholic" : "Non-Alcoholic" %> <i class="fas fa-cocktail" style="color: #e9c46a"></i></p>
+      <p class="list_glass"><%= cocktail_within.glass %> <i class="fas fa-glass-whiskey" style="color: #e9c46a"></i></p>
     </div>
 </div>
