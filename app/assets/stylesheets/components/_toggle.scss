@@ -8,7 +8,7 @@
   border-radius: 10px;
   width: 47px;
   height: 43px;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 #cocktails_section {
@@ -24,10 +24,15 @@
 .thumb-toggle:hover {
   border: 1px solid black;
   border-radius: 10px;
-  width: 147px;
+  width: 130px;
   height: 43px;
+  background-color: white;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.2);
 }
-  .thumb-toggle:hover, .toggle-name:hover {
+.whole_encilada:hover {
+  .toggle-name {
     opacity: 1;
     transition: 0.3s;
   }
+
+}
