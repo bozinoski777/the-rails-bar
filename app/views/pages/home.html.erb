@@ -2,8 +2,9 @@
 <div class="container">
 <section id="cocktails_section">
   <% if params[:display].present? && params[:display] == "list"  %>
+  <p class="toggle-name">Show Grid</p>
   <form class="text-right mt-3 mb-3" action="/" accept-charset="UTF-8" method="get">
-   <p class="toggle-name">Show Grid</p><button class="thumb-toggle text-right" type="submit" value="Grid"><i class="thumb-list-toggle fas fa-th-large"></i></button>
+   <button class="thumb-toggle text-right" type="submit" value="Grid"><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790759/Mr%20Cocktail%20icons/pieces_cb03dx.svg", class: "thumb-list-toggle", alt: "alttext" %></button>
   </form>
 
   <div class="container text-center">
@@ -18,8 +19,9 @@
     </div>
   </div>
   <% else %>
+  <p class="toggle-name">Show List</p>
   <form class="text-right mt-3 mb-3" action="/" accept-charset="UTF-8" method="get">
-    <p class="toggle-name">Show List</p><button class="thumb-toggle text-right" type="submit" name="display" value="list"><i class="thumb-list-toggle fas fa-th-list"></i></button>
+    <button class="thumb-toggle text-right" type="submit" name="display" value="list"><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790764/Mr%20Cocktail%20icons/grid_afd6y9.svg", style: "transform: rotate(90deg)", class: "thumb-list-toggle", alt: "alttext" %></button>
   </form>
   <div class="container text-center">
       <div data-controller="infinite-scroll">

@@ -1,7 +1,6 @@
 .thumb-list-toggle {
   text-align: center;
-  font-size: 25px;
-  padding: 5px;
+  width: 34px;
 }
 
 .thumb-toggle {
@@ -19,7 +18,7 @@
   position: absolute;
   top: 11px;
   right: 47px;
-  opacity: 1;
+  opacity: 0;
 }
 
 .thumb-toggle:hover {
@@ -27,7 +26,7 @@
   border-radius: 10px;
   width: 147px;
   height: 43px;
-}
-.toggle-name:hover .thumb-toggle:hover {
-  opacity: 1;
+  .toggle-name {
+    opacity: 1;
+  }
 }
