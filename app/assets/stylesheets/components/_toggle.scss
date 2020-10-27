@@ -26,7 +26,8 @@
   border-radius: 10px;
   width: 147px;
   height: 43px;
-  .toggle-name {
-    opacity: 1;
-  }
 }
+  .thumb-toggle:hover, .toggle-name:hover {
+    opacity: 1;
+    transition: 0.3s;
+  }
