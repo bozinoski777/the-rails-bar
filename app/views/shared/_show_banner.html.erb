@@ -1,13 +1,16 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(32,0,0,0.6),rgba(0,0,0,0.4)), url(<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>);">
-  <div class="container text-center">
+  <div class="container">
     <!-- Button trigger modal -->
-    <div id="edit-button-border">
-      <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalName">
-        <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg", class: "edit-button-img", alt: "alttext" %>
-      <p>Edit Name</p>
-      </button>
+    <div class="title_and_edit_button  d-flex justify-content-center">
+      <h1><%= cocktail_within.name %></h1>
+
+      <div id="edit-button-border">
+        <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalName">
+          <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg", class: "edit-button-img", alt: "alttext" %>
+        </button>
+        <p>Edit Name</p>
+      </div>
     </div>
-    <h1><%= cocktail_within.name %></h1>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalName" tabindex="-1" role="dialog" aria-labelledby="exampleModalNameLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
