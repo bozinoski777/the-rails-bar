@@ -70,3 +70,21 @@
   .edit-button-img {
     width: 31px;
   }
+
+#img_button {
+  position: relative;
+}
+
+#img_button:hover {
+  position: relative;
+  #img_button_edit {
+    opacity: 1;
+  }
+}
+#img_button_edit {
+  position: absolute;
+  top: -3px;
+  left: 5px;
+  opacity: 0;
+  transition: .5s;
+}

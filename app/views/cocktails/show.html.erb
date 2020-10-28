@@ -12,16 +12,11 @@
 <div class="container">
   <div class="modal-body row">
     <div class="col-md-6">
+      <div id="img_button">
       <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%" %>
-      <div class="container">
-        <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
-        <%= f.input :rating, collection: (1..5).to_a %>
-        <%#= f.submit  %>
-        <% end %>
-      </div>
 
       <!-- Button trigger modal -->
-      <div class="title_and_edit_button mt-2 d-flex">
+      <div id="img_button_edit"class="title_and_edit_button mt-2 d-flex">
         <div id="edit-button-border">
           <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalPhoto">
             <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603877849/Mr%20Cocktail%20icons/photo_2_biwa3l.svg", class: "edit-button-img", alt: "alttext" %>
@@ -29,7 +24,7 @@
           </button>
         </div>
       </div>
-
+      </div>
       <!-- Modal -->
       <div class="modal fade" id="exampleModalPhoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalPhotoLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -53,6 +48,13 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="container">
+        <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
+        <%= f.input :rating, collection: (1..5).to_a %>
+        <%#= f.submit  %>
+        <% end %>
       </div>
     </div>
 
