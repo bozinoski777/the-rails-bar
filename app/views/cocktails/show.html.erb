@@ -16,7 +16,7 @@
       <div class="title_and_edit_button mt-2 d-flex">
         <div id="edit-button-border">
           <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalPhoto">
-            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg", class: "edit-button-img", alt: "alttext" %>
+            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603877849/Mr%20Cocktail%20icons/photo_2_biwa3l.svg", class: "edit-button-img", alt: "alttext" %>
           <p>Edit Photo</p>
           </button>
         </div>
@@ -87,11 +87,6 @@
           </div>
         </div>
       </div>
-      <i class="far fa-trash-alt"></i>
-      <%= link_to "Delete #{@cocktail.name}",
-                  cocktail_path(@cocktail),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
       <p><%=@cocktail.description%></p>
       <h3>Glass Type</h3>
 
@@ -104,8 +99,14 @@
       <% else %>
       <p><%= "Non-Alcoholic" %></p>
       <% end %>
+      <div id="delete-button-border">
+      <i class="far fa-trash-alt"></i>
+      <%= link_to "Delete #{@cocktail.name}",
+                  cocktail_path(@cocktail),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
     </div>
-
+</div>
     <div class="container d-flex">
       <h2>Rate this cocktail!</h2>
       <%= simple_form_for([@cocktail, @rating]) do |f| %>
