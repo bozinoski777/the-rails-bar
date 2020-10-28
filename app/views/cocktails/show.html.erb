@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <%= render 'shared/show_banner', cocktail_within: @cocktail %>
 <% if params[:new] == 'creation' %>
 <div class="alert alert-success" role="alert">
@@ -12,7 +13,12 @@
   <div class="modal-body row">
     <div class="col-md-6">
       <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%" %>
-
+      <div class="container">
+      <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
+      <%= f.input :rating, collection: (1..5).to_a %>
+      <%= f.submit "AMAN" %>
+      <% end %>
+</div>
 
       <!-- Button trigger modal -->
       <div class="title_and_edit_button mt-2 d-flex">
@@ -59,43 +65,7 @@
         </div>
         <div class="col-md-6">
 
-      <!-- Button trigger modal -->
-      <div class="title_and_edit_button mt-2 d-flex">
-        <div id="edit-button-border">
-          <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalInstructions">
-            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg", class: "edit-button-img", alt: "alttext" %>
-          <p>Edit Info</p>
-          </button>
-        </div>
-      </div>
 
-        </div>
-      </div>
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalInstructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalInstructionsLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalInstructionsLabel">Edit Information</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <%= simple_form_for(@cocktail) do |f| %>
-                <%= f.input :description %>
-                <%= f.input :glass %>
-                <%= f.input :alcoholic %>
-                <%= f.submit 'Update Info' %>
-              <% end %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div id="delete-button-border">
       <i class="far fa-trash-alt"></i>
@@ -105,16 +75,6 @@
                   data: { confirm: "Are you sure?" } %>
     </div>
 </div>
-    <div class="container d-flex">
-      <h2>Rate this cocktail!</h2>
-      <%= simple_form_for([@cocktail, @rating]) do |f| %>
-      <%= f.input :rating, as: :radio_buttons, collection: [['1', 'one'],
-      ['2', 'two'],
-      ['3', 'three'],
-      ['4', 'four'],
-      ['5', 'five']], label_method: :second, value_method: :first %>
-      <%= f.submit %>
-      <% end %>
-    </div>
   </div>
 </div>
+
