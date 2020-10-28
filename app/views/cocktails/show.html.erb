@@ -12,6 +12,22 @@
   <div class="modal-body row">
     <div class="col-md-6">
       <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%" %>
+
+      <div class="d-flex justify-content-between">
+        <p> <% if @cocktail.ratings.present? %>
+              <% @cocktail.ratings.average("rating").to_i.times do %>
+                <i class="fas fa-star" style="color: #e9c46a"></i>
+              <% end %>
+                <% (5-@cocktail.ratings.average("rating").to_i).times do %>
+                  <i class="fas fa-star" style="color: lightgray"></i>
+                <% end %>
+            <% else %>
+                <% (5).times do %>
+                  <i class="fas fa-star" style="color: lightgray"></i>
+                <% end %>
+            <% end %>
+        </p>
+      </div>
       <!-- Button trigger modal -->
       <div class="title_and_edit_button mt-2 d-flex">
         <div id="edit-button-border">
@@ -50,10 +66,13 @@
 
     <div class="col-md-6">
       <%= render 'shared/table', cocktail_within: @cocktail %>
-      <br>
-      <h2>Instructions:</h2>
-      <!-- Button trigger modal -->
+      <div class="row">
+        <div class="col-md-6">
+        <h4>Instructions:</h4>
+        </div>
+        <div class="col-md-6">
 
+      <!-- Button trigger modal -->
       <div class="title_and_edit_button mt-2 d-flex">
         <div id="edit-button-border">
           <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalInstructions">
@@ -62,6 +81,27 @@
           </button>
         </div>
       </div>
+
+        </div>
+      </div>
+      <p><%=@cocktail.description%></p>
+      <div class="row">
+        <div class="col-md-6">
+      <h4>Glass Type</h4>
+      <h4>Alcohol</h4>
+
+        </div>
+        <div class="col-md-6">
+      <p><%=@cocktail.glass%></p>
+      <% if @cocktail.alcoholic == true%>
+      <p><%= "Alcoholic" %></p>
+      <% else %>
+      <p><%= "Non-Alcoholic" %></p>
+      <% end %>
+
+        </div>
+      </div>
+      <br>
       <!-- Modal -->
       <div class="modal fade" id="exampleModalInstructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalInstructionsLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -87,18 +127,7 @@
           </div>
         </div>
       </div>
-      <p><%=@cocktail.description%></p>
-      <h3>Glass Type</h3>
 
-      <p><%=@cocktail.glass%></p>
-      <p>Ratings</p>
-      <%= @cocktail.ratings.average("rating") %>
-      <br>
-      <% if @cocktail.alcoholic == true%>
-      <p><%= "Alcoholic" %></p>
-      <% else %>
-      <p><%= "Non-Alcoholic" %></p>
-      <% end %>
       <div id="delete-button-border">
       <i class="far fa-trash-alt"></i>
       <%= link_to "Delete #{@cocktail.name}",
