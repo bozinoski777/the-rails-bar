@@ -53,27 +53,32 @@
       <br>
       <h2>Instructions:</h2>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        <i class="fas fa-edit"></i>
-      </button>
+
+      <div class="title_and_edit_button mt-2 d-flex">
+        <div id="edit-button-border">
+          <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalInstructions">
+            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg", class: "edit-button-img", alt: "alttext" %>
+          <p>Edit Info</p>
+          </button>
+        </div>
+      </div>
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="exampleModalInstructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalInstructionsLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalInstructionsLabel">Edit Information</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
               <%= simple_form_for(@cocktail) do |f| %>
                 <%= f.input :description %>
                 <%= f.input :glass %>
                 <%= f.input :alcoholic %>
                 <%= f.submit 'Update Info' %>
               <% end %>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
