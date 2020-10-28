@@ -1,0 +1,48 @@
+<table id="tablePreview" class="table">
+<!--Table head-->
+  <thead>
+    <tr>
+      <th>Instructions</th>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+
+    <tr>
+
+    <td> <%= cocktail_within.description %> </td>
+
+    </tr>
+
+
+  </tbody>
+  <!--Table body-->
+</table>
+<table id="tablePreview" class="table">
+<!--Table head-->
+  <thead>
+    <tr>
+
+      <th>Glass Type</th>
+      <th>Alcoholoic?</th>
+    </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+
+    <tr>
+
+    <td> <%= cocktail_within.glass %> </td>
+    <% if @cocktail.alcoholic == true%>
+    <td><%= "Alcoholic" %></td>
+    <% else %>
+    <td><%= "Non-Alcoholic" %></td>
+    <% end %>
+    </tr>
+
+
+  </tbody>
+  <!--Table body-->
+</table>

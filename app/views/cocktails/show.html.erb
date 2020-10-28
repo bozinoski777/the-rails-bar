@@ -13,21 +13,7 @@
     <div class="col-md-6">
       <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%" %>
 
-      <div class="d-flex justify-content-between">
-        <p> <% if @cocktail.ratings.present? %>
-              <% @cocktail.ratings.average("rating").to_i.times do %>
-                <i class="fas fa-star" style="color: #e9c46a"></i>
-              <% end %>
-                <% (5-@cocktail.ratings.average("rating").to_i).times do %>
-                  <i class="fas fa-star" style="color: lightgray"></i>
-                <% end %>
-            <% else %>
-                <% (5).times do %>
-                  <i class="fas fa-star" style="color: lightgray"></i>
-                <% end %>
-            <% end %>
-        </p>
-      </div>
+
       <!-- Button trigger modal -->
       <div class="title_and_edit_button mt-2 d-flex">
         <div id="edit-button-border">
@@ -66,9 +52,10 @@
 
     <div class="col-md-6">
       <%= render 'shared/table', cocktail_within: @cocktail %>
+      <%= render 'shared/table_infos', cocktail_within: @cocktail %>
       <div class="row">
         <div class="col-md-6">
-        <h4>Instructions:</h4>
+
         </div>
         <div class="col-md-6">
 
@@ -84,24 +71,6 @@
 
         </div>
       </div>
-      <p><%=@cocktail.description%></p>
-      <div class="row">
-        <div class="col-md-6">
-      <h4>Glass Type</h4>
-      <h4>Alcohol</h4>
-
-        </div>
-        <div class="col-md-6">
-      <p><%=@cocktail.glass%></p>
-      <% if @cocktail.alcoholic == true%>
-      <p><%= "Alcoholic" %></p>
-      <% else %>
-      <p><%= "Non-Alcoholic" %></p>
-      <% end %>
-
-        </div>
-      </div>
-      <br>
       <!-- Modal -->
       <div class="modal fade" id="exampleModalInstructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalInstructionsLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
