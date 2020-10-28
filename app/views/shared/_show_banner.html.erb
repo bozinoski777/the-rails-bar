@@ -3,14 +3,29 @@
     <!-- Button trigger modal -->
     <div class="title_and_edit_button  d-flex justify-content-center">
       <h1><%= cocktail_within.name %></h1>
-
       <div id="edit-button-border">
         <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalName">
           <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg", class: "edit-button-img", alt: "alttext" %>
         <p>Edit Name</p>
         </button>
+
       </div>
     </div>
+        <div class="text-center">
+          <p> <% if cocktail_within.ratings.present? %>
+                <% cocktail_within.ratings.average("rating").to_i.times do %>
+                  <i class="fas fa-star" style="font-size: 30px; color: #e9c46a"></i>
+                <% end %>
+                  <% (5-cocktail_within.ratings.average("rating").to_i).times do %>
+                    <i class="fas fa-star" style="font-size: 30px; color: lightgray"></i>
+                  <% end %>
+              <% else %>
+                  <% (5).times do %>
+                    <i class="fas fa-star" style="font-size: 30px; color: lightgray"></i>
+                  <% end %>
+              <% end %>
+          </p>
+        </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalName" tabindex="-1" role="dialog" aria-labelledby="exampleModalNameLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
