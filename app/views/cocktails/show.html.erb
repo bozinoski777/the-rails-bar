@@ -50,12 +50,6 @@
         </div>
       </div>
 
-      <div class="container">
-        <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
-        <%= f.input :rating, collection: (1..5).to_a %>
-        <%#= f.submit  %>
-        <% end %>
-      </div>
     </div>
 
     <div class="col-md-6">
@@ -81,7 +75,7 @@
 </div>
 
 
- <script type="text/javascript">
+<!--  <script type="text/javascript">
 
   $(function() {
     $('#rating_rating').barrating({
@@ -95,4 +89,4 @@
 
 
 </script>
-
+ -->

@@ -11,21 +11,14 @@
 
       </div>
     </div>
-        <div class="text-center">
-          <p> <% if cocktail_within.ratings.present? %>
-                <% cocktail_within.ratings.average("rating").to_i.times do %>
-                  <i class="fas fa-star" style="font-size: 30px; color: #e9c46a"></i>
-                <% end %>
-                  <% (5-cocktail_within.ratings.average("rating").to_i).times do %>
-                    <i class="fas fa-star" style="font-size: 30px; color: lightgray"></i>
-                  <% end %>
-              <% else %>
-                  <% (5).times do %>
-                    <i class="fas fa-star" style="font-size: 30px; color: lightgray"></i>
-                  <% end %>
-              <% end %>
-          </p>
+      <div class="text-center">
+        <div class="container">
+          <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
+          <%= f.input :rating, label: false, collection: (1..5).to_a %>
+          <%#= f.submit  %>
+          <% end %>
         </div>
+      </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalName" tabindex="-1" role="dialog" aria-labelledby="exampleModalNameLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -52,3 +45,19 @@
 
   </div>
 </div>
+ <script type="text/javascript">
+
+  $(function() {
+    $('#rating_rating').barrating({
+      theme: 'css-stars',
+      initialRating: '<%= cocktail_within.ratings.average("rating").to_i %>',
+      onSelect: (value, text, event) => {
+      const form = $("form.review_form"); // We are selecting the form on the page with its class
+      form.submit(); // We submit the form with javascript
+    }
+  });
+    });
+
+
+</script>
+
