@@ -32,6 +32,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 gem 'cloudinary', '~> 1.12.0'
 gem 'pagy', '~> 3.5'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 
 # Reduces boot times through caching; required in config/boot.rb

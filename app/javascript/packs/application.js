@@ -1,6 +1,3 @@
-import { initStarRating } from '../plugins/init_star_rating';
-
-initStarRating();
 
 
 // This file is automatically compiled by Webpack, along with any other files
@@ -30,3 +27,4 @@ $(document).on("turbolinks:load", () => {
 })
 
 import "controllers"
+

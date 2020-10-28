@@ -14,11 +14,11 @@
     <div class="col-md-6">
       <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%" %>
       <div class="container">
-      <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
-      <%= f.input :rating, collection: (1..5).to_a %>
-      <%= f.submit "AMAN" %>
-      <% end %>
-</div>
+        <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
+        <%= f.input :rating, collection: (1..5).to_a %>
+        <%#= f.submit  %>
+        <% end %>
+      </div>
 
       <!-- Button trigger modal -->
       <div class="title_and_edit_button mt-2 d-flex">
@@ -77,4 +77,23 @@
 </div>
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.1/jquery.barrating.min.js"></script>
+
+
+ <script type="text/javascript">
+
+  $(function() {
+    $('#rating_rating').barrating({
+      theme: 'css-stars',
+      onSelect: (value, text, event) => {
+      const form = $("form.review_form"); // We are selecting the form on the page with its class
+      form.submit(); // We submit the form with javascript
+    }
+  });
+    });
+
+
+</script>
 
