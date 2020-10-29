@@ -1,4 +1,5 @@
-<table id="tablePreview" class="table">
+<div class="container">
+  <table id="tablePreview" class="table">
   <thead>
     <tr>
       <th>Photo, Title & Ingredients</th>
@@ -8,6 +9,7 @@
   </thead>
 
 </table>
+</div>
 <% @cocktails.each do |cocktail| %>
   <%= render 'shared/cocktail_list', cocktail_within: cocktail%>
 <% end %>

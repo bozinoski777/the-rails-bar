@@ -1,15 +1,16 @@
 <%= render 'shared/banner'%>
 <div class="container">
+  <div class="mt-4 mb-0 container text-center">
+    <h2>Top Cocktails</h2>
+  </div>
 <section id="cocktails_section">
   <% if params[:display].present? && params[:display] == "list"  %>
-  <div class="whole_encilada">
+  <div class="container whole_encilada">
   <p class="toggle-name">Show Grid</p>
-  <form class="whole_encilada text-right mt-3 mb-3" action="/" accept-charset="UTF-8" method="get">
+  <form class="whole_encilada text-right mb-3" action="/" accept-charset="UTF-8" method="get">
    <button class="thumb-toggle text-right" type="submit" value="Grid"><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790759/Mr%20Cocktail%20icons/pieces_cb03dx.svg", class: "thumb-list-toggle", alt: "alttext" %></button>
   </form>
 </div>
-
-  <div class="container">
       <div data-controller="infinite-scroll">
         <div class="text-" data-target="infinite-scroll.entries">
         <%= render "./cocktails/render_cocktails_list" %>
@@ -19,11 +20,10 @@
           <%== pagy_nav(@pagy) %>
         </div>
     </div>
-  </div>
   <% else %>
-  <div class="whole_encilada">
+  <div class="container whole_encilada">
   <p class="toggle-name">Show List</p>
-  <form class="text-right mt-3 mb-3" action="/" accept-charset="UTF-8" method="get">
+  <form class="text-right mb-3" action="/" accept-charset="UTF-8" method="get">
     <button class="thumb-toggle text-right" type="submit" name="display" value="list"><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790764/Mr%20Cocktail%20icons/grid_afd6y9.svg", style: "transform: rotate(90deg)", class: "thumb-list-toggle", alt: "alttext" %></button>
   </form>
   </div>
