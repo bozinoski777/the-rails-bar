@@ -1,7 +1,6 @@
 <div class="container">
-  <a style="text-decoration: none;" href="<%="/cocktails/#{cocktail_within.id}" %>">
-  </a>
-</div>
+  <a style="text-decoration: none; color: black;" href="<%="/cocktails/#{cocktail_within.id}" %>">
+
 <div class="card-product">
   <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill, id: 'main_img' %>
     <div class="col">
@@ -28,4 +27,6 @@
       <p class="list_alcoholic"><%= cocktail_within.alcoholic ? "Alcoholic" : "Non-Alcoholic" %> <i class="fas fa-cocktail" style="color: #e9c46a"></i></p>
       <p class="list_glass"><%= cocktail_within.glass %> <i class="fas fa-glass-whiskey" style="color: #e9c46a"></i></p>
     </div>
+</div>
+  </a>
 </div>
