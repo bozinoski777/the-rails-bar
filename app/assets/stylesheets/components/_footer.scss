@@ -1,10 +1,10 @@
-.banner {
+.banner_footer {
   background-size: cover;
-  background-position: top;
-  padding: 150px 0;
+  background-position: bottom;
+  padding: 50px 0;
 }
 
-.banner h1 {
+.banner_footer h4 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -14,7 +14,7 @@
 
 }
 
-.banner p {
+.banner_footer p {
   font-size: 40px;
   color: white;
   text-shadow: 0px 0px 10px #000000;
