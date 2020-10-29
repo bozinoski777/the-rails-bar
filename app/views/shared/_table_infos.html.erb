@@ -33,12 +33,11 @@
                 <%= f.input :description %>
                 <%= f.input :glass %>
                 <%= f.input :alcoholic %>
-                <%= f.submit 'Update Info' %>
-              <% end %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+                <%= f.submit 'Update Info', class: "btn btn-primary" %>
+              <% end %>
             </div>
           </div>
         </div>
