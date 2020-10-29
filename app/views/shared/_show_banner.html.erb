@@ -1,8 +1,8 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(32,0,0,0.6),rgba(0,0,0,0.4)), url(<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>);">
-  <div class="container pt-5">
+  <div class="container pt-3">
     <!-- Button trigger modal -->
     <div class="title_and_edit_button  d-flex justify-content-center">
-      <h1><%= cocktail_within.name %></h1>
+      <h1 id="banana" style="margin-bottom: 30px;"><%= cocktail_within.name %></h1>
         <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalName">
       <div id="edit-button-border">
           <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg", class: "edit-button-img", alt: "alttext" %>

@@ -10,3 +10,13 @@
   font-weight: bold;
   text-shadow: 0px 0px 15px #000000;
 }
+.banner-show {
+  button {
+  opacity: 0;
+  transition: .5s;
+ }
+}
+
+.title_and_edit_button:hover > #banana + button {
+  opacity: 1;
+}
