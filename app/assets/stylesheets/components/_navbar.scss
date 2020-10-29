@@ -18,7 +18,7 @@
   border: 1px solid black;
   border-radius: 10px;
   transition: .2s;
-  width: 80px;
+  width: 57px;
   height: 54px;
   p {
     opacity: 0;
@@ -32,6 +32,7 @@
   transition: .2s;
   position: relative;
   top: -2px;
+  right: 10px;
 }
 }
 
@@ -57,7 +58,7 @@
   border: 1px solid black;
   border-radius: 10px;
   transition: .2s;
-  width: 80px;
+  width: 57px;
   // position: relative;
   text-align: right;
   float: right;
@@ -91,5 +92,5 @@
   #new_cocktail_nav {
     position: absolute;
     top: 11px;
-    right: 36px;
+    right: 25px;
   }

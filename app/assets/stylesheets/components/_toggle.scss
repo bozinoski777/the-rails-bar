@@ -51,9 +51,10 @@
 }
 .toggle-name-index {
   position: absolute;
-  top: 11px;
+  top: 10px;
   right: 47px;
   opacity: 0;
+  color: black;
 }
 .whole_encilada-index {
   border: 1px solid black;
@@ -86,7 +87,7 @@
 .whole_encilada-index:hover {
   .toggle-name-index {
     opacity: 1;
-    transition: 1s;
+    transition: 1.2s;
   }
 
 }

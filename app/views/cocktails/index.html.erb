@@ -1,55 +1,64 @@
 <div class="container text-center">
+  <div class="container">
+    <% if params['alcoholic'] == 'false' %>
+      <h1>
+        <%="Non-Alcoholic Drinks" %>
+      </h1>
+    <% elsif params['query'].present? %>
+      <h1>
+        <%="Drinks with #{params['query'].capitalize}"%>
+      </h1>
+    <% else %>
+      <h1>
+        <%="Drinks"%>
+      </h1>
+    <% end %>
+  </div>
+</div>
 <div class="container">
- <% if params['alcoholic'] == 'false' %>
- <h1><%="Non-Alcoholic Drinks" %></h1>
- <% elsif params['query'].present? %>
- <h1><%="Drinks with #{params['query'].capitalize}"%></h1>
- <% else %>
- <h1><%="Drinks"%></h1>
- <% end %>
-</div>
-</div>
-<div class="container">
-<section id="cocktails_section-index">
-  <% if params[:display].present? && params[:display] == "list"  %>
-<div class="container pb-4">
-<div class="whole_encilada-index text-right">
-<p class="toggle-name-index">Show Grid</p>
-  <a class="thumb-toggle-index text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=grid"%> ><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790759/Mr%20Cocktail%20icons/pieces_cb03dx.svg", class: "thumb-list-toggle-index", alt: "alttext" %></a>
-</div>
-</div>
-
-
-  <div class="container align-center">
-      <div data-controller="infinite-scroll">
-        <div data-target="infinite-scroll.entries">
-        <%= render "render_cocktails_list" %>
+  <section id="cocktails_section-index">
+    <% if params[:display].present? && params[:display] == "list"  %>
+      <a class="thumb-toggle-index text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=grid"%> >
+        <div class="container pb-4">
+          <div class="whole_encilada-index text-right">
+            <p class="toggle-name-index">
+              Show Grid
+            </p>
+            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790759/Mr%20Cocktail%20icons/pieces_cb03dx.svg", class: "thumb-list-toggle-index", alt: "alttext" %>
+          </div>
         </div>
-
-        <div data-target="infinite-scroll.pagination">
-          <%== pagy_nav(@pagy) %>
+      </a>
+      <div class="container align-center">
+        <div data-controller="infinite-scroll">
+          <div data-target="infinite-scroll.entries">
+            <%= render "render_cocktails_list" %>
+          </div>
+          <div data-target="infinite-scroll.pagination">
+            <%== pagy_nav(@pagy) %>
+          </div>
         </div>
-    </div>
-  </div>
-  <% else %>
-  <div class="container pb-4">
-  <div class="whole_encilada-index text-right">
-  <p class="toggle-name-index">Show List</p>
-  <a class="thumb-toggle-index text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=list"%> ><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790764/Mr%20Cocktail%20icons/grid_afd6y9.svg", style: "transform: rotate(90deg)", class: "thumb-list-toggle-index", alt: "alttext" %></a>
-  </div>
-</div>
-  <div class="container align-center">
-      <div data-controller="infinite-scroll">
-        <div data-target="infinite-scroll.entries">
-        <%= render "render_cocktails" %>
+      </div>
+    <% else %>
+      <a class="thumb-toggle-index text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=list"%> >
+        <div class="container pb-4">
+          <div class="whole_encilada-index text-right">
+            <p class="toggle-name-index">
+              Show List
+            </p>
+            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790764/Mr%20Cocktail%20icons/grid_afd6y9.svg", style: "transform: rotate(90deg)", class: "thumb-list-toggle-index", alt: "alttext" %>
+          </div>
         </div>
-
-        <div data-target="infinite-scroll.pagination">
-          <%== pagy_nav(@pagy) %>
+      </a>
+      <div class="container align-center">
+        <div data-controller="infinite-scroll">
+          <div data-target="infinite-scroll.entries">
+            <%= render "render_cocktails" %>
+          </div>
+          <div data-target="infinite-scroll.pagination">
+            <%== pagy_nav(@pagy) %>
+          </div>
         </div>
-    </div>
-  </div>
-<% end %>
-</section>
-
+      </div>
+    <% end %>
+  </section>
 </div>
