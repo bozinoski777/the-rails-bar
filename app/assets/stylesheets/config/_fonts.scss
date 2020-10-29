@@ -1,10 +1,15 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Roboto:wght@300;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Roboto:wght@300;400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
 
 // Define fonts for body and headers
 
-$headers-font: 'Gayathri', sans-serif;
-$body-font: 'Roboto', sans-serif;
+$headers-font: 'Lobster Two', cursive;
+
+$body-font: 'Poiret One', cursive;
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

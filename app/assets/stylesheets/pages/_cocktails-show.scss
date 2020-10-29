@@ -15,7 +15,7 @@
   transition: .2s;
   width: 42px;
   text-align: right;
-  height: 36px;
+  height: 42px;
   position: relative;
   background-color: #f4f4f4;
   p {
@@ -68,7 +68,9 @@
 }
 
   .edit-button-img {
-    width: 31px;
+    width: 30px;
+    position: absolute;
+    top: 5px;
   }
 
 #img_button {
