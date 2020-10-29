@@ -25,12 +25,11 @@
           <div class="modal-body">
             <%= simple_form_for(cocktail_within) do |f| %>
               <%= f.input :name %>
-              <%= f.submit 'Update Name'%>
-            <% end %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+              <%= f.submit 'Update Name', class: "btn btn-primary"%>
+            <% end %>
           </div>
         </div>
       </div>

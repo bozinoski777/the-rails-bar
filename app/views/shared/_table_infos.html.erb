@@ -30,7 +30,7 @@
             </div>
             <div class="modal-body">
               <%= simple_form_for(@cocktail) do |f| %>
-                <%= f.input :description %>
+                <%= f.input :description, :input_html => { :style => "height: 200px;"}, as: :text %>
                 <%= f.input :glass %>
                 <%= f.input :alcoholic %>
             </div>
