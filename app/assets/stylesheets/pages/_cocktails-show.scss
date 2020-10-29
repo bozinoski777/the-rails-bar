@@ -2,11 +2,39 @@
 
 /*** basic styles ***/
 
+#ingredient {
+
+  td{
+  font-weight: none;
+  }
+}
+#ingredient:hover {
+  outline: 1px solid lightgray;
+  outline-offset: -1px;
+  td{
+    font-weight: bold;
+  }
+}
+
 #add_ingredient {
+  border: none;
+  td, i{
+  transition: 0.2s;
+  }
+
 }
 #add_ingredient:hover {
+  background-color: darkgray;
+  color: white;
   cursor: pointer;
-  border: 1px solid lightgray;
+  outline: 1px solid lightgray;
+  outline-offset: -1px;
+  td{
+    font-weight: bold;
+  }
+  i {
+    transform: rotate(45deg);
+  }
 }
 
 #edit-button-border{
