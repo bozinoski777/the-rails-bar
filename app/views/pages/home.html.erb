@@ -6,9 +6,9 @@
 <section id="cocktails_section">
   <% if params[:display].present? && params[:display] == "list"  %>
   <div class="container whole_encilada">
-  <p class="toggle-name">Show Grid</p>
-  <form class="whole_encilada text-right mb-3" action="/" accept-charset="UTF-8" method="get">
+  <form id="toggle-button" class="whole_encilada text-right mb-3" action="/" accept-charset="UTF-8" method="get">
    <button class="thumb-toggle text-right" type="submit" value="Grid"><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790759/Mr%20Cocktail%20icons/pieces_cb03dx.svg", class: "thumb-list-toggle", alt: "alttext" %></button>
+  <p id="toggle-name">Show Grid</p>
   </form>
 </div>
       <div data-controller="infinite-scroll">
@@ -22,9 +22,9 @@
     </div>
   <% else %>
   <div class="container whole_encilada">
-  <p class="toggle-name">Show List</p>
   <form class="text-right mb-3" action="/" accept-charset="UTF-8" method="get">
     <button class="thumb-toggle text-right" type="submit" name="display" value="list"><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790764/Mr%20Cocktail%20icons/grid_afd6y9.svg", style: "transform: rotate(90deg)", class: "thumb-list-toggle", alt: "alttext" %></button>
+  <p id="toggle-name">Show List</p>
   </form>
   </div>
   <div class="container text-center">

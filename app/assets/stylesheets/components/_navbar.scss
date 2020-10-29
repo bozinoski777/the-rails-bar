@@ -22,13 +22,16 @@
   height: 54px;
   p {
     opacity: 0;
-    top: 8px;
+    top: 7px;
     left: 3px;
     position: relative;
+    color: black;
   }
 #new_cocktail_nav, #nav_logo{
   transform: rotate(0deg);
   transition: .2s;
+  position: relative;
+  top: -2px;
 }
 }
 

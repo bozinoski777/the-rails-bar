@@ -14,7 +14,7 @@
 #cocktails_section {
   position: relative;
 }
-.toggle-name {
+#toggle-name {
   position: absolute;
   top: 11px;
   right: 62px;
@@ -29,13 +29,13 @@
   background-color: white;
   box-shadow: 0 2px 7px rgba(0,0,0,0.2);
 }
-.whole_encilada:hover {
-  .toggle-name {
-    opacity: 1;
-    transition: 0.3s;
-  }
 
+.thumb-toggle:hover + #toggle-name{
+  opacity: 1;
+  transition: 0.3s;
 }
+
+
 
 .thumb-list-toggle-index {
   text-align: center;

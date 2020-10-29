@@ -12,7 +12,7 @@
 <div class="container">
 <section id="cocktails_section-index">
   <% if params[:display].present? && params[:display] == "list"  %>
-<div class="text-right container">
+<div class="container pb-4">
 <div class="whole_encilada-index text-right">
 <p class="toggle-name-index">Show Grid</p>
   <a class="thumb-toggle-index text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=grid"%> ><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790759/Mr%20Cocktail%20icons/pieces_cb03dx.svg", class: "thumb-list-toggle-index", alt: "alttext" %></a>
@@ -32,16 +32,12 @@
     </div>
   </div>
   <% else %>
-<!--   <div class="whole_encilada text-right">
-  <p class="toggle-name">Show List</p>
-  <form class="text-right mt-3 mb-3" action="/" accept-charset="UTF-8" method="get">
-    <button class="thumb-toggle text-right" type="submit" name="display" value="list"><%#= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790764/Mr%20Cocktail%20icons/grid_afd6y9.svg", style: "transform: rotate(90deg)", class: "thumb-list-toggle", alt: "alttext" %></button>
-  </form>
-  </div> -->
+  <div class="container pb-4">
   <div class="whole_encilada-index text-right">
   <p class="toggle-name-index">Show List</p>
   <a class="thumb-toggle-index text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=list"%> ><%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790764/Mr%20Cocktail%20icons/grid_afd6y9.svg", style: "transform: rotate(90deg)", class: "thumb-list-toggle-index", alt: "alttext" %></a>
   </div>
+</div>
   <div class="container align-center">
       <div data-controller="infinite-scroll">
         <div data-target="infinite-scroll.entries">
