@@ -11,6 +11,7 @@
 #ingredient:hover {
   outline: 1px solid lightgray;
   outline-offset: -1px;
+  background-color: #dcdcdc38;
   td{
     font-weight: bold;
   }
@@ -51,6 +52,7 @@
     top: 5px;
     left: 45px;
     position: absolute;
+    font-size: 20px;
   }
 }
 

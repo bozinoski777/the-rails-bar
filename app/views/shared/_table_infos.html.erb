@@ -1,10 +1,12 @@
-<table id="tablePreview" class="table">
+<table id="tablePreview" class="table" style="margin: 0;">
 <!--Table head-->
-  <thead>
     <tr>
       <th class="d-flex justify-content-between">
       <!-- Button trigger modal -->
       <div class="title_and_edit_button d-flex">
+        <h2 style="font-size: 37px;">
+          Instructions
+        </h2>
         <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalInstructions">
           <div id="edit-button-border">
           <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg", class: "edit-button-img", alt: "alttext" %>
@@ -13,10 +15,8 @@
           </p>
           </div>
         </button>
-        <h2>
-          Instructions
-        </h2>
       </div>
+  <thead>
     </th>
 
       <!-- Modal -->
