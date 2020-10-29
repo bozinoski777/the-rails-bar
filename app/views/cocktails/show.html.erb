@@ -14,7 +14,15 @@
     <div class="col-md-6">
       <div id="img_button">
       <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%" %>
-
+      <div style="margin-left: 135px;">
+        <div class="container d-flex">
+          <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
+          <%= f.input :rating, label: false, collection: (1..5).to_a %>
+          <%#= f.submit  %>
+          <% end %>
+        <h4 class="mt-4"><%= @cocktail.ratings.average("rating").to_i  %> </h4>
+        </div>
+      </div>
       <!-- Button trigger modal -->
       <div id="img_button_edit"class="title_and_edit_button mt-2 d-flex">
         <div id="edit-button-border">
@@ -90,3 +98,19 @@
 
 </script>
  -->
+ <script type="text/javascript">
+
+  $(function() {
+    $('#rating_rating').barrating({
+      theme: 'css-stars',
+      initialRating: '<%= @cocktail.ratings.average("rating").to_i %>',
+      onSelect: (value, text, event) => {
+      const form = $("form.review_form"); // We are selecting the form on the page with its class
+      form.submit(); // We submit the form with javascript
+    }
+  });
+    });
+
+
+</script>
+
