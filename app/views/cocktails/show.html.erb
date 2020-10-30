@@ -21,14 +21,14 @@
   <div class="modal-body row">
     <div class="col-md-6">
       <div id="img_button">
-        <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%" %>
+        <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%" if @cocktail.photo.attached? %>
         <div style="margin-left: 135px;">
           <div class="container d-flex">
             <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
             <%= f.input :rating, label: false, collection: (1..5).to_a %>
             <% end %>
             <h4 class="mt-4">
-              <%= @cocktail.ratings.average("rating").to_i %>
+              <%= @cocktail.ratings.average("rating").nil? ? "0" : @cocktail.ratings.average("rating").round(2) %>
             </h4>
           </div>
         </div>
@@ -60,7 +60,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, style: "width: 100%;", class: "pb-4" %>
+            <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, style: "width: 100%;", class: "pb-4" if @cocktail.photo.attached? %>
             <%= simple_form_for(@cocktail) do |f| %>
               <%= f.input :photo, label: false %>
           </div>
@@ -79,13 +79,7 @@
         <div class="col-md-6">
         </div>
         <div class="col-md-6">
-          <div id="delete-button-border">
-          <i class="far fa-trash-alt"></i>
-          <%= link_to "Delete #{@cocktail.name}",
-                      cocktail_path(@cocktail),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %>
-          </div>
+
         </div>
       </div>
     </div>

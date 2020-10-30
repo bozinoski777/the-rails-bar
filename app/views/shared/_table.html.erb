@@ -3,9 +3,24 @@
 <!--Table head-->
   <thead>
     <tr>
-            <h2 style="border-top: 1px solid lightgray; font-size: 37px; margin-bottom: 15px; padding-top: 15px;">
+      <div class="title_and_edit_button d-flex">
+        <h2 style="border-top: 1px solid lightgray; font-size: 37px; margin-bottom: 15px; padding-top: 15px;">
           Ingredients
         </h2>
+          <div id="edit-button-border">
+        <i class="far fa-trash-alt"></i>
+          <%= link_to "Delete #{@cocktail.name}",
+                      cocktail_path(@cocktail),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>
+        <!-- <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#exampleModalInstructions"> -->
+            <%#= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg", class: "edit-button-img", alt: "alttext" %>
+            <p>
+              Edit
+            </p>
+          </div>
+        </button>
+      </div>
       <th>#</th>
       <th>Ingredient</th>
       <th>Dose</th>

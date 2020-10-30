@@ -2,7 +2,7 @@
   <a style="text-decoration: none; color: black;" href="<%="/cocktails/#{cocktail_within.id}" %>">
 
 <div class="card-product">
-  <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill, id: 'main_img' %>
+  <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill, id: 'main_img' if cocktail_within.photo.attached? %>
     <div class="col">
         <div class="list_name"> <h2><%= cocktail_within.name %></h2> </div>
         <div class="ingredients-list">
