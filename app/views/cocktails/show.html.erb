@@ -19,7 +19,7 @@
 
 <div class="container">
   <div class="modal-body row">
-    <div class="col-md-6">
+    <div class="col-md-6" id="left_side">
       <div id="img_button">
         <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%" if @cocktail.photo.attached? %>
         <div style="margin-left: 135px;">
@@ -72,7 +72,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div id="right_side" class="col-md-6">
       <%= render 'shared/table', cocktail_within: @cocktail %>
       <%= render 'shared/table_infos', cocktail_within: @cocktail %>
       <div class="row">
