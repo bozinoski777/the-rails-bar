@@ -1,4 +1,9 @@
-<div class="banner_footer" style="background-image: linear-gradient(rgba(32,0,0,0.6), rgba(0,0,0,0.4)), url(<%= @cocktail.nil? ? "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603980437/pexels-george-desipris-1028637_hls5ol.jpg" : (cl_image_path @cocktail.photo.key)%> );">
+<div class="banner_footer" style="background-image: linear-gradient(rgba(32,0,0,0.6), rgba(0,0,0,0.4)), url(
+<%= if @cocktail.nil? || !@cocktail.photo.attached?
+  "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603980437/pexels-george-desipris-1028637_hls5ol.jpg"
+  else
+    (cl_image_path @cocktail.photo.key)
+    end %> );">
   <div class="container">
     <h4>Made with love</h4>
   </div>

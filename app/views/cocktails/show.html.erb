@@ -27,7 +27,7 @@
             <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
             <%= f.input :rating, label: false, collection: (1..5).to_a %>
             <% end %>
-            <h4 class="mt-4">
+            <h4 style="margin-top: 20px;">
               <%= @cocktail.ratings.average("rating").nil? ? "0" : @cocktail.ratings.average("rating").round(2) %>
             </h4>
           </div>
