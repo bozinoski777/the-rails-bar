@@ -4,15 +4,11 @@
 
 <% if params[:new] == 'creation' %>
   <div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">
-      Well done!
-    </h4>
-    <p>
-      Aww yeah, you successfully read this important alert message. ADD DOSES AND EDIT STUFF!
-    </p>
-    <hr>
-    <p class="mb-0">
-      Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+    <h2 class="alert-heading">
+     🌟🌟🌟🌟🌟 Well done! 🌟🌟🌟🌟🌟
+    </h2>
+    <p style="font-size: 28px;">
+      Add ingredinets a preparation description!
     </p>
   </div>
 <% end %>
@@ -21,7 +17,11 @@
   <div class="modal-body row">
     <div class="col-md-6" id="left_side">
       <div id="img_button">
-        <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%" if @cocktail.photo.attached? %>
+        <% if @cocktail.photo.attached? %>
+        <%=cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%"  %>
+        <% else %>
+        <p style="font-size: 40px; text-align: right; text-decoration: underline;"><%= "Upload a picture" %></p>
+        <% end %>
         <div style="margin-left: 135px;">
           <div class="container d-flex">
             <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
