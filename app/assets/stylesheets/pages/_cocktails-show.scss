@@ -164,3 +164,34 @@
 .banner-show:hover > div > .title_and_edit_button > button > #edit-button-border {
   opacity: 1;
 }
+
+#arrow_new {
+      transform: rotate(270deg);
+    filter: invert(100%);
+    width: 80px;
+    position: absolute;
+    right: 15px;
+    top: 70px;
+
+}
+
+#arrow_search {
+      filter: invert(100%);
+      width: 80px;
+      position: relative;
+      top: -210px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+}
+
+#arrow_create {
+
+    filter: invert(100%);
+    width: 80px;
+    position: absolute;
+    left: 15px;
+    top: 70px;
+        transform: scaleX(-1) rotate(270deg);
+
+}
