@@ -64,7 +64,6 @@
   text-align: right;
   height: 42px;
   position: relative;
-  background-color: #f4f4f4;
   left: 6px;
   p {
     opacity: 0;
@@ -80,12 +79,12 @@
   border-radius: 10px;
   width: 190px;
   transition: .2s;
-  background-color: white;
+  background-color: #fd101538;
     p {
       opacity: 1;
     transition: 1s;
     }
-    .edit-button-img {
+    .delete-button-img {
       -webkit-transform: rotate(10deg);
       transform-origin: center;
       }
@@ -112,6 +111,12 @@
     position: absolute;
     top: 5px;
     left: 6px;
+  }
+  .delete-button-img {
+    width: 30px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
   }
 
 #img_button {
