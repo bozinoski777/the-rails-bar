@@ -195,3 +195,27 @@
         transform: scaleX(-1) rotate(270deg);
 
 }
+#new_wrapper {
+  opacity: 0;
+  transition: 1s;
+}
+#search_wrapper {
+  opacity: 0;
+  transition: 1s;
+}
+#create_wrapper {
+  opacity: 0;
+  transition: 1s;
+}
+
+.banner:hover > .container > #new_wrapper {
+  opacity: 1;
+}
+
+.banner:hover > .container > #search_wrapper {
+  opacity: 1;
+}
+
+.banner:hover > .container > #create_wrapper {
+  opacity: 1;
+}
