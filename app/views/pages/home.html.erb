@@ -24,7 +24,7 @@
         <div class="text-center" data-target="infinite-scroll.entries">
           <%= render "./cocktails/render_cocktails_list" %>
         </div>
-        <div data-target="infinite-scroll.pagination">
+        <div class=" d-flex justify-content-center" data-target="infinite-scroll.pagination">
           <%== pagy_bootstrap_nav(@pagy) %>
         </div>
       </div>
@@ -40,12 +40,12 @@
           </p>
         </form>
       </div>
-      <div class="container text-center">
+      <div class="container">
         <div data-controller="infinite-scroll">
           <div data-target="infinite-scroll.entries">
             <%= render "./cocktails/render_cocktails" %>
           </div>
-          <div  data-target="infinite-scroll.pagination">
+          <div class=" d-flex justify-content-center" data-target="infinite-scroll.pagination">
             <%== pagy_bootstrap_nav(@pagy) %>
           </div>
         </div>
