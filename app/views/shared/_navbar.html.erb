@@ -35,7 +35,7 @@
                 </div>
                 <div class="modal-body">
                   <div class="container">
-                    <form name="banana" onsubmit="return validateForm()" style="width:100%" class="simple_form new_cocktail" id="new_cocktail" novalidate="novalidate" enctype="multipart/form-data" action="/cocktails" accept-charset="UTF-8" method="post">
+                    <form name="newForm" onsubmit="return validateForm()" style="width:100%" class="simple_form new_cocktail" id="new_cocktail" novalidate="novalidate" enctype="multipart/form-data" action="/cocktails" accept-charset="UTF-8" method="post">
                       <input type="hidden" name="authenticity_token" value="78mNoegrOaQbVyvAUHW41fzVAv1MD1Qqo+HX9I51AIB0bFE2w/xMfMphcALG30uYtgT/1cONtQ1/N7liJRBdAA==">
                       <div class="form-group string required cocktail_name">
                         <label class="string required" for="cocktail_name">Name <abbr title="required">*</abbr></label>
@@ -63,7 +63,7 @@
           </div>
           <script>
             function validateForm() {
-              var x = document.forms["banana"]["cocktail[name]"].value;
+              var x = document.forms["newForm"]["cocktail[name]"].value;
               if (x == "") {
                 alert("Name must be filled out");
                 return false;

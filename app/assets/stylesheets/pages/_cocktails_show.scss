@@ -32,7 +32,7 @@
     transform: rotate(45deg);
   }
 }
-#edit-button-border {
+.edit_button_border {
   border: 1px solid black;
   border-radius: 10px;
   transition: .2s;
@@ -83,7 +83,7 @@
     transform-origin: center;
   }
 }
-#edit-button-border:hover {
+.edit_button_border:hover {
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.37);
   border-radius: 10px;
   width: 85px;
@@ -93,12 +93,12 @@
     opacity: 1;
     transition: 1s;
   }
-  .edit-button-img {
+  .edit_button_img {
     -webkit-transform: rotate(10deg);
     transform-origin: center;
   }
 }
-.edit-button-img {
+.edit_button_img {
   width: 30px;
   position: absolute;
   top: 5px;
@@ -123,27 +123,13 @@
   top: -3px;
   transition: .5s;
 }
-.banner-show {
-  background-size: cover;
-  background-position: center;
-}
-.banner-show h1 {
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 100px;
-  font-weight: bold;
-  text-shadow: 0px 0px 15px #000000;
-}
-#right_side:hover > .title_and_edit_button > a > #delete-button-border {
+#right_side:hover > div > a > #delete-button-border {
   opacity: 1;
 }
-#right_side:hover > #tablePreview > tbody > tr > th > div > button > #edit-button-border {
+#right_side:hover > #tablePreview > tbody > tr > th > div > button > .edit_button_border {
   opacity: 1;
 }
-#left_side:hover > #img_button > #img_button_edit > button > #edit-button-border {
-  opacity: 1;
-}
-.banner-show:hover > div > .title_and_edit_button > button > #edit-button-border {
+#left_side:hover > #img_button > #img_button_edit > button > .edit_button_border {
   opacity: 1;
 }
 #arrow_new {

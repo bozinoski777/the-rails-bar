@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<%= render 'shared/show_banner', cocktail_within: @cocktail %>
+<%= render 'shared/banner_cocktail', cocktail_within: @cocktail %>
 
 <% if params[:new] == 'creation' %>
   <div class="alert alert-success" role="alert">
@@ -33,10 +33,10 @@
           </div>
         </div>
         <!-- Edit Photo Modal Button -->
-        <div id="img_button_edit"class="title_and_edit_button mt-2 d-flex">
-          <button type="button" style=" border: none; background-color: #f4f4f400;" class="edit-img d-flex" data-toggle="modal" data-target="#editPhotoModal">
-            <div id="edit-button-border">
-              <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603877849/Mr%20Cocktail%20icons/photo_2_biwa3l.svg", class: "edit-button-img", alt: "alttext" %>
+        <div id="img_button_edit"class="mt-2 d-flex">
+          <button type="button" style=" border: none; background-color: #f4f4f400;" class="d-flex" data-toggle="modal" data-target="#editPhotoModal">
+            <div class="edit_button_border">
+              <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603877849/Mr%20Cocktail%20icons/photo_2_biwa3l.svg", class: "edit_button_img", alt: "alttext" %>
               <p>
                 Edit
               </p>

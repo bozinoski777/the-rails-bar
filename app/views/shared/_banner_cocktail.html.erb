@@ -1,0 +1,21 @@
+<div class="banner_cocktail" style="background-image: linear-gradient(rgba(32,0,0,0.6), rgba(0,0,0,0.4)),
+                                    url(<%= cl_image_path(cocktail_within.photo.key) if cocktail_within.photo.attached? %>);">
+  <div class="container pt-3">
+    <div class="d-flex justify-content-center">
+      <h1>
+        <%= cocktail_within.name %>
+      </h1>
+      <button id="edit_name_button" type="button" class="d-flex" data-toggle="modal" data-target="#EditNameModal">
+        <div class="edit_button_border">
+          <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg",
+                         class: "edit_button_img", alt: "alttext" %>
+          <p>
+            Edit
+          </p>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Edit Name Modal -->
+<%= render 'shared/modals/edit_name_modal', cocktail_within: cocktail_within %>
