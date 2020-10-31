@@ -169,12 +169,12 @@
   opacity: 0;
   transition: 1s;
 }
-.banner:hover > .container > #new_wrapper {
+.banner_homepage:hover > .container > #new_wrapper {
   opacity: 1;
 }
-.banner:hover > .container > #search_wrapper {
+.banner_homepage:hover > .container > #search_wrapper {
   opacity: 1;
 }
-.banner:hover > .container > #create_wrapper {
+.banner_homepage:hover > .container > #create_wrapper {
   opacity: 1;
 }
