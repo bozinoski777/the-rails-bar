@@ -18,7 +18,7 @@
     <div class="col-md-6" id="left_side">
       <div id="img_button">
         <% if @cocktail.photo.attached? %>
-        <%=cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "width: 100%"  %>
+        <%=cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "border-radius: 25px; width: 100%"  %>
         <% else %>
         <p style="font-size: 40px; text-align: right; text-decoration: underline;"><%= "Upload a picture" %></p>
         <% end %>
