@@ -1,0 +1,8 @@
+    <h1 style="font-size: 40px; margin-top: 20px; margin-bottom: 15px;">
+      Tasty selection:
+    </h1>
+<div class="align-center container row justify-content-around" >
+<% @cocktails.each do |cocktail| %>
+  <%= render 'shared/card', cocktail_within: cocktail %>
+<% end %>
+</div>

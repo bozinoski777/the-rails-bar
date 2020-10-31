@@ -24,6 +24,7 @@ class CocktailsController < ApplicationController
     @dose = Dose.new
     @ingredients = Ingredient.all
     @rating = Rating.new
+    @cocktails = Cocktail.all.sample(4)
   end
 
   def new
