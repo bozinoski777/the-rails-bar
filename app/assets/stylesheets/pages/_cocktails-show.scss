@@ -1,28 +1,23 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css);
 
-/*** basic styles ***/
-
 #ingredient {
-
-  td{
-  font-weight: none;
+  td {
+    font-weight: none;
   }
 }
 #ingredient:hover {
   outline: 1px solid lightgray;
   outline-offset: -1px;
   background-color: #dcdcdc38;
-  td{
+  td {
     font-weight: bold;
   }
 }
-
 #add_ingredient {
   border: none;
-  td, i{
-  transition: 0.2s;
+  td, i {
+    transition: 0.2s;
   }
-
 }
 #add_ingredient:hover {
   background-color: darkgray;
@@ -30,15 +25,14 @@
   cursor: pointer;
   outline: 1px solid lightgray;
   outline-offset: -1px;
-  td{
+  td {
     font-weight: bold;
   }
   i {
     transform: rotate(45deg);
   }
 }
-
-#edit-button-border{
+#edit-button-border {
   border: 1px solid black;
   border-radius: 10px;
   transition: .2s;
@@ -56,8 +50,7 @@
     font-size: 20px;
   }
 }
-
-#delete-button-border{
+#delete-button-border {
   border: 1px solid black;
   border-radius: 10px;
   transition: .2s;
@@ -75,55 +68,50 @@
     font-size: 20px;
   }
 }
-
 #delete-button-border:hover {
- box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.37);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.37);
   border-radius: 10px;
   width: 190px;
   transition: .2s;
   background-color: #fd101538;
-    p {
-      opacity: 1;
+  p {
+    opacity: 1;
     transition: 1s;
-    }
-    .delete-button-img {
-      -webkit-transform: rotate(10deg);
-      transform-origin: center;
-      }
+  }
+  .delete-button-img {
+    -webkit-transform: rotate(10deg);
+    transform-origin: center;
+  }
 }
-
 #edit-button-border:hover {
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.37);
   border-radius: 10px;
   width: 85px;
   transition: .2s;
   background-color: white;
-    p {
-      opacity: 1;
+  p {
+    opacity: 1;
     transition: 1s;
-    }
-    .edit-button-img {
-      -webkit-transform: rotate(10deg);
-      transform-origin: center;
-      }
-}
-
+  }
   .edit-button-img {
-    width: 30px;
-    position: absolute;
-    top: 5px;
-    left: 6px;
+    -webkit-transform: rotate(10deg);
+    transform-origin: center;
   }
-  .delete-button-img {
-    width: 30px;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-  }
-
+}
+.edit-button-img {
+  width: 30px;
+  position: absolute;
+  top: 5px;
+  left: 6px;
+}
+.delete-button-img {
+  width: 30px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
 #img_button {
   position: relative;
-      border-radius: 25px;
 }
 
 #img_button:hover {
@@ -135,12 +123,10 @@
   top: -3px;
   transition: .5s;
 }
-
 .banner-show {
   background-size: cover;
   background-position: center;
 }
-
 .banner-show h1 {
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -148,53 +134,42 @@
   font-weight: bold;
   text-shadow: 0px 0px 15px #000000;
 }
-
-
 #right_side:hover > .title_and_edit_button > a > #delete-button-border {
   opacity: 1;
 }
-
 #right_side:hover > #tablePreview > tbody > tr > th > div > button > #edit-button-border {
   opacity: 1;
 }
-
 #left_side:hover > #img_button > #img_button_edit > button > #edit-button-border {
   opacity: 1;
 }
-
 .banner-show:hover > div > .title_and_edit_button > button > #edit-button-border {
   opacity: 1;
 }
-
 #arrow_new {
-      transform: rotate(270deg);
-    filter: invert(100%);
-    width: 80px;
-    position: absolute;
-    right: 15px;
-    top: 10px;
-
+  transform: rotate(270deg);
+  filter: invert(100%);
+  width: 80px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
 }
-
 #arrow_search {
-      filter: invert(100%);
-      width: 55px;
-      position: relative;
-      top: -210px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+  filter: invert(100%);
+  width: 55px;
+  position: relative;
+  top: -210px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 #arrow_create {
-
-    filter: invert(100%);
-    width: 80px;
-    position: absolute;
-    left: 15px;
-    top: 10px;
-        transform: scaleX(-1) rotate(270deg);
-
+  filter: invert(100%);
+  width: 80px;
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  transform: scaleX(-1) rotate(270deg);
 }
 #new_wrapper {
   opacity: 0;
@@ -208,15 +183,12 @@
   opacity: 0;
   transition: 1s;
 }
-
 .banner:hover > .container > #new_wrapper {
   opacity: 1;
 }
-
 .banner:hover > .container > #search_wrapper {
   opacity: 1;
 }
-
 .banner:hover > .container > #create_wrapper {
   opacity: 1;
 }

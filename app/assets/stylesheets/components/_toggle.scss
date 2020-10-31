@@ -2,7 +2,6 @@
   text-align: center;
   width: 34px;
 }
-
 .thumb-toggle {
   border: 1px solid black;
   border-radius: 10px;
@@ -10,7 +9,6 @@
   height: 43px;
   transition: 0.2s;
 }
-
 #cocktails_section {
   position: relative;
 }
@@ -20,7 +18,6 @@
   right: 62px;
   opacity: 0;
 }
-
 .thumb-toggle:hover {
   border: 1px solid black;
   border-radius: 10px;
@@ -29,23 +26,14 @@
   background-color: white;
   box-shadow: 0 2px 7px rgba(0,0,0,0.2);
 }
-
 .thumb-toggle:hover + #toggle-name{
   opacity: 1;
   transition: 0.3s;
 }
-
-
-
 .thumb-list-toggle-index {
   text-align: center;
   width: 34px;
 }
-
-.thumb-toggle-index {
-
-}
-
 #cocktails_section-index {
   position: relative;
 }
@@ -63,18 +51,16 @@
   height: 43px;
   transition: 0.2s;
   position: absolute;
-      right: 21px;
-      /* transform-origin: right; */
-      top: -27px;
+  right: 21px;
+  top: -27px;
   img{
     text-align: center;
     width: 34px;
     position: absolute;
     right: 5px;
     top: 4px;
-}
   }
-
+}
 .whole_encilada-index:hover {
   border: 1px solid black;
   border-radius: 10px;
@@ -82,13 +68,11 @@
   height: 43px;
   background-color: white;
   box-shadow: 0 2px 7px rgba(0,0,0,0.2);
-  }
-
+}
 .whole_encilada-index:hover {
   .toggle-name-index {
     opacity: 1;
     transition: 1.2s;
   }
-
 }
 

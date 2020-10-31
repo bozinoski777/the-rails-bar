@@ -10,7 +10,6 @@
   border: 1px solid darkgray;
   border-radius: 10px;
 }
-
 .card-product:hover {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 70px;
@@ -20,7 +19,6 @@
   width: 60px;
   object-fit: cover;
 }
-
 .card-product h2 {
   font-size: 27px;
   font-weight: bold;
@@ -31,21 +29,18 @@
   font-size: 30px;
   transition: 0.3s;
 }
-
 .card-product p, .ingredients-list {
   font-size: 15px;
   line-height: 1.4;
   opacity: .9;
   margin-bottom: 0;
   transition: 0.3s;
-  // margin-top: 8px;
 }
 .card-product:hover p {
   font-size: 15px;
   transition: 0.3s;
   opacity: 1;
 }
-
 .card-product .card-product-infos {
   padding: 16px;
 }
