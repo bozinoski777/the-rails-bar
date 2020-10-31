@@ -1,5 +1,5 @@
 <div class="banner_footer" style="background-image: linear-gradient(rgba(32,0,0,0.6), rgba(0,0,0,0.4)), url(
-<%= if @cocktail.nil? || !@cocktail.photo.attached?
+  <%= if @cocktail.nil? || !@cocktail.photo.attached?
   "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603980437/pexels-george-desipris-1028637_hls5ol.jpg"
   else
     (cl_image_path @cocktail.photo.key)
@@ -8,5 +8,9 @@
     <a href="https://github.com/bozinoski777/rails-mister-cocktail" target="_blank" style="text-shadow: 0px 0px 10px #000000;"><i style="color: white; font-size: 60px;" class="fab fa-github-square"></i></a>
     <p>Made with ♡ by Hristian Bozinoski</p>
   </div>
+  <div class="d-flex justify-content-center">
+  <p style="font-size: 20px;">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> |</p>
+  <p style="font-size: 20px;">| Cocktails from the API of <a href="https://www.thecocktaildb.com">TheCocktailDB</a></p>
+</div>
 </div>
 

@@ -21,11 +21,11 @@
         </form>
       </div>
       <div data-controller="infinite-scroll">
-        <div class="text-" data-target="infinite-scroll.entries">
+        <div class="text-center" data-target="infinite-scroll.entries">
           <%= render "./cocktails/render_cocktails_list" %>
         </div>
         <div data-target="infinite-scroll.pagination">
-          <%== pagy_nav(@pagy) %>
+          <%== pagy_bootstrap_nav(@pagy) %>
         </div>
       </div>
     <% else %>
@@ -45,12 +45,11 @@
           <div data-target="infinite-scroll.entries">
             <%= render "./cocktails/render_cocktails" %>
           </div>
-          <div data-target="infinite-scroll.pagination">
-            <%== pagy_nav(@pagy) %>
+          <div  data-target="infinite-scroll.pagination">
+            <%== pagy_bootstrap_nav(@pagy) %>
           </div>
         </div>
       </div>
     <% end %>
   </section>
 </div>
-icons by Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
