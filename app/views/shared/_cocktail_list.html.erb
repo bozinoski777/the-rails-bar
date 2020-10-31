@@ -3,7 +3,7 @@
 
 <div class="card-product">
   <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill, id: 'main_img' if cocktail_within.photo.attached? %>
-    <div class="col">
+    <div class="col-md-8 ">
         <div class="list_name"> <h2><%= cocktail_within.name %></h2> </div>
         <div class="ingredients-list">
           <div class="list_ingredient">
@@ -22,10 +22,14 @@
         </div>
       </div>
     </div>
-    <div class="col text-right">
-      <p class="list_rating"><%= cocktail_within.ratings.average("rating").nil? ? "0" : cocktail_within.ratings.average("rating").round(2) %><i class="fas fa-star" style="color: #e9c46a"></i> </p>
-      <p class="list_alcoholic"><%= cocktail_within.alcoholic ? "Alcoholic" : "Non-Alcoholic" %> <i class="fas fa-cocktail" style="color: #e9c46a"></i></p>
-      <p class="list_glass"><%= cocktail_within.glass %> <i class="fas fa-glass-whiskey" style="color: #e9c46a"></i></p>
+    <div class="col text-right" >
+      <p style="font-size: 18px;" class="list_alcoholic"><%= cocktail_within.alcoholic ? "Alcoholic" : "Non-Alcoholic" %> <i class="fas fa-cocktail" style="color: #e9c46a"></i></p>
+      <p style="font-size: 18px;" class="list_glass"><%= cocktail_within.glass %> <i class="fas fa-glass-whiskey" style="color: #e9c46a"></i></p>
+    </div>
+    <div class="col-md-1 text-right">
+      <p class="list_rating" style="font-size: 18px; font-weight: bold;">
+      <%= cocktail_within.ratings.average("rating").nil? ? "0" : cocktail_within.ratings.average("rating").round(2) %><i class="fas fa-star" style="color: #e9c46a"></i>
+      </p>
     </div>
 </div>
   </a>

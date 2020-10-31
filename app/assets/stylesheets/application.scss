@@ -12,3 +12,7 @@
 @import "components/index";
 @import "pages/index";
 @import "components/css-stars";
+button:focus {
+  outline: none;
+  border: none;
+}
