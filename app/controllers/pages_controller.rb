@@ -11,7 +11,7 @@ def loader
   respond_to do |format|
     format.html
     format.json {
-    render json: { entries: render_to_string(partial: "./cocktails/render_cocktails", formats: [:html]), pagination: view_context.pagy_nav(@pagy) }
+    render json: { entries: render_to_string(partial: "./cocktails/render_cocktails", formats: [:html]), pagination: view_context.pagy_bootstrap_nav(@pagy) }
     }
   end
 end
