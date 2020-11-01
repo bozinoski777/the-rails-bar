@@ -1,30 +1,29 @@
 <div class="container text-center">
-  <div class="container">
-    <% if params['alcoholic'] == 'false' %>
-      <h1>
-        <%="Non-Alcoholic Drinks" %>
-      </h1>
-    <% elsif params['query'].present? %>
-      <h1>
-        <%="Drinks with #{params['query'].capitalize}"%>
-      </h1>
-    <% else %>
-      <h1>
-        <%="Drinks"%>
-      </h1>
-    <% end %>
-  </div>
+  <% if params['alcoholic'] == 'false' %>
+    <h1>
+      <%="Non-Alcoholic Drinks" %>
+    </h1>
+  <% elsif params['query'].present? %>
+    <h1>
+      <%="Drinks with #{params['query'].capitalize}"%>
+    </h1>
+  <% else %>
+    <h1>
+      <%="Drinks"%>
+    </h1>
+  <% end %>
 </div>
 <div class="container">
-  <section id="cocktails_section-index">
+  <section id="cocktails_index_wrapper">
     <% if params[:display].present? && params[:display] == "list"  %>
-      <a class="thumb-toggle-index text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=grid"%> >
+      <a class="text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=grid"%> >
         <div class="container pb-4">
-          <div class="whole_encilada-index text-right">
-            <p class="toggle-name-index">
+          <div class="toggle_button_index text-right">
+            <p class="toggle_text_index">
               Show Grid
             </p>
-            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790759/Mr%20Cocktail%20icons/pieces_cb03dx.svg", class: "thumb-list-toggle-index", alt: "alttext" %>
+            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790759/Mr%20Cocktail%20icons/pieces_cb03dx.svg",
+                           id: "toggle_icon", alt: "alttext" %>
           </div>
         </div>
       </a>
@@ -33,19 +32,20 @@
           <div data-target="infinite-scroll.entries">
             <%= render "render_cocktails_list" %>
           </div>
-          <div class=" d-flex justify-content-center" data-target="infinite-scroll.pagination">
+          <div class="d-flex justify-content-center" data-target="infinite-scroll.pagination">
             <%== pagy_bootstrap_nav(@pagy) %>
           </div>
         </div>
       </div>
     <% else %>
-      <a class="thumb-toggle-index text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=list"%> >
+      <a class="text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=list"%> >
         <div class="container pb-4">
-          <div class="whole_encilada-index text-right">
-            <p class="toggle-name-index">
+          <div class="toggle_button_index text-right">
+            <p class="toggle_text_index">
               Show List
             </p>
-            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790764/Mr%20Cocktail%20icons/grid_afd6y9.svg", style: "transform: rotate(90deg)", class: "thumb-list-toggle-index", alt: "alttext" %>
+            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603790764/Mr%20Cocktail%20icons/grid_afd6y9.svg",
+                           style: "transform: rotate(90deg)", id: "toggle_icon", alt: "alttext" %>
           </div>
         </div>
       </a>
@@ -54,7 +54,7 @@
           <div  data-target="infinite-scroll.entries">
             <%= render "render_cocktails" %>
           </div>
-          <div class=" d-flex justify-content-center" data-target="infinite-scroll.pagination">
+          <div class="d-flex justify-content-center" data-target="infinite-scroll.pagination">
             <%== pagy_bootstrap_nav(@pagy) %>
           </div>
         </div>

@@ -30,21 +30,21 @@
   opacity: 1;
   transition: 0.3s;
 }
-.thumb-list-toggle-index {
+#toggle_icon {
   text-align: center;
   width: 34px;
 }
-#cocktails_section-index {
+#cocktails_index_wrapper {
   position: relative;
 }
-.toggle-name-index {
+.toggle_text_index {
   position: absolute;
   top: 10px;
   right: 47px;
   opacity: 0;
   color: black;
 }
-.whole_encilada-index {
+.toggle_button_index {
   border: 1px solid black;
   border-radius: 10px;
   width: 47px;
@@ -61,7 +61,7 @@
     top: 4px;
   }
 }
-.whole_encilada-index:hover {
+.toggle_button_index:hover {
   border: 1px solid black;
   border-radius: 10px;
   width: 130px;
@@ -69,8 +69,8 @@
   background-color: white;
   box-shadow: 0 2px 7px rgba(0,0,0,0.2);
 }
-.whole_encilada-index:hover {
-  .toggle-name-index {
+.toggle_button_index:hover {
+  .toggle_text_index {
     opacity: 1;
     transition: 1.2s;
   }

@@ -82,7 +82,7 @@
   position: relative;
   top: -2px;
 }
-.banana:hover > #delete_ingredient_button_img {
+.delete_ingredient_wrapper:hover > #delete_ingredient_button_img {
   -webkit-transform: rotate(10deg);
   transform-origin: center;
 }
