@@ -2,7 +2,7 @@
 <%= render 'shared/new_cocktail_alert' %>
 <div class="container">
   <div class="modal-body row">
-    <div class="col-md-6" id="left_side">
+    <div class="col-md-12 col-lg-6" id="left_side">
       <div id="cocktail_img_wrapper">
         <% if @cocktail.photo.attached? %>
           <%=cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img' %>
@@ -26,7 +26,7 @@
     </div>
     <!-- Edit Photo Modal -->
     <%= render 'shared/modals/edit_photo_modal' %>
-    <div id="right_side" class="col-md-6">
+    <div id="right_side" class="col-md-12 col-lg-6">
       <%= render 'shared/cocktail_ingredients_table', cocktail_within: @cocktail %>
       <%= render 'shared/cocktail_information_table', cocktail_within: @cocktail %>
     </div>

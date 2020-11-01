@@ -89,3 +89,51 @@
   width: 35px;
   left: -5px;
 }
+@media only screen and (max-width: 1000px) {
+  .btn {
+    display: none;
+  }
+  #search_icon {
+    display: none;
+  }
+  #searchbar_button{
+    display: none;
+  }
+  #searchbar_button {
+    border: none;
+    transition: 0s;
+  }
+  #searchbar_button #input_text {
+    transition: 0s;
+    opacity: 1;
+  }
+  .searchbar_button:hover > button {
+    display: none;
+  }
+  #search_icon {
+    display: none;
+  }
+  #searchbar_button:hover {
+    display: none;
+  }
+  .custom-switch {
+    display: none;
+  }
+  .search_bar_wrapper {
+    display: none;
+  }
+  #searchbar_button:hover {
+    background-color: none;
+    opacity: 1;
+    box-shadow: none;
+    #input_text {
+      transition: 0s;
+      opacity: 1;
+    }
+    .custom-switch {
+      transition: 8s;
+      opacity: 0;
+      margin-left: 10px;
+    }
+  }
+}
