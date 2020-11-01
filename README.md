@@ -1,24 +1,33 @@
 # README
+## The Rails Bar - Le Wagon Coding Bootcamp Exercise
+### LIVE DEMO: http://the-rails-bar.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Info:
 
-Things you may want to cover:
+* Ruby version:
+  - 2.6.6p146 (2020-03-31 revision 67876)
 
-* Ruby version
+* Rails version:
+  - 6.0.3.4
+  
+* Testing:
+  - Rspec
+  - Capybara
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Javascript Packages: 
+  - jQuery Bar Rating Plugin
+ 
+* Aditional rails gems:
+  - 'capybara'
+  - 'pagy', '~> 3.5'
+  - 'cloudinary', '~> 1.12.0'
+  
+* Deployment:
+  - Heroku
+  
+* Images & Icons:
+  - https://www.pexels.com/
+  - https://www.flaticon.com/authors/freepik
+ 
+* Database:
+  - ARI by: http://thecocktaildb.com/
