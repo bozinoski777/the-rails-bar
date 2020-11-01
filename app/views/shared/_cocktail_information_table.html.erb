@@ -1,0 +1,45 @@
+<table class="table" style="margin: 0;">
+  <tr>
+    <th class="d-flex justify-content-between">
+    <div class="d-flex">
+      <h2 style="font-size: 37px; margin: 0px;">
+        Instructions
+      </h2>
+      <button type="button" style=" border: none; background-color: #f4f4f400;" class="d-flex" data-toggle="modal" data-target="#edit_cocktail_information">
+        <div class="edit_button_border">
+        <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653847/Mr%20Cocktail%20icons/edit_rfn5xg.svg",
+                       class: "edit_button_img", alt: "alttext" %>
+        <p>
+          Edit
+        </p>
+        </div>
+      </button>
+    </div>
+    </th>
+    <!-- Edit Cocktail Information Modal -->
+    <%= render 'shared/modals/edit_cocktail_information_modal' %>
+  </tr>
+  <tbody>
+    <tr>
+      <td>
+        <%= cocktail_within.description %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Glass Type</th>
+      <th>Contains Alcohol</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><%= cocktail_within.glass %></td>
+    <% if @cocktail.alcoholic == true%>
+      <td><%= "Yes" %></td>
+    <% else %>
+      <td><%= "No" %></td>
+    <% end %>
+  </tr>
+</table>

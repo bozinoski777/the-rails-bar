@@ -1,8 +1,10 @@
-    <h1 style="font-size: 40px; margin-top: 20px; margin-bottom: 15px;">
-      Tasty selection:
-    </h1>
-<div class="align-center container row justify-content-around" >
-<% @cocktails.each do |cocktail| %>
-  <%= render 'shared/cocktail_card', cocktail_within: cocktail %>
-<% end %>
+<div class="tasty_selection">
+  <h1>
+    Tasty selection:
+  </h1>
+  <div class="align-center container row justify-content-around">
+    <% @cocktails.each do |cocktail| %>
+      <%= render 'shared/cocktail_card', cocktail_within: cocktail %>
+    <% end %>
+  </div>
 </div>

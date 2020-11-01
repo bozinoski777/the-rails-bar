@@ -1,0 +1,50 @@
+<table class="table" style="margin: 0;">
+  <thead>
+    <tr>
+      <div class="divider"></div>
+      <div class="d-flex">
+        <h2 style="font-size: 37px;">
+          Ingredients
+        </h2>
+        <!-- Delete Cocktail Button -->
+        <a style="color: black;" data-confirm="<p style='font-size: 20px;' >Delete <%=@cocktail.name%></p>" rel="nofollow" data-method="delete" href="/cocktails/<%=@cocktail.id%>">
+          <div id="delete_button_border">
+            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653845/Mr%20Cocktail%20icons/delete_n3d9pm.svg",
+                           id: "delete_button_img", alt: "alttext" %>
+            <p>
+              Delete Cocktail
+            </p>
+          </div>
+        </a>
+      </div>
+      <th>#</th>
+      <th>Ingredient</th>
+      <th>Dose</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% n = 1 %>
+    <% @cocktail.doses.each do |dose| %>
+    <tr id="ingredient">
+      <th scope="row"><%= n %></th>
+      <td><%= dose.ingredient.name %></td>
+      <td><%= dose.description %></td>
+      <td><%= link_to "Delete",
+              dose_path(dose),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+      </td>
+      <% n += 1 %>
+      <% end %>
+    </tr>
+    <tr data-target="#newIngredientModal" data-toggle="modal" id="add_ingredient">
+      <th scope="row"> <i class="far fa-plus-square"></i> </th>
+      <td>Add an ingredient</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <!-- New Ingredient Modal -->
+    <%= render 'shared/modals/new_ingredient' %>
+  </tbody>
+</table>
