@@ -1,4 +1,4 @@
-.search_bar {
+.search_bar_wrapper {
   border-radius: 10px;
   box-shadow: none;
   left: 50%;
@@ -64,7 +64,7 @@
   padding-right: 1rem;
   padding-top: 0.3rem;
 }
-#whole_searchbar {
+#searchbar_button {
   border: 1px solid black;
   transition: 0.8s;
   #input_text {
@@ -76,7 +76,7 @@
     transition: 0.1s;
   }
 }
-#whole_searchbar:hover {
+#searchbar_button:hover {
   background-color: white;
   opacity: 1;
   width: 25%;
@@ -104,7 +104,7 @@
   left: 10px;
   opacity: 0;
 }
-#decoy {
+#search_icon {
   position: relative;
   width: 35px;
   left: -5px;

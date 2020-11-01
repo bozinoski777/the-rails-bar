@@ -1,29 +1,25 @@
-
-<div id="whole_searchbar" class="search_bar d-flex justify-content-between">
+<div id="searchbar_button" class="search_bar_wrapper d-flex justify-content-between">
   <button type="submit" name="commit" value="Search" class="btn btn-link btn-lg">
-  <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603747390/Mr%20Cocktail%20icons/zoom_pbjdyx.svg", id: "decoy" %>
-    </button>
+    <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603747390/Mr%20Cocktail%20icons/zoom_pbjdyx.svg",
+                   id: "search_icon" %>
+  </button>
   <div>
-<%= form_tag cocktails_path, id: 'search_from', method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search by Ingredient",
-    id: "input_text"
-  %>
-<!-- <div id="search_button">
-    <%#= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603747390/Mr%20Cocktail%20icons/zoom_pbjdyx.svg", id: "magnify" %>
-</div> -->
+  <%= form_tag cocktails_path, id: 'search_from', method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search by Ingredient",
+      id: "input_text" %>
   </div>
-<div class="custom-control custom-switch">
-  <% if params[:alcoholic].present? && params[:alcoholic] == "false" %>
-  <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false" checked>
-  <% else %>
-  <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false">
+  <div class="custom-control custom-switch">
+    <% if params[:alcoholic].present? && params[:alcoholic] == "false" %>
+      <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false" checked>
+    <% else %>
+      <input type="checkbox" class="custom-control-input" name="alcoholic" id="alcoholic" value="false">
+    <% end %>
+    <label class="custom-control-label" for="alcoholic">
+      Virgin
+    </label>
+  </div>
   <% end %>
-  <label class="custom-control-label" for="alcoholic">Virgin</label>
-</div>
-
-  <!-- <%#= submit_tag "Search", class: "btn btn-primary" %> -->
-<% end %>
 </div>
