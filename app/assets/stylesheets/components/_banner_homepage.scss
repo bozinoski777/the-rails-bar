@@ -85,3 +85,8 @@
 .banner_homepage:hover > .container > #create_wrapper {
   opacity: 1;
 }
+@media only screen and (max-width: 1000px) {
+  #new_wrapper, #search_wrapper, #create_wrapper {
+    display: none;
+  }
+}

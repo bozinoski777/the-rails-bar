@@ -1,13 +1,13 @@
 .br-theme-css-stars .br-widget {
-  height: 48px;
+  height: 38px;
   white-space: nowrap;
 }
 .br-theme-css-stars .br-widget a {
   text-decoration: none;
-  height: 38px;
-  width: 38px;
+  height: 28px;
+  width: 28px;
   float: left;
-  font-size: 43px;
+  font-size: 40px;
   margin-right: 5px;
 }
 .br-theme-css-stars .br-widget a:after {
