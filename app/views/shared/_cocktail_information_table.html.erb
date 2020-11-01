@@ -21,7 +21,7 @@
   </tr>
   <tbody>
     <tr>
-      <td>
+      <td class="table_highlight">
         <%= cocktail_within.description %>
       </td>
     </tr>
@@ -35,11 +35,11 @@
     </tr>
   </thead>
   <tr>
-    <td><%= cocktail_within.glass %></td>
+    <td class="table_highlight"><%= cocktail_within.glass %></td>
     <% if @cocktail.alcoholic == true%>
-      <td><%= "Yes" %></td>
+      <td class="table_highlight"><%= "Yes" %></td>
     <% else %>
-      <td><%= "No" %></td>
+      <td class="table_highlight"><%= "No" %></td>
     <% end %>
   </tr>
 </table>

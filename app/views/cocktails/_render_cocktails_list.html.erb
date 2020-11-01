@@ -1,14 +1,13 @@
 <div class="container">
   <table class="table">
-  <thead>
-    <tr>
-      <th>Photo, Title & Ingredients</th>
-      <th> </th>
-      <th class="text-right">Acloholic, Glass Type, Rating</th>
-    </tr>
-  </thead>
-
-</table>
+    <thead>
+      <tr>
+        <th>Photo, Title & Ingredients</th>
+        <th> </th>
+        <th class="text-right">Acloholic, Glass Type, Rating</th>
+      </tr>
+    </thead>
+  </table>
 </div>
 <% @cocktails.each do |cocktail| %>
   <%= render 'shared/cocktail_list', cocktail_within: cocktail%>

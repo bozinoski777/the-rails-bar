@@ -1,17 +1,15 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css);
 
-#ingredient {
+.table_highlight {
   td {
     font-weight: none;
   }
 }
-#ingredient:hover {
+.table_highlight:hover {
   outline: 1px solid lightgray;
   outline-offset: -1px;
   background-color: #dcdcdc38;
-  td {
-    font-weight: bold;
-  }
+  font-weight: bold;
 }
 .edit_button_border {
   border: 1px solid black;
@@ -78,6 +76,15 @@
     -webkit-transform: rotate(10deg);
     transform-origin: center;
   }
+}
+#delete_ingredient_button_img {
+  width: 20px;
+  position: relative;
+  top: -2px;
+}
+.banana:hover > #delete_ingredient_button_img {
+  -webkit-transform: rotate(10deg);
+  transform-origin: center;
 }
 .edit_button_img {
   width: 30px;

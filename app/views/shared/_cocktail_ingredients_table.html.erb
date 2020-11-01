@@ -26,13 +26,17 @@
   <tbody>
     <% n = 1 %>
     <% @cocktail.doses.each do |dose| %>
-    <tr id="ingredient">
+    <tr class="table_highlight">
       <th scope="row"><%= n %></th>
       <td><%= dose.ingredient.name %></td>
       <td><%= dose.description %></td>
-      <td><%= link_to "Delete",
+      <td class="banana">
+        <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603653845/Mr%20Cocktail%20icons/delete_n3d9pm.svg",
+        id: "delete_ingredient_button_img", alt: "alttext" %>
+        <%= link_to "Delete",
               dose_path(dose),
               method: :delete,
+              style: "color: black;",
               data: { confirm: "Are you sure?" } %>
       </td>
       <% n += 1 %>
