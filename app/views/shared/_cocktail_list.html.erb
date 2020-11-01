@@ -1,7 +1,7 @@
 <div class="container cocktail_list_wrapper">
   <a href="<%="/cocktails/#{cocktail_within.id}" %>">
   <div class="card_product">
-    <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill, id: 'main_img' if cocktail_within.photo.attached? %>
+    <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill if cocktail_within.photo.attached? %>
     <div class="col-md-8 ">
       <div class="list_name">
         <h2>
