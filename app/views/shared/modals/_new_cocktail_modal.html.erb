@@ -1,0 +1,46 @@
+<div class="modal fade" id="NewCocktailModal" tabindex="-1" role="dialog" aria-labelledby="NewCocktailModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="NewCocktailModalLabel">Create a New Cocktail!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form name="newForm" onsubmit="return validateForm()" style="width:100%" class="simple_form new_cocktail" id="new_cocktail" novalidate="novalidate" enctype="multipart/form-data" action="/cocktails" accept-charset="UTF-8" method="post">
+            <input type="hidden" name="authenticity_token" value="78mNoegrOaQbVyvAUHW41fzVAv1MD1Qqo+HX9I51AIB0bFE2w/xMfMphcALG30uYtgT/1cONtQ1/N7liJRBdAA==">
+            <div class="form-group string required cocktail_name">
+              <label class="string required" for="cocktail_name">Name <abbr title="required">*</abbr></label>
+              <input class="form-control string required" type="text" name="cocktail[name]" id="cocktail_name">
+            </div>
+            <div class="form-group file optional cocktail_photo">
+              <label class="file optional" for="cocktail_photo">Photo</label>
+              <input class="form-control-file file optional" type="file" name="cocktail[photo]" id="cocktail_photo">
+            </div>
+            <fieldset class="form-group boolean optional cocktail_alcoholic form-group-valid">
+              <div class="form-check">
+                <input name="cocktail[alcoholic]" type="hidden" value="0">
+                <input class="form-check-input is-valid boolean optional" type="checkbox" value="1" checked="checked" name="cocktail[alcoholic]" id="cocktail_alcoholic">
+                <label class="form-check-label boolean optional" for="cocktail_alcoholic1">Alcoholic</label>
+              </div>
+            </fieldset>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" name="commit" value="Create Cocktail"  class="btn btn-primary">Create Cocktail</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+  function validateForm() {
+    var x = document.forms["newForm"]["cocktail[name]"].value;
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+  }
+</script>

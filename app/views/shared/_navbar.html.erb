@@ -1,83 +1,22 @@
 <div class="navbar navbar-expand-sm navbar-lewagon">
+  <!-- Top Cocktails -->
   <div id="logo_border">
     <%= link_to "/?top=cocktails", class: "navbar-brand nav-link d-flex", id:"home_logo" do %>
-      <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603652990/cocktails_rknagu.svg", id: "nav_logo" %>
-    <p> Top Cocktails</p>
+      <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603652990/cocktails_rknagu.svg",
+                     id: "top_cocktails_icon" %>
+    <p>Top Cocktails</p>
     <% end %>
-
   </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <!-- Search Bar -->
   <%= render 'shared/search_bar'%>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <div class="nav-item active">
-      </div>
-      <div class="nav-item">
-        <div id="new_cocktail_border">
-          <button style=" border: none; background-color: #f4f4f400;"  type="button" class="navbar-brand nav-link d-flex" data-toggle="modal" data-target="#exampleModalNewCock">
-            <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603657228/Mr%20Cocktail%20icons/shaker_ieoznh.svg", id: "new_cocktail_nav" %>
-            <p>New Cocktail</p>
-          </button>
-        </div>
-
-          <!-- New Cocktail Modal -->
-          <div class="modal fade" id="exampleModalNewCock" tabindex="-1" role="dialog" aria-labelledby="exampleModalNewCockLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalNewCockLabel">Create a New Cocktail!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                    <form name="newForm" onsubmit="return validateForm()" style="width:100%" class="simple_form new_cocktail" id="new_cocktail" novalidate="novalidate" enctype="multipart/form-data" action="/cocktails" accept-charset="UTF-8" method="post">
-                      <input type="hidden" name="authenticity_token" value="78mNoegrOaQbVyvAUHW41fzVAv1MD1Qqo+HX9I51AIB0bFE2w/xMfMphcALG30uYtgT/1cONtQ1/N7liJRBdAA==">
-                      <div class="form-group string required cocktail_name">
-                        <label class="string required" for="cocktail_name">Name <abbr title="required">*</abbr></label>
-                        <input class="form-control string required" type="text" name="cocktail[name]" id="cocktail_name">
-                      </div>
-                      <div class="form-group file optional cocktail_photo">
-                        <label class="file optional" for="cocktail_photo">Photo</label>
-                        <input class="form-control-file file optional" type="file" name="cocktail[photo]" id="cocktail_photo">
-                      </div>
-                      <fieldset class="form-group boolean optional cocktail_alcoholic form-group-valid">
-                        <div class="form-check">
-                          <input name="cocktail[alcoholic]" type="hidden" value="0">
-                          <input class="form-check-input is-valid boolean optional" type="checkbox" value="1" checked="checked" name="cocktail[alcoholic]" id="cocktail_alcoholic">
-                          <label class="form-check-label boolean optional" for="cocktail_alcoholic1">Alcoholic</label>
-                        </div>
-                      </fieldset>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" name="commit" value="Create Cocktail"  class="btn btn-primary">Create Cocktail</button>
-                    </form>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <script>
-            function validateForm() {
-              var x = document.forms["newForm"]["cocktail[name]"].value;
-              if (x == "") {
-                alert("Name must be filled out");
-                return false;
-              }
-            }
-          </script>
-        </div>
-
-      <li class="nav-item dropdown">
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-        </div>
-      </div>
-      </li>
-    </ul>
+  <!-- New Cocktail -->
+  <div id="new_cocktail_border">
+    <button type="button" class="navbar-brand nav-link d-flex" data-toggle="modal" data-target="#NewCocktailModal">
+      <%= image_tag "https://res.cloudinary.com/dj9iphc8u/image/upload/v1603657228/Mr%20Cocktail%20icons/shaker_ieoznh.svg",
+                     id: "new_cocktail_icon" %>
+      <p>New Cocktail</p>
+    </button>
   </div>
+  <!-- New Cocktail Modal -->
+  <%= render 'shared/modals/new_cocktail_modal' %>
 </div>
