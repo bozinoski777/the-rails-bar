@@ -2,7 +2,7 @@
   <h1>
     Tasty selection:
   </h1>
-  <div class="align-center container row justify-content-around">
+  <div style="display: flex; flex-wrap: wrap;" class="align-center container justify-content-around">
     <% @cocktails.each do |cocktail| %>
       <%= render 'shared/cocktail_card', cocktail_within: cocktail %>
     <% end %>
