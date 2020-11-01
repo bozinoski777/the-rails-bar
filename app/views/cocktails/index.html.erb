@@ -17,7 +17,7 @@
   <section id="cocktails_index_wrapper">
     <% if params[:display].present? && params[:display] == "list"  %>
       <a class="text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=grid"%> >
-        <div class="container pb-4">
+        <div class="container pb-4 mt-4">
           <div class="toggle_button_index text-right">
             <p class="toggle_text_index">
               Show Grid
@@ -39,7 +39,7 @@
       </div>
     <% else %>
       <a class="text-right" href=<%="/cocktails?query=#{params[:query]}&alcoholic=#{params[:alcoholic]}&commit=#{params[:commit]}&display=list"%> >
-        <div class="container pb-4">
+        <div class="container pb-4 mt-4">
           <div class="toggle_button_index text-right">
             <p class="toggle_text_index">
               Show List
