@@ -1,4 +1,7 @@
 .banner_homepage {
+  background-image: linear-gradient(rgba(32,0,0,0.6),
+                    rgba(0,0,0,0.4)),
+                    url(https://res.cloudinary.com/dj9iphc8u/image/upload/v1603980437/pexels-george-desipris-1028637_hls5ol.jpg);
   background-size: cover;
   background-position: top;
   padding: 70px 0;
@@ -21,18 +24,64 @@
   position: relative;
   top: 70px;
 }
-#new_wrapper_text {
+#new_arrow {
+  transform: rotate(270deg);
+  filter: invert(100%);
+  width: 80px;
   position: absolute;
-  top: 58px;
-  left: 95px;
+  right: 15px;
+  top: 10px;
 }
-#search_wrapper_text {
-  position: absolute;
-  left: 48.5%;
-  top: 55px;
+#search_arrow {
+  filter: invert(100%);
+  width: 55px;
+  position: relative;
+  top: -210px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-#create_wrapper_text {
+#create_arrow {
+  filter: invert(100%);
+  width: 80px;
   position: absolute;
-  top: 52px;
-  right: 95px;
+  left: 15px;
+  top: 10px;
+  transform: scaleX(-1) rotate(270deg);
+}
+#new_wrapper {
+  opacity: 0;
+  transition: 1s;
+  p {
+    position: absolute;
+    top: 58px;
+    left: 95px;
+  }
+}
+#search_wrapper {
+  opacity: 0;
+  transition: 1s;
+  p {
+    position: absolute;
+    left: 48.5%;
+    top: 55px;
+  }
+}
+#create_wrapper {
+  opacity: 0;
+  transition: 1s;
+  p {
+    position: absolute;
+    top: 52px;
+    right: 95px;
+  }
+}
+.banner_homepage:hover > .container > #new_wrapper {
+  opacity: 1;
+}
+.banner_homepage:hover > .container > #search_wrapper {
+  opacity: 1;
+}
+.banner_homepage:hover > .container > #create_wrapper {
+  opacity: 1;
 }
