@@ -1,6 +1,6 @@
 # README
 ## The Rails Bar - Le Wagon Coding Bootcamp Exercise
-### LIVE DEMO: http://accenture-challange-hris.herokuapp.com/
+### LIVE DEMO: http://the-rails-bar.herokuapp.com/
 
 Info:
 
