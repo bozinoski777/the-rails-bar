@@ -3,13 +3,6 @@
   box-shadow: none;
   left: 50%;
   width: 57px;
-  #magnify {
-    color: black;
-    width: 34px;
-    left: 8px;
-    top: 8px;
-    position: absolute;
-  }
   input {
     opacity: 0;
     border: 1px solid white;
@@ -90,19 +83,6 @@
     opacity: 1;
     margin-left: 10px;
   }
-  #search_button {
-    opacity: 1;
-    transition: 3s;
-  }
-}
-#search_button {
-  transition: 0.1s;
-  position: relative;
-  opacity: 1;
-  float: right;
-  top: -50px;
-  left: 10px;
-  opacity: 0;
 }
 #search_icon {
   position: relative;
