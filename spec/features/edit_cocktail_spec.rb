@@ -16,7 +16,8 @@ RSpec.describe 'Edit cocktail' do
 
   it 'edits cocktail name' do
     visit('/cocktails/1')
-    fill_in 'Name', with: 'TestName'
+    # fill_in 'Name', with: 'TestName'
+    find(:css, "input[id$='cocktail_name']").set("TestName")
     click_button('Update Name')
     expect(page).to have_content('TestName')
   end
