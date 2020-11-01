@@ -5,23 +5,25 @@
         <div class="info">
           <h1 class="card_name"><%= cocktail_within.name %></h1>
             <div class="d-flex justify-content-between">
-              <p> <% if cocktail_within.ratings.present? %>
-                    <% cocktail_within.ratings.average("rating").to_i.times do %>
-                      <i class="fas fa-star" style="color: #e9c46a"></i>
-                    <% end %>
-                      <% (5-cocktail_within.ratings.average("rating").to_i).times do %>
-                        <i class="fas fa-star" style="color: lightgray"></i>
-                      <% end %>
-                  <% else %>
-                      <% (5).times do %>
-                        <i class="fas fa-star" style="color: lightgray"></i>
-                      <% end %>
+              <p>
+                <% if cocktail_within.ratings.present? %>
+                  <% cocktail_within.ratings.average("rating").to_i.times do %>
+                    <i class="fas fa-star" style="color: #e9c46a"></i>
                   <% end %>
+                  <% (5-cocktail_within.ratings.average("rating").to_i).times do %>
+                    <i class="fas fa-star" style="color: lightgray"></i>
+                  <% end %>
+                <% else %>
+                  <% (5).times do %>
+                    <i class="fas fa-star" style="color: lightgray"></i>
+                  <% end %>
+                <% end %>
               </p>
             </div>
-          <ul class="card_ingredient"><% cocktail_within.ingredients.each do |ing| %>
-                                             <li><%= ing.name%></li>
-                                              <% end %>
+          <ul class="card_ingredient">
+            <% cocktail_within.ingredients.each do |ing| %>
+              <li><%= ing.name%></li>
+            <% end %>
           </ul>
         </div>
       </div>
