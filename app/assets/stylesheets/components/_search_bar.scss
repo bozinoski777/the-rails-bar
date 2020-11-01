@@ -90,6 +90,9 @@
   left: -5px;
 }
 @media only screen and (max-width: 1000px) {
+  .search_bar_wrapper #input_text {
+    width: 130%;
+  }
   .btn {
     display: none;
   }
