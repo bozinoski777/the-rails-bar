@@ -2,7 +2,7 @@
   <a href="<%="/cocktails/#{cocktail_within.id}" %>">
   <div class="card_product">
     <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill if cocktail_within.photo.attached? %>
-    <div class="col-md-8 ">
+    <div class="col-sm-12 col-12 col-lg-12 col-xl-8 col-md-12">
       <div class="list_name">
         <h2>
           <%= cocktail_within.name %>
@@ -24,11 +24,11 @@
         </div>
       </div>
     </div>
-    <div class="col text-right" >
-      <p style="font-size: 18px;" class="list_alcoholic">
+    <div class="col-sm-0 col-lg-0 col-xl-2 col-md-2 text-right" >
+      <p class="list_alcoholic">
         <%= cocktail_within.alcoholic ? "Alcoholic" : "Non-Alcoholic" %><i class="fas fa-cocktail" style="color: #e9c46a"></i>
       </p>
-      <p style="font-size: 18px;" class="list_glass">
+      <p class="list_glass">
         <%= cocktail_within.glass %><i class="fas fa-glass-whiskey" style="color: #e9c46a"></i>
       </p>
     </div>
