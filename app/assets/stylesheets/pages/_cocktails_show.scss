@@ -98,11 +98,11 @@
   top: 5px;
   left: 5px;
 }
-#img_button {
+#cocktail_img_wrapper {
   position: relative;
 }
 
-#img_button:hover {
+#cocktail_img_wrapper:hover {
   position: relative;
 }
 
@@ -117,6 +117,10 @@
 #right_side:hover > table > tbody > tr > th > div > button > .edit_button_border {
   opacity: 1;
 }
-#left_side:hover > #img_button > #img_button_edit > button > .edit_button_border {
+#left_side:hover > #cocktail_img_wrapper > #img_button_edit > button > .edit_button_border {
   opacity: 1;
+}
+#main_img {
+  border-radius: 25px;
+  width: 100%;
 }

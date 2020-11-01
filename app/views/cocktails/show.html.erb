@@ -1,37 +1,16 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <%= render 'shared/banner_cocktail', cocktail_within: @cocktail %>
-
-<% if params[:new] == 'creation' %>
-  <div class="alert alert-success" role="alert">
-    <h2 class="alert-heading">
-     🌟🌟🌟🌟🌟 Well done! 🌟🌟🌟🌟🌟
-    </h2>
-    <p style="font-size: 28px;">
-      Add ingredinets a description!
-    </p>
-  </div>
-<% end %>
-
+<%= render 'shared/new_cocktail_alert' %>
 <div class="container">
   <div class="modal-body row">
     <div class="col-md-6" id="left_side">
-      <div id="img_button">
+      <div id="cocktail_img_wrapper">
         <% if @cocktail.photo.attached? %>
-        <%=cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img', style: "border-radius: 25px; width: 100%"  %>
+          <%=cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, id: 'main_img' %>
         <% else %>
-        <p style="font-size: 40px; text-align: right; text-decoration: underline;"><%= "Upload a picture" %></p>
+          <p style="font-size: 40px; text-align: right; text-decoration: underline;"><%= "Upload a picture" %></p>
         <% end %>
-        <div style="margin-left: 135px;">
-          <div class="container d-flex">
-            <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
-            <%= f.input :rating, label: false, collection: (1..5).to_a %>
-            <% end %>
-            <h4 style="margin-top: 20px;">
-              <%= @cocktail.ratings.average("rating").nil? ? "0" : @cocktail.ratings.average("rating").round(2) %>
-            </h4>
-          </div>
-        </div>
+        <!-- Cocktail Rating -->
+        <%= render 'shared/cocktail_rating' %>
         <!-- Edit Photo Modal Button -->
         <div id="img_button_edit"class="mt-2 d-flex">
           <button type="button" style=" border: none; background-color: #f4f4f400;" class="d-flex" data-toggle="modal" data-target="#editPhotoModal">
@@ -46,57 +25,12 @@
       </div>
     </div>
     <!-- Edit Photo Modal -->
-    <div class="modal fade" id="editPhotoModal" tabindex="-1" role="dialog" aria-labelledby="editPhotoModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editPhotoModalLabel">
-              Update Image
-            </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">
-                &times;
-              </span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, style: "width: 100%;", class: "pb-4" if @cocktail.photo.attached? %>
-            <%= simple_form_for(@cocktail) do |f| %>
-              <%= f.input :photo, label: false %>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <%= f.submit 'Update Photo', class: "btn btn-primary"%>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= render 'shared/modals/edit_photo_modal' %>
     <div id="right_side" class="col-md-6">
       <%= render 'shared/cocktail_ingredients_table', cocktail_within: @cocktail %>
       <%= render 'shared/cocktail_information_table', cocktail_within: @cocktail %>
-      <div class="row">
-        <div class="col-md-6">
-        </div>
-        <div class="col-md-6">
-
-        </div>
-      </div>
     </div>
   </div>
-      <%= render 'shared/similar_cocktails', @similar %>
+  <%= render 'shared/similar_cocktails', @similar %>
 </div>
-
- <script type="text/javascript">
-  $(function() {
-    $('#rating_rating').barrating({
-      theme: 'css-stars',
-      initialRating: '<%= @cocktail.ratings.average("rating").to_i %>',
-      onSelect: (value, text, event) => {
-        const form = $("form.review_form"); // We are selecting the form on the page with its class
-        form.submit(); // We submit the form with javascript
-      }
-    });
-  });
-</script>
 

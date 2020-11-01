@@ -1,0 +1,23 @@
+<div style="margin-left: 135px;">
+  <div class="container d-flex">
+    <%= simple_form_for([@cocktail, @rating], html: { class: "review_form" }) do |f| %>
+    <%= f.input :rating, label: false, collection: (1..5).to_a %>
+    <% end %>
+    <h4 style="margin-top: 20px;">
+      <%= @cocktail.ratings.average("rating").nil? ? "0" : @cocktail.ratings.average("rating").round(2) %>
+    </h4>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function() {
+    $('#rating_rating').barrating({
+      theme: 'css-stars',
+      initialRating: '<%= @cocktail.ratings.average("rating").to_i %>',
+      onSelect: (value, text, event) => {
+        const form = $("form.review_form");
+        form.submit();
+      }
+    });
+  });
+</script>
+

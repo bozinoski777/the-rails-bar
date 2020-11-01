@@ -1,0 +1,26 @@
+<div class="modal fade" id="editPhotoModal" tabindex="-1" role="dialog" aria-labelledby="editPhotoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editPhotoModalLabel">
+          Update Image
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            &times;
+          </span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= cl_image_tag @cocktail.photo.key, width: 700, crop: :fill, style: "width: 100%;", class: "pb-4" if @cocktail.photo.attached? %>
+        <%= simple_form_for(@cocktail) do |f| %>
+          <%= f.input :photo, label: false %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit 'Update Photo', class: "btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
