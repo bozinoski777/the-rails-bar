@@ -2,6 +2,10 @@
   background-size: cover;
   background-position: bottom;
   padding-top: 50px;
+  i {
+    color: white;
+    font-size: 60px;
+  }
 }
 .banner_footer h4 {
   margin: 0;
@@ -15,4 +19,8 @@
   font-size: 40px;
   color: white;
   text-shadow: 0px 0px 10px #000000;
+}
+.sources p {
+    font-size: 20px;
+    padding: 5px;
 }

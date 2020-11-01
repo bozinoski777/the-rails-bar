@@ -3,6 +3,6 @@
     </h1>
 <div class="align-center container row justify-content-around" >
 <% @cocktails.each do |cocktail| %>
-  <%= render 'shared/card', cocktail_within: cocktail %>
+  <%= render 'shared/cocktail_card', cocktail_within: cocktail %>
 <% end %>
 </div>

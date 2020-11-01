@@ -1,21 +1,23 @@
-<div class="container">
-  <a style="text-decoration: none; color: black;" href="<%="/cocktails/#{cocktail_within.id}" %>">
-
-<div class="card-product">
-  <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill, id: 'main_img' if cocktail_within.photo.attached? %>
+<div class="container cocktail_list_wrapper">
+  <a href="<%="/cocktails/#{cocktail_within.id}" %>">
+  <div class="card_product">
+    <%= cl_image_tag cocktail_within.photo.key, width: 400, crop: :fill, id: 'main_img' if cocktail_within.photo.attached? %>
     <div class="col-md-8 ">
-        <div class="list_name"> <h2><%= cocktail_within.name %></h2> </div>
-        <div class="ingredients-list">
-          <div class="list_ingredient">
+      <div class="list_name">
+        <h2>
+          <%= cocktail_within.name %>
+        </h2>
+      </div>
+      <div class="ingredients_list">
+        <div class="list_ingredient">
           <p>
-            <% n_ingredients = cocktail_within.ingredients.size %>
             <% n = 0 %>
-            <% cocktail_within.ingredients.limit(6).each do |ing| %>
-              <% if n < (n_ingredients - 1) %>
-                <%= ing.name %>,
+            <% cocktail_within.ingredients.limit(6).each do |ingredient| %>
+              <% if n < (cocktail_within.ingredients.size - 1) %>
+                <%= ingredient.name %>,
                 <% n += 1 %>
               <% else %>
-                <%= ing.name %>.
+                <%= ingredient.name %>.
               <% end %>
             <% end %>
           </p>
@@ -23,14 +25,18 @@
       </div>
     </div>
     <div class="col text-right" >
-      <p style="font-size: 18px;" class="list_alcoholic"><%= cocktail_within.alcoholic ? "Alcoholic" : "Non-Alcoholic" %> <i class="fas fa-cocktail" style="color: #e9c46a"></i></p>
-      <p style="font-size: 18px;" class="list_glass"><%= cocktail_within.glass %> <i class="fas fa-glass-whiskey" style="color: #e9c46a"></i></p>
+      <p style="font-size: 18px;" class="list_alcoholic">
+        <%= cocktail_within.alcoholic ? "Alcoholic" : "Non-Alcoholic" %><i class="fas fa-cocktail" style="color: #e9c46a"></i>
+      </p>
+      <p style="font-size: 18px;" class="list_glass">
+        <%= cocktail_within.glass %><i class="fas fa-glass-whiskey" style="color: #e9c46a"></i>
+      </p>
     </div>
     <div class="col-md-1 text-right">
       <p class="list_rating" style="font-size: 18px; font-weight: bold;">
-      <%= cocktail_within.ratings.average("rating").nil? ? "0" : cocktail_within.ratings.average("rating").round(2) %><i class="fas fa-star" style="color: #e9c46a"></i>
+        <%= cocktail_within.ratings.average("rating").nil? ? "0" : cocktail_within.ratings.average("rating").round(2) %><i class="fas fa-star" style="color: #e9c46a"></i>
       </p>
     </div>
-</div>
+  </div>
   </a>
 </div>

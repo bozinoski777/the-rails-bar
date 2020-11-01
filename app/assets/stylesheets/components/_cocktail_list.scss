@@ -1,4 +1,10 @@
-.card-product {
+.cocktail_list_wrapper {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+.card_product {
   overflow: hidden;
   height: 60px;
   width: 100%;
@@ -10,37 +16,37 @@
   border: 1px solid darkgray;
   border-radius: 10px;
 }
-.card-product:hover {
+.card_product:hover {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 70px;
 }
-.card-product img {
+.card_product img {
   height: 100%;
   width: 60px;
   object-fit: cover;
 }
-.card-product h2 {
+.card_product h2 {
   font-size: 27px;
   font-weight: bold;
   margin: 0;
   transition: 0.3s;
 }
-.card-product:hover h2 {
+.card_product:hover h2 {
   font-size: 30px;
   transition: 0.3s;
 }
-.card-product p, .ingredients-list {
+.card_product p, .ingredients_list {
   font-size: 15px;
   line-height: 1.4;
   opacity: .9;
   margin-bottom: 0;
   transition: 0.3s;
 }
-.card-product:hover p {
+.card_product:hover p {
   font-size: 15px;
   transition: 0.3s;
   opacity: 1;
 }
-.card-product .card-product-infos {
+.card_product .card_product_infos {
   padding: 16px;
 }
