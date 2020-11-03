@@ -9,6 +9,9 @@ Info:
 
 * Rails version:
   - 6.0.3.4
+
+* Database:
+  - PostgreSQL
   
 * Testing:
   - Rspec
@@ -28,9 +31,10 @@ Info:
 * Deployment:
   - Heroku
   
+### Credits 
 * Images & Icons:
   - https://www.pexels.com/
   - https://www.flaticon.com/authors/freepik
- 
-* Database:
+
+* Data:
   - API by: http://thecocktaildb.com/
