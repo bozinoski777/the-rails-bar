@@ -21,6 +21,9 @@ Info:
   - 'capybara'
   - 'pagy', '~> 3.5'
   - 'cloudinary', '~> 1.12.0'
+
+* Responsiveness:
+  - Bootstrap 4.0
   
 * Deployment:
   - Heroku
