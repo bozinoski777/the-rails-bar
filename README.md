@@ -30,4 +30,4 @@ Info:
   - https://www.flaticon.com/authors/freepik
  
 * Database:
-  - ARI by: http://thecocktaildb.com/
+  - API by: http://thecocktaildb.com/
