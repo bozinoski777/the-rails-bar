@@ -9,6 +9,9 @@ Info:
 
 * Rails version:
   - 6.0.3.4
+
+* Database:
+  - PostgreSQL
   
 * Testing:
   - Rspec
@@ -21,13 +24,17 @@ Info:
   - 'capybara'
   - 'pagy', '~> 3.5'
   - 'cloudinary', '~> 1.12.0'
+
+* Responsiveness:
+  - Bootstrap 4.0
   
 * Deployment:
   - Heroku
   
+### Credits 
 * Images & Icons:
   - https://www.pexels.com/
   - https://www.flaticon.com/authors/freepik
- 
-* Database:
-  - ARI by: http://thecocktaildb.com/
+
+* Data:
+  - API by: http://thecocktaildb.com/
